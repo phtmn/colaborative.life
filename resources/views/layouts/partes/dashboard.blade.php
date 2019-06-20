@@ -5,7 +5,7 @@
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-lg-12 col-md-10">
-					<h1 class="display-2 text-white"> # Dashboard</h1>
+					<h1 class="display-2 text-white"> <i class="ni ni-tv-2 text-white"></i> Dashboard</h1>
 				</div>		
             </div>
         </div>
@@ -26,7 +26,7 @@
 					 
 					<div class="ods">
                         <h1 class="display-4 text-white " style="text-indent: 20px;">Olá, {{ auth()->user()->apelido}}</h1> 
-						<h2 class="text-white mt-0 mb-5 text-justify" style="text-indent: 20px;">Aqui no <strong><b>COOPVIVA</b></strong>, você pode engajar com projetos ou causas que estão de acordo com seus propósitos de forma planejada, estruturada e transparente. <a href="{{route('quero_investir')}}" class="text-white"> <strong><b><u>#SimEuQuero</u></b></strong></h2>
+						<h2 class="text-white mt-0 mb-5 text-justify" style="text-indent: 20px;">Aqui no <strong><b>XXX</b></strong>, você pode engajar com projetos ou causas que estão de acordo com seus propósitos de forma planejada, estruturada e transparente. <a href="{{route('quero_investir')}}" class="text-white"> <strong><b><u>#SimEuQuero</u></b></strong></h2>
                     </div>
 					
 
@@ -45,13 +45,13 @@
 
                     
 					 
-					<div class="ods">
-                        @forelse($metas->unique('objetivo_id') as $obj) 
-                            <a style="cursor: pointer"><img class="img-thumbnail" style="width:55px; height:55px;" src="{{asset('/vendor/site/images/ods/ods'.$obj->objetivo_id.'.png')}}"></a>
-                        @empty 
-                            <p class="text-warning font-weight-900">#não há objetivos da Agenda 2030 cadastrados!</p> 
-                        @endforelse 
-                    </div>
+                {{--	<div class="ods"> --}}
+                  {{--       @forelse($metas->unique('objetivo_id') as $obj) --}}
+                    {{--        <a style="cursor: pointer"><img class="img-thumbnail" style="width:55px; height:55px;" src="{{asset('/vendor/site/images/ods/ods'.$obj->objetivo_id.'.png')}}"></a> --}}
+                    {{--    @empty  --}}
+                      {{--      <p class="text-warning font-weight-900">#não há objetivos da Agenda 2030 cadastrados!</p>  --}}
+                        {{--  @endforelse  --}}
+                          {{-- </div> --}}
 					
 
 					 

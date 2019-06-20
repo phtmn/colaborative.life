@@ -6,7 +6,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route('osc.create')}}">
-            <i class="ni ni-settings-gear-65 text-blue"></i> Perfil
+            <i class="ni ni-circle-08 text-blue"></i> Perfil
         </a>
     </li>
 
@@ -22,13 +22,12 @@
         </a>
     </li>
     
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('osc.objetivos') }}">
-            <i class=""><img src="{{asset('vendor/site/images/agenda_ico.png')}}" class="navbar-brand-img" alt="..."></i>
-            
-             ODS
-        </a>
-    </li>
+    {{--    <li class="nav-item"> --}}
+        {{--   <a class="nav-link" href="{{ route('osc.objetivos') }}"> --}}
+        {{--       <i class=""><img src="{{asset('vendor/site/images/agenda_ico.png')}}" class="navbar-brand-img" alt="..."></i> --}}
+        {{--             ODS --}}
+            {{--  </a> --}}
+                {{--  </li> --}}
    
 	
 	

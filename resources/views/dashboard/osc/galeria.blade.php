@@ -3,14 +3,14 @@
 @section('cabecalho')
 
 
-    <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-image: url({{asset('vendor/argon-dash/assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
+    <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
         <!-- Mask -->
         <span class="mask bg-gradient-danger opacity-8"></span>
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-lg-12 col-md-10 col-xs-12">
-                    <h1 class="display-2 text-white"># Galeria</h1>
+                    <h1 class="display-2 text-white"> <i class="ni ni-album-2 text-white"></i> Galeria</h1>
                    {{-- <p class="text-white mt-0 mb-2">Precisamos de algumas informações para incluir o seu projeto, assim que finalizar ele será enviado
 				   para aprovação da plataforma.</p> --}}
                    

@@ -45,18 +45,15 @@
 									<form class="form form-investidor" action="{{route('register')}}" method="POST">
 										@csrf
 										<div class="form-group">
-											<label for="name">Nome Completo</label>
+											<label for="name">Nome completo</label>
 											<input type="text" name="name" class="form-control" placeholder="Digite seu nome" required="true" value="{{ old('name') }}">
 										</div>
+										
 										<div class="form-group">
-											<label for="name">Como gosta de ser chamado?</label>
-											<input type="text" name="apelido" class="form-control" placeholder="Digite como gosta de ser chamado" required="true" value="{{old('apelido')}}">
-										</div>
-										<div class="form-group">
-											<label for="tipo_conta">Como você deseja participar do <b class="text-success">COOPVIVA</b>?</label>
+											<label for="tipo_conta">Como você deseja participar do <b class="text-success">XXX</b>?</label>
 											<select name="tipo_conta" id="tipo_conta" class="form-control" required>
 												<option value=""> ... Selecione uma opção ... </option>
-												<option value="osc">Perfil OSC (Organização Sem Fins Lucrativos)</option>
+												<option value="osc">Perfil Proponente de Projetos</option>
 												<option value="investidor-pf">Perfil Investidor Pessoa Fìsica</option>
 												<option value="investidor-pj">Perfil Investidor Pessoa Jurídica</option>
 {{--												<option value="empresa">Empresa</option>--}}
@@ -82,7 +79,7 @@
 											<div class="form-group" style="margin-left: 25px">
 												<div class="form-check form-check-inline">
 													<input class="form-check-input" type="checkbox" name="termo" value="ACEITO">
-													<label class="form-check-label" >Aceito os <a href="{{url('/termo-de-uso')}}" target="_blank"> Termos de Uso </a></label>
+													<label class="form-check-label" >Aceito os <a href="{{url('/termo-de-uso')}}" > Termos de Uso </a></label>
 												</div>
 											</div>
 										</div>
@@ -103,7 +100,7 @@
 							
 							<div class="card-body">
 							<div class="form-group">
-									<label for="name"><strong class="text-primary"><i class="ni ni-building"></i> Perfil OSC (Organização Sem Fins Lucrativos)</strong></label>
+									<label for="name"><strong class="text-primary"><i class="ni ni-collection"></i> Perfil Proponente de Projetos</strong></label>
 									<p class="text-justify" class="sample-text" style="text-indent: 20px;"> Se você é uma organização sem fins lucrativos e produz o bem comum, com alto valor socioambiental agregado.</p>
 								</div>
 								<hr>

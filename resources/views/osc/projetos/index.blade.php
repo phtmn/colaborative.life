@@ -1,7 +1,7 @@
 @extends('layouts.dashboard') 
 
 @section('cabecalho')
-    <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-image: url({{asset('vendor/argon-dash/assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
+    <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
         <!-- Mask -->
         <span class="mask bg-gradient-success opacity-8"></span>
         <!-- Header container -->
@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-10">
                 
-				<h1 class="display-2 text-white"> # Projetos</h1>
+				<h1 class="display-2 text-white"> <i class="ni ni-collection text-white"></i> Projetos</h1>
 				{{--<h1 class="display-2 text-white">Olá, {{ auth()->user()->apelido}}</h1> --}}
                 {{--    <p class="text-white mt-0 mb-2">Cadastre seus projetos e receba investimentos da nossa rede de investidores (patrocinadores/doadores). #SimEuQuero. </p> --}}
                     

@@ -173,7 +173,7 @@ class OscController extends Controller
     public function landingPage(){
         if(Auth::user()->osc() == null){
 
-            Alert::warning('Você precisa cadastrar sua Osc Primeiro','Keep Calm')->persistent('Entendi');
+            // Alert::warning('Você precisa cadastrar sua Osc Primeiro','Keep Calm')->persistent('Entendi');
             return redirect()->route('osc.create');
         }else{
             $osc = Osc::where('user_id',Auth::user()->id)->first();

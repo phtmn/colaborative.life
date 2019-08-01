@@ -11,8 +11,8 @@
             <div class="row">
                 <div class="col-lg-12 col-md-10">
 					<h1 class="display-2 text-white"> <i class="ni ni-circle-08 text-white"></i> Perfil</h1>
-                    {{--<h1 class="display-2 text-white">Olá, {{ auth()->user()->apelido}}</h1> --}}
-						{{-- <p class="text-white mt-0 mb-2">Nesta etapa será preenchido todos os dados de sua Organização. Preencha com cuidado, pois elas serão enviadas para nossa rede de investidores (patrocinadores/doadores). </p> --}}
+                    <!-- <h1 class="display-2 text-white">Olá, {{ auth()->user()->name}}</h1>  -->
+						<!-- {{-- <p class="text-white mt-0 mb-2">Nesta etapa será preenchido todos os dados de sua Organização. Preencha com cuidado, pois elas serão enviadas para nossa rede de investidores (patrocinadores/doadores). </p> --}} -->
                    <!-- <p class="text-white font-weight-300">Campos com * são obrigatórios</p> -->
                     
 
@@ -24,8 +24,7 @@
 
 @section('conteudo')
     <div class="container mt--7">
-        <div class="row">
-  
+          
                 {!! Form::open(['route'=>'osc.store','enctype'=>'multipart/form-data']) !!}
                 <div class="col-md-12">
                     <div class="card shadow">
@@ -33,138 +32,79 @@
                                 <p class="text-primary mt-2">Dados Gerais</p>
 						<hr>
                             <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Nome Fantasia <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-sm-9">
-                                    {!! Form::text('nome_fantasia',null,['class'=>'form-control']) !!}
-                                    @if ($errors->has('nome_fantasia'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('nome_fantasia') }}</strong>
-                                        </span>
-                                    @endif
+                                <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
+                                <div class="col-sm-8">
+                                    {!! Form::text('nome', auth()->user()->name,['class'=>'form-control', 'placeholder'=>'Nome do proponente do projeto']) !!}                                   
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">
-                                    CNPJ
+                                    Nº do documento
                                 </label>
                                 <div class="col-sm-3">
-                                    {!! Form::text('cnpj',null,['class'=>'form-control','id'=>'ano','id'=>'cnpj']) !!}
-                                    @if ($errors->has('cnpj'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('cnpj') }}</strong>
-                                        </span>
-                                    @endif
+                                    {!! Form::text('numdoc',null,['class'=>'form-control','id'=>'ano','id'=>'cpfcnpj', 'placeholder'=>'CNPJ ou CPF']) !!}                                  
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">Telefone</label>
                                 <div class="col-sm-3">
                                     {!! Form::text('telefone',null,['class'=>'form-control','id'=>'telefone']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <label for="cep" class="col-sm-3 col-form-label text-right">CEP</label>
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     {!! Form::text('cep',null,['class'=> 'form-control','id'=>'cep']) !!}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
-                                <div class="col-sm-9">
+                                <div class="col-sm-8">
                                     {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
                                 </div>
-
                             </div>
-
                             <div class="form-group row">
                                 <label for="Bairro" class="col-sm-3 col-form-label text-right">Bairro</label>
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     {!! Form::text('bairro',null,['class'=> 'form-control','id'=>'bairro']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <label for="numero" class="col-sm-3 col-form-label text-right">Número</label>
                                 <div class="col-sm-2">
                                     {!! Form::text('numero',null,['class'=> 'form-control','id'=>'num']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <label for="cidade" class="col-sm-3 col-form-label text-right">Cidade <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-sm-6">
+                                <label for="cidade" class="col-sm-3 col-form-label text-right">Cidade </label>
+                                <div class="col-sm-5">
                                     {!! Form::text('cidade',null,['class'=> 'form-control','id'=>'cidade']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <label for="uf" class="col-sm-3 col-form-label text-right">Estado <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-sm-3">
+                                <label for="uf" class="col-sm-3 col-form-label text-right">Estado </label>
+                                <div class="col-sm-1">
                                     {!! Form::text('uf',null,['class'=> 'form-control','id'=>'estado']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <label for="complemento" class="col-sm-3 col-form-label text-right">Complemento</label>
-                                <div class="col-sm-2">
-                                    {!! Form::text('complemento',null,['class'=> 'form-control']) !!}
-                                </div>
-                            </div>
-
-                            
-
-
-                             
-										
-										
-										
-										
-							
-
-							<div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Espaço Livre</label>
-                                <div class="col-md-9">
-                                   {!! Form::textarea('espaco_livre',null,['class'=>'form-control contador7',
-                                             'style'=>'resize: none', 'rows'=>'5',
-                                             'placeholder'=>'Se uma revista internacional muito importante lhe convidasse para escrever uma matéria sobre sua organização, qual seria o título e quais os diferenciais você indicaria para esta matéria? Use no máximo 500 caracteres! ']) !!}
-                                    <span class='caracteres7'></span>
-									@if ($errors->has('espaco_livre'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('espaco_livre') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right"> Site <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
+                                <label for="" class="col-sm-3 col-form-label text-right"> Site </label>
                                 <div class="col-md-7">
                                     {!! Form::url('site',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.coopviva.com.br']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right"> Vídeo Institucional <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-md-7">
-                                    {!! Form::text('video_institucional',null,['class'=>'form-control','placeholder'=>'exemplo: https://youtube.com/urlDoVideo']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Fan Page <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
+                                <label for="" class="col-sm-3 col-form-label text-right">Fan Page </label>
                                 <div class="col-md-7">
                                     {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'exemplo: https://facebook.com.br/suainstituicao']) !!}
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Instagram <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
+                                <label for="" class="col-sm-3 col-form-label text-right">Instagram </label>
                                 <div class="col-md-7">
                                     {!! Form::text('instagram',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.instagram.com/coopviva']) !!}
                                 </div>
                             </div>
-                      
-
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
                         </div>
@@ -174,12 +114,12 @@
             </div>
             {!! Form::close() !!}
        
-    </div>
+
 @stop
 
 @section('js')
     <script src="{{asset('js/jquery.mask.min.js')}}"> </script>
-    <script src="{{asset('js/caracter_count.js')}}"> </script>
+ 
 
     <script>
         $(document).ready(function(){
@@ -199,6 +139,31 @@
                 $("#estado").val("");
                 $("#ibge").val("");
             }
+
+            $("#cpfcnpj").keydown(function(){
+            try {
+                $("#cpfcnpj").unmask();
+            } catch (e) {}
+
+            var tamanho = $("#cpfcnpj").val().length;
+
+            if(tamanho < 11){
+                $("#cpfcnpj").mask("999.999.999-99");
+            } else if(tamanho >= 11){
+                $("#cpfcnpj").mask("99.999.999/9999-99");
+            }
+
+            // ajustando foco
+            var elem = this;
+            setTimeout(function(){
+                // mudo a posição do seletor
+                elem.selectionStart = elem.selectionEnd = 10000;
+            }, 0);
+            // reaplico o valor para mudar o foco
+            var currentValue = $(this).val();
+            $(this).val('');
+            $(this).val(currentValue);
+        });
 
             //Quando o campo cep perde o foco.
             $("#cep").blur(function () {

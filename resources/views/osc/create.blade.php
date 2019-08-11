@@ -58,15 +58,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-<<<<<<< HEAD
                                 <label for="logradouro" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
                                 <div class="col-sm-9">
                                     {!! Form::text('logradouro',null,['class'=> 'form-control','id'=>'endereco']) !!}
-=======
                                 <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
                                 <div class="col-sm-8">
                                     {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 </div>
                             </div>
                             <div class="form-group row">

@@ -24,12 +24,9 @@
 @section('conteudo')
  
     <div class="container mt--7">
-<<<<<<< HEAD
         <div class="row">
 
-=======
         
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                 {!! Form::model($osc,['route'=> ['osc.store'],'enctype'=>'multipart/form-data']) !!}
                 
                 <div class="col-md-12">
@@ -38,7 +35,6 @@
                             <p class="text-primary mt-2">Dados do Proponente</p>
 							<hr>
                             <div class="form-group row">
-<<<<<<< HEAD
                                 <label for="" class="col-sm-3 col-form-label text-right">Nome do Proponente apagar<b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
                                 <div class="col-sm-9">
                                     {!! Form::text('nome_fantasia',null,['class'=>'form-control' ,'readonly']) !!}
@@ -47,19 +43,16 @@
 
                             
                            
-=======
                                 <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
                                 <div class="col-sm-8">
                                     {!! Form::text('nome', auth()->user()->name,['class'=>'form-control', 'placeholder'=>'Nome do proponente do projeto']) !!}                                   
                                 </div>
                             </div>
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                             <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">
                                     Nº do documento
                                 </label>
                                 <div class="col-sm-3">
-<<<<<<< HEAD
                                     {!! Form::text('cnpj',null,['class'=>'form-control','id'=>'ano','id'=>'cnpj']) !!}
                                 </div>
                             </div>
@@ -75,9 +68,7 @@
                                 <label for="" class="col-sm-3 col-form-label text-right">E-mail </label>
                                 <div class="col-sm-6">
                                     {!! Form::text('email',null,['class'=>'form-control']) !!}
-=======
                                     {!! Form::text('numdoc',null,['class'=>'form-control','id'=>'ano','id'=>'cpfcnpj', 'placeholder'=>'CNPJ ou CPF']) !!}                                  
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -93,15 +84,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-<<<<<<< HEAD
                                 <label for="logradouro" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
                                 <div class="col-sm-9">
                                     {!! Form::text('logradouro',null,['class'=> 'form-control','id'=>'endereco']) !!}
-=======
                                 <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
                                 <div class="col-sm-8">
                                     {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -113,7 +101,6 @@
                             <div class="form-group row">
                                 <label for="numero" class="col-sm-3 col-form-label text-right">Número</label>
                                 <div class="col-sm-2">
-<<<<<<< HEAD
                                     {!! Form::text('numero',null,['class'=> 'form-control']) !!}
                                 </div>
                             </div>
@@ -202,7 +189,6 @@
 
                             <!-- <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">Video Institucional  <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-=======
                                     {!! Form::text('numero',null,['class'=> 'form-control','id'=>'num']) !!}
                                 </div>
                             </div>
@@ -220,17 +206,13 @@
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right"> Site </label>
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 <div class="col-md-7">
                                     {!! Form::url('site',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.coopviva.com.br']) !!}
                                 </div>
                             </div> -->
                             <div class="form-group row">
-<<<<<<< HEAD
                                 <label for="" class="col-sm-3 col-form-label text-right">Fanpage </label>
-=======
                                 <label for="" class="col-sm-3 col-form-label text-right">Fan Page </label>
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 <div class="col-md-7">
                                     {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'exemplo: https://facebook.com.br/suainstituicao']) !!}
                                 </div>
@@ -252,11 +234,8 @@
             
             {!! Form::close() !!}
       
-<<<<<<< HEAD
     </div>
-=======
 
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
         
 @stop
 

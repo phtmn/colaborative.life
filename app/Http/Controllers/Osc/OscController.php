@@ -60,7 +60,6 @@ class OscController extends Controller
                 OSC::UpdateOrCreate(
                     ['user_id' => auth()->user()->id],
                     [
-<<<<<<< HEAD
                     //    'nome_fantasia'         => $request->nome_fantasia,
                        'cnpj'                  => $request->cnpj,
                     //    'ano_fundacao'          => $request->ano_fundacao,
@@ -80,18 +79,15 @@ class OscController extends Controller
                        'logradouro'            => $request->logradouro,
                        'numero'                => $request->numero,
                     //    'complemento'           => $request->complemento,
-=======
                        'nome'                  => $request->nome,
                        'numdoc'                => $request->numdoc,
                        'telefone'              => $request->telefone,
                        'cep'                   => $request->cep,
                        'rua'                   => $request->rua,
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                        'bairro'                => $request->bairro,
                        'numero'                => $request->numero,                       
                        'cidade'                => $request->cidade,
                        'uf'                    => $request->uf,
-<<<<<<< HEAD
                     //    'situacao_imovel'       => $request->situacao_imovel,
 
                     //    'banco_investimentos'    => $request->banco_investimentos,
@@ -107,11 +103,9 @@ class OscController extends Controller
                     //    'valores'        => $request->valores,
                     //    'espaco_livre'   => $request->espaco_livre,
 
-=======
                        'site'                  => $request->site,                     
                        'facebook'              => $request->facebook,
                        'instagram'             => $request->instagram,
->>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                        'user_id'               => $request->user()->id,
 
                     ]);

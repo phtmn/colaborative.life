@@ -17,6 +17,7 @@ class CreateOscsTable extends Migration {
 			$table->increments('id');
 			$table->unsignedInteger('user_id');
 			$table->uuid('uuid')->nullable();
+<<<<<<< HEAD
 
 			// $table->string('nome_fantasia')->nullable();
 			$table->string('cnpj')->nullable();
@@ -34,10 +35,15 @@ class CreateOscsTable extends Migration {
             // $table->string('video_institucional')->nullable();
             $table->text('mapa')->nullable();
 
+=======
+			$table->string('nome')->nullable();
+			$table->string('numdoc')->nullable();				
+			$table->string('telefone')->nullable();
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
 			$table->string('cep')->nullable();
-			$table->string('logradouro', 200)->nullable();
-			$table->string('numero', 50)->nullable();
+			$table->string('rua', 200)->nullable();
 			$table->string('bairro', 200)->nullable();
+<<<<<<< HEAD
 			// $table->string('complemento', 200)->nullable();
 			$table->string('cidade', 200)->nullable();
 			$table->string('uf', 2)->nullable();
@@ -58,6 +64,15 @@ class CreateOscsTable extends Migration {
 
 			$table->boolean('ativa')->default(0);
 			$table->string('logo', 200)->nullable();
+=======
+			$table->string('numero', 50)->nullable();	
+			$table->string('cidade', 200)->nullable();
+			$table->string('uf', 2)->nullable();
+			$table->string('site')->nullable();
+            $table->string('facebook')->nullable();
+			$table->string('instagram')->nullable();            
+			$table->boolean('ativa')->default(0);			
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
 			$table->timestamps();
 			$table->softDeletes();
 

@@ -51,51 +51,42 @@ class OscController extends Controller
 
 
 
-                $bancoDoacao = new banco();
-                $bancoDoacao->banco         = $request->banco;
-                $bancoDoacao->conta         = $request->conta;
-                $bancoDoacao->agencia       = $request->agencia;
-                $bancoDoacao->tipo_conta    = 'doacao';
-                $bancoDoacao->contaDv       = $request->contaDv;
-                $bancoDoacao->save();
+                // $bancoDoacao = new banco();
+                // $bancoDoacao->banco         = $request->banco;
+                // $bancoDoacao->conta         = $request->conta;
+                // $bancoDoacao->agencia       = $request->agencia;
+                // $bancoDoacao->tipo_conta    = 'doacao';
+                // $bancoDoacao->contaDv       = $request->contaDv;
+                // $bancoDoacao->save();
 
-                $endereco = new Endereco();
-                $endereco->cep = $request->cep;
-                $endereco->rua = $request->rua;
-                $endereco->numero = $request->numero;
-                $endereco->cidade = $request->cidade;
-                $endereco->bairro = $request->bairro;
-                $endereco->uf = $request->uf;
-                $endereco->complemento = $request->complemento;
-                $endereco->save();
+                // $endereco = new Endereco();
+                // $endereco->cep = $request->cep;
+                // $endereco->rua = $request->rua;
+                // $endereco->numero = $request->numero;
+                // $endereco->cidade = $request->cidade;
+                // $endereco->bairro = $request->bairro;
+                // $endereco->uf = $request->uf;
+                // $endereco->complemento = $request->complemento;
+                // $endereco->save();
 
                 $osc = new Osc();
-                $osc->nome_fantasia         = $request->nome_fantasia;
-                $osc->sigla_osc             = $request->sigla_osc;
-                $osc->cnae                  = $request->cnae;
-                $osc->responsavel_legal     = $request->responsavel_legal;
-                $osc->situacao_imovel       = $request->situacao_imovel;
-                $osc->ano_inscricao_cnpj    = $request->ano_inscricao_cnpj;
-                $osc->ano_fundacao          = $request->ano_fundacao;
-                $osc->email                 = $request->email;
-                $osc->site                  = $request->site;
-                $osc->descricao_osc         = $request->descricao_osc;
+           
+                $osc->nome                  = $request->nome;
+                $osc->numdoc                = $request->numdoc;
                 $osc->telefone              = $request->telefone;
-                $osc->objetivo_ods          = $request->objetivo_ods;
-                $osc->metas_ods             = $request->metas_ods;
-                $osc->atividade_economica   = $request->atividade_economica;
-                $osc->area_atuacao          = $request->area_atuacao;
-                $osc->sub_area1             = $request->sub_area1;
-                $osc->sub_area2             = $request->sub_area2;
-                $osc->surgimento_osc        = $request->surgimento_osc;
-                $osc->missao_osc            = $request->missao_osc;
-                $osc->visao_osc             = $request->visao_osc;
-                $osc->finalidades_estatutarias_ods = $request->finalidades_estatutarias_ods;
-                $osc->link_estatuto_osc     = $request->link_estatuto_osc;
-                $osc->logo                  = $file_path ? $file_path : $osc->logo;
-                $osc->banco_doacao_id       = $bancoDoacao->id;
+                $osc->cep                   = $request->cep;
+                $osc->rua                   = $request->rua;
+                $osc->bairro                = $request->bairro;
+                $osc->numero                = $request->numero;                       
+                $osc->cidade                = $request->cidade;
+                $osc->uf                    = $request->uf;
+                $osc->site                  = $request->site;                     
+                $osc->facebook              = $request->facebook;
+                $osc->instagram             = $request->instagram;
+
+               
                 $osc->user_id               = $request->user()->id;
-                $osc->endereco_id           = $endereco->id;
+                // $osc->endereco_id           = $endereco->id;
                 
                 $osc->save();
 

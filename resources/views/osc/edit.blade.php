@@ -24,8 +24,12 @@
 @section('conteudo')
  
     <div class="container mt--7">
+<<<<<<< HEAD
         <div class="row">
 
+=======
+        
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                 {!! Form::model($osc,['route'=> ['osc.store'],'enctype'=>'multipart/form-data']) !!}
                 
                 <div class="col-md-12">
@@ -34,6 +38,7 @@
                             <p class="text-primary mt-2">Dados do Proponente</p>
 							<hr>
                             <div class="form-group row">
+<<<<<<< HEAD
                                 <label for="" class="col-sm-3 col-form-label text-right">Nome do Proponente apagar<b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
                                 <div class="col-sm-9">
                                     {!! Form::text('nome_fantasia',null,['class'=>'form-control' ,'readonly']) !!}
@@ -42,11 +47,19 @@
 
                             
                            
+=======
+                                <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
+                                <div class="col-sm-8">
+                                    {!! Form::text('nome', auth()->user()->name,['class'=>'form-control', 'placeholder'=>'Nome do proponente do projeto']) !!}                                   
+                                </div>
+                            </div>
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                             <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">
                                     Nº do documento
                                 </label>
                                 <div class="col-sm-3">
+<<<<<<< HEAD
                                     {!! Form::text('cnpj',null,['class'=>'form-control','id'=>'ano','id'=>'cnpj']) !!}
                                 </div>
                             </div>
@@ -62,6 +75,9 @@
                                 <label for="" class="col-sm-3 col-form-label text-right">E-mail </label>
                                 <div class="col-sm-6">
                                     {!! Form::text('email',null,['class'=>'form-control']) !!}
+=======
+                                    {!! Form::text('numdoc',null,['class'=>'form-control','id'=>'ano','id'=>'cpfcnpj', 'placeholder'=>'CNPJ ou CPF']) !!}                                  
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -70,33 +86,34 @@
                                     {!! Form::text('telefone',null,['class'=>'form-control','id'=>'telefone']) !!}
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <label for="cep" class="col-sm-3 col-form-label text-right">CEP</label>
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     {!! Form::text('cep',null,['class'=> 'form-control','id'=>'cep']) !!}
                                 </div>
                             </div>
                             <div class="form-group row">
+<<<<<<< HEAD
                                 <label for="logradouro" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
                                 <div class="col-sm-9">
                                     {!! Form::text('logradouro',null,['class'=> 'form-control','id'=>'endereco']) !!}
+=======
+                                <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
+                                <div class="col-sm-8">
+                                    {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 </div>
-
                             </div>
-
                             <div class="form-group row">
                                 <label for="Bairro" class="col-sm-3 col-form-label text-right">Bairro</label>
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     {!! Form::text('bairro',null,['class'=> 'form-control','id'=>'bairro']) !!}
                                 </div>
                             </div>
-
-
-
                             <div class="form-group row">
                                 <label for="numero" class="col-sm-3 col-form-label text-right">Número</label>
                                 <div class="col-sm-2">
+<<<<<<< HEAD
                                     {!! Form::text('numero',null,['class'=> 'form-control']) !!}
                                 </div>
                             </div>
@@ -185,14 +202,37 @@
 
                             <!-- <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">Video Institucional  <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
+=======
+                                    {!! Form::text('numero',null,['class'=> 'form-control','id'=>'num']) !!}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="cidade" class="col-sm-3 col-form-label text-right">Cidade </label>
+                                <div class="col-sm-5">
+                                    {!! Form::text('cidade',null,['class'=> 'form-control','id'=>'cidade']) !!}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="uf" class="col-sm-3 col-form-label text-right">Estado </label>
+                                <div class="col-sm-1">
+                                    {!! Form::text('uf',null,['class'=> 'form-control','id'=>'estado']) !!}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label text-right"> Site </label>
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 <div class="col-md-7">
-                                    {!! Form::text('video_institucional',null,['class'=>'form-control','placeholder'=>'https://youtube.com/urlDoVideo']) !!}
+                                    {!! Form::url('site',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.coopviva.com.br']) !!}
                                 </div>
                             </div> -->
                             <div class="form-group row">
+<<<<<<< HEAD
                                 <label for="" class="col-sm-3 col-form-label text-right">Fanpage </label>
+=======
+                                <label for="" class="col-sm-3 col-form-label text-right">Fan Page </label>
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
                                 <div class="col-md-7">
-                                    {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'https://facebook.com.br/suainstituicao']) !!}
+                                    {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'exemplo: https://facebook.com.br/suainstituicao']) !!}
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -201,7 +241,6 @@
                                     {!! Form::text('instagram',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.instagram.com/coopviva']) !!}
                                 </div>
                             </div>
-						
 
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
@@ -213,7 +252,11 @@
             
             {!! Form::close() !!}
       
+<<<<<<< HEAD
     </div>
+=======
+
+>>>>>>> 5d615c93c4ae25eab8bfc02009a9ef45659b2332
         
 @stop
 
@@ -240,6 +283,32 @@
                 $("#ibge").val("");
             }
 
+
+            $("#cpfcnpj").keydown(function(){
+            try {
+                $("#cpfcnpj").unmask();
+            } catch (e) {}
+
+            var tamanho = $("#cpfcnpj").val().length;
+
+            if(tamanho < 11){
+                $("#cpfcnpj").mask("999.999.999-99");
+            } else if(tamanho >= 11){
+                $("#cpfcnpj").mask("99.999.999/9999-99");
+            }
+
+            // ajustando foco
+            var elem = this;
+            setTimeout(function(){
+                // mudo a posição do seletor
+                elem.selectionStart = elem.selectionEnd = 10000;
+            }, 0);
+            // reaplico o valor para mudar o foco
+            var currentValue = $(this).val();
+            $(this).val('');
+            $(this).val(currentValue);
+        });
+            
             //Quando o campo cep perde o foco.
             $("#cep").blur(function () {
 

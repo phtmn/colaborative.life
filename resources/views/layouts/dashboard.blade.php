@@ -111,7 +111,7 @@
 			
 			
             @if(auth()->user()->osc())
-            <a class="h4 mb-0 text-white d-none d-lg-inline-block" href="{{route('detalhe.osc',auth()->user()->osc()->id)}}"><i class="ni ni-world-2 "></i> <i class="font-weight-bold 900">Landing Pageee </i></a>
+            <a class="h4 mb-0 text-white d-none d-lg-inline-block" href="{{route('detalhe.osc',auth()->user()->osc()->id)}}"><i class="ni ni-world-2 "></i> <i class="font-weight-bold 900">Landing Page </i></a>
             <!-- Form -->
             @endif
             <!-- User -->
@@ -206,7 +206,7 @@
         </div>
         <!-- Footer -->
         <footer class="footer">
-            <div class="row align-items-center justify-content-xl-between">
+            <!-- <div class="row align-items-center justify-content-xl-between">
                 <div class="col-xl-6">
                     <div class="copyright text-center text-xl-left text-muted">
                         &copy; 2019 <a href="" class="font-weight-bold ml-1 text-success font-weight-bold 900" >COOPVIVA</a>
@@ -229,7 +229,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </footer>
     </div>
 </div>

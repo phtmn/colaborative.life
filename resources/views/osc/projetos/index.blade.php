@@ -59,7 +59,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                        <button type="submit" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Em breve"><i class="ni ni-cloud-upload-96"></i> Upload .PDF</button>
+                                        <button type="submit" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Em breve"><i class="ni ni-cloud-upload-96"></i> Upload de arquivos</button>
                                         
                                         </a>
                                             @if($d->arquivo != null)

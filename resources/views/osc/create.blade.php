@@ -71,9 +71,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
+                                <label for="logradouro" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
                                 <div class="col-sm-9">
-                                    {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
+                                    {!! Form::text('logradouro',null,['class'=> 'form-control','id'=>'endereco']) !!}
                                 </div>
 
                             </div>

@@ -22,221 +22,88 @@
 @stop
 
 @section('conteudo')
- 
-    <div class="container mt--7">
-        <div class="row">
 
-        
-                {!! Form::model($osc,['route'=> ['osc.store'],'enctype'=>'multipart/form-data']) !!}
-                
+
+
+        <div class="container mt--7">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body bg-transparent">
-                            <p class="text-primary mt-2">Dados do Proponente</p>
-							<hr>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Nome do Proponente apagar<b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-sm-9">
-                                    {!! Form::text('nome_fantasia',null,['class'=>'form-control' ,'readonly']) !!}
-                                </div>
-                            </div>
+                            <form action="{{route('osc.store')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <p class="text-primary mt-2">Dados do gerais</p>
+                                <hr>
 
-                            
-                           
-                                <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
-                                <div class="col-sm-8">
-                                    {!! Form::text('nome', auth()->user()->name,['class'=>'form-control', 'placeholder'=>'Nome do proponente do projeto']) !!}                                   
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="nome_fantasia" class="form-control" value="{{ auth()->user()->name}}" readonly>                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">
-                                    Nº do documento
-                                </label>
-                                <div class="col-sm-3">
-                                    {!! Form::text('cnpj',null,['class'=>'form-control','id'=>'ano','id'=>'cnpj']) !!}
-                                </div>
-                            </div>
-                            
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Responsável Legal apagar</label>
-                                <div class="col-sm-6">
-                                    {!! Form::text('responsavel',null,['class'=>'form-control']) !!}
-                                </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">E-mail </label>
-                                <div class="col-sm-6">
-                                    {!! Form::text('email',null,['class'=>'form-control']) !!}
-                                    {!! Form::text('numdoc',null,['class'=>'form-control','id'=>'ano','id'=>'cpfcnpj', 'placeholder'=>'CNPJ ou CPF']) !!}                                  
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">E-mail</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" name="nome_fantasia" class="form-control" value="{{ auth()->user()->email}}" readonly >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Telefone/Fax</label>
-                                <div class="col-sm-3">
-                                    {!! Form::text('telefone',null,['class'=>'form-control','id'=>'telefone']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cep" class="col-sm-3 col-form-label text-right">CEP</label>
-                                <div class="col-sm-2">
-                                    {!! Form::text('cep',null,['class'=> 'form-control','id'=>'cep']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="logradouro" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
-                                <div class="col-sm-9">
-                                    {!! Form::text('logradouro',null,['class'=> 'form-control','id'=>'endereco']) !!}
-                                <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
-                                <div class="col-sm-8">
-                                    {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="Bairro" class="col-sm-3 col-form-label text-right">Bairro</label>
-                                <div class="col-sm-5">
-                                    {!! Form::text('bairro',null,['class'=> 'form-control','id'=>'bairro']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="numero" class="col-sm-3 col-form-label text-right">Número</label>
-                                <div class="col-sm-2">
-                                    {!! Form::text('numero',null,['class'=> 'form-control']) !!}
-                                </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="cidade" class="col-sm-3 col-form-label text-right">Cidade </label>
-                                <div class="col-sm-6">
-                                    {!! Form::text('cidade',null,['class'=> 'form-control','id'=>'cidade']) !!}
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Nº do documento</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="cep" class="form-control" value=" " id="cep" placeholder="CPF ou CNPJ" >                                        
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="uf" class="col-sm-3 col-form-label text-right">Estado </label>
-                                <div class="col-sm-3">
-                                    {!! Form::text('uf',null,['class'=> 'form-control','id'=>'estado']) !!}
+                                 <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Telefone </label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="telefone" class="form-control" value=" " id="telefone" placeholder="" >                                        
+                                    </div>
                                 </div>
-                            </div>
 
-                                               
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">CEP</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="cep" class="form-control" value="{{$osc->cep}}" id="cep" >                                        
+                                    </div>
+                                </div>
 
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Endereço</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="logradouro" class="form-control" value="{{$osc->logradouro}}" >                                        
+                                    </div>
+                                </div>
 
-						
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Bairro </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="bairro" class="form-control" value="{{$osc->bairro}}" >                                        
+                                    </div>
+                                </div>
 
-                            						
-							<div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Sua história<b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-md-9">
-								 {!! Form::textarea('historia',null,['class'=>'form-control contador1','style'=>'resize: none','rows'=>'5','maxlenght'=>'500','maxlenght'=>'500', 'placeholder'=>'Use no máximo 500 caracteres!']) !!}
-                                    <span class='caracteres1'></span>
-									 @if ($errors->has('historia'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('historia') }}</strong>
-                                        </span>
-                                    @endif
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">UF</label>
+                                    <div class="col-sm-1">
+                                        <input type="text" name="uf" class="form-control" value="{{$osc->uf}}" >                                        
+                                    </div>
                                 </div>
-                            </div>
-							
-							<div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Objetivos que deseja atingir</label>
-                                <div class="col-md-9">
-								{!! Form::textarea('objetivos',null,['class'=>'form-control contador2','maxlenght'=>'500', 'style'=>'resize: none', 'rows'=>'5','maxlenght'=>'500', 'placeholder'=>'Use no máximo 500 caracteres!']) !!}
-                                    <span class='caracteres2'></span>
-									@if ($errors->has('objetivos'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('objetivos') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-							
-							<div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Impactos gerados no Úlitmo ano <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-md-9">
-								 {!! Form::textarea('impactos',null,['class'=>'form-control contador3', 'style'=>'resize: none', 'rows'=>'5','maxlenght'=>'500', 'placeholder'=>'Use no máximo 500 caracteres!']) !!}
-                                    <span class='caracteres3'></span>
-									@if ($errors->has('impactos'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('impactos') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-							
-							<div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Missão <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                <div class="col-md-9">
-								{!! Form::textarea('missao',null,['class'=>'form-control contador4', 'style'=>'resize: none', 'rows'=>'5','maxlenght'=>'500', 'placeholder'=>'Use no máximo 500 caracteres!']) !!}
-                                    <span class='caracteres4'></span>
-										@if ($errors->has('missao'))
-                                        <span class="text-danger" role="alert">
-                                            <strong>{{ $errors->first('missao') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-							
-						
-							
-												
-						    <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Site </label>
-                                <div class="col-md-7">
-                                    {!! Form::text('site',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.coopviva.com.br']) !!}
-                                </div>
-                            </div>
 
-                            <!-- <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Video Institucional  <b class="text-primary" data-toggle="tooltip" data-placement="right" title="Publicado na Landing Page"> * </b></label>
-                                    {!! Form::text('numero',null,['class'=> 'form-control','id'=>'num']) !!}
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cidade" class="col-sm-3 col-form-label text-right">Cidade </label>
-                                <div class="col-sm-5">
-                                    {!! Form::text('cidade',null,['class'=> 'form-control','id'=>'cidade']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="uf" class="col-sm-3 col-form-label text-right">Estado </label>
-                                <div class="col-sm-1">
-                                    {!! Form::text('uf',null,['class'=> 'form-control','id'=>'estado']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right"> Site </label>
-                                <div class="col-md-7">
-                                    {!! Form::url('site',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.coopviva.com.br']) !!}
-                                </div>
-                            </div> -->
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Fanpage </label>
-                                <label for="" class="col-sm-3 col-form-label text-right">Fan Page </label>
-                                <div class="col-md-7">
-                                    {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'exemplo: https://facebook.com.br/suainstituicao']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Instagram </label>
-                                <div class="col-md-7">
-                                    {!! Form::text('instagram',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.instagram.com/coopviva']) !!}
-                                </div>
-                            </div>
-
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
-                        </div>
-						  </div>
+                            </form>
+						</div>
                     </div>
                 </div>
-            </div>
-            
-            {!! Form::close() !!}
-      
-    </div>
+            </div>         
+        </div>
+		
 
-        
+
+
 @stop
 
 @section('js')

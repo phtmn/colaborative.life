@@ -51,62 +51,19 @@ class OscController extends Controller
     }
 
 
-    public function store(CreateOscRequest $request){
-
+    public function store222(CreateOscRequest $request){
 
         $result = DB::transaction(function() use ($request) {
             try {
-
+               
                 OSC::UpdateOrCreate(
                     ['user_id' => auth()->user()->id],
                     [
-                    //    'nome_fantasia'         => $request->nome_fantasia,
-                       'cnpj'                  => $request->cnpj,
-                    //    'ano_fundacao'          => $request->ano_fundacao,
-                    //    'sigla'                 => $request->sigla,
-                    //    'cnaes'                 => $request->cnae,
-                    //    'responsavel'           => $request->responsavel,
-                       'email'                 => $request->email,
-                       'telefone'              => $request->telefone,
-                       'site'                  => $request->site,
-                       'facebook'              => $request->facebook,
-                       'instagram'             => $request->instagram,
-                    //    'youtube'               => $request->youtube,
-                    //    'video_institucional'   => toEmbeb($request->video_institucional),
-                       'mapa'                  => $request->mapa,
-
-                        'cep'                  => $request->cep,
-                       'logradouro'            => $request->logradouro,
-                       'numero'                => $request->numero,
-                    //    'complemento'           => $request->complemento,
-                       'nome'                  => $request->nome,
-                       'numdoc'                => $request->numdoc,
-                       'telefone'              => $request->telefone,
-                       'cep'                   => $request->cep,
-                       'rua'                   => $request->rua,
-                       'bairro'                => $request->bairro,
-                       'numero'                => $request->numero,                       
-                       'cidade'                => $request->cidade,
-                       'uf'                    => $request->uf,
-                    //    'situacao_imovel'       => $request->situacao_imovel,
-
-                    //    'banco_investimentos'    => $request->banco_investimentos,
-                    //    'agencia_investimentos'  => $request->agencia_investimentos,
-                    //    'conta_investimentos'    => $request->conta_investimentos,
-                    //    'op_investimentos'       => $request->op_investimentos,
-
-                    //    'historia'       => $request->historia,
-                       'objetivos'      => $request->objetivos,
-                    //    'impactos'       => $request->impactos,
-                    //    'missao'         => $request->missao,
-                    //    'visao'          => $request->visao,
-                    //    'valores'        => $request->valores,
-                    //    'espaco_livre'   => $request->espaco_livre,
-
-                       'site'                  => $request->site,                     
-                       'facebook'              => $request->facebook,
-                       'instagram'             => $request->instagram,
-                       'user_id'               => $request->user()->id,
+                    
+                       'nome_fantasia'         => $request->nome_fantasia,                      
+                       'sigla'                 => $request->sigla,
+                       'ano_fundacao'          => $request->ano_fundacao,
+                       'user_id'               => $request->user()->id
 
                     ]);
 
@@ -122,62 +79,25 @@ class OscController extends Controller
         },2); return $result;
     }
 
-    // public function update(Request $request,$id){
+    public function store(Request $request){
 
-    //     //dd($request->all());
-    //     $result = DB::transaction(function() use ($request,$id) {
-    //         try {
-    //                     $osc = OSC::findOrFail($id);
-    //                     $banco              = $osc->banco();
-    //                     $banco->banco       = $request->banco;
-    //                     $banco->agencia     = $request->agencia;
-    //                     $banco->conta       = $request->conta;
-    //                     $banco->contaDV     = $request->contaDv;
-    //                     $banco->tipo_conta  = 3;
-    //                     $banco->save();
+        //dd($request->all());
+        $osc = OSC::UpdateOrCreate(
+            ['user_id' => auth()->user()->id],
+            [
+                'nome_fantasia'          => $request->nome_fantasia,                                       
+                'user_id'   => auth()->user()->id
+            ]
+        );
 
-    //                    $osc->nome_fantasia                  = $request->nome_fantasia;
-    //                    $osc->cnpj                           = $request->cnpj;
-    //                    $osc->ano_inscricao_cnpj             = $request->ano_inscricao_cnpj;
-    //                    $osc->ano_fundacao                   = $request->ano_fundacao;
-    //                    $osc->sigla                          = $request->sigla;
-    //                    $osc->cnae                           = $request->cnae;
-    //                    $osc->cnae_sec                       = $request->cnae_sec;
-    //                    $osc->responsavel_legal              = $request->responsavel_legal;
-    //                    $osc->situacao_imovel_id             = $request->situacao_imovel_id;
-    //                    $osc->email                          = $request->email;
-    //                    $osc->site                           = $request->site;
-    //                    $osc->descricao                      = $request->descricao;
-    //                    $osc->telefone                       = $request->telefone;
-    //                         $osc->cep                       = $request->cep;
-    //                         $osc->logradouro                = $request->logradouro;
-    //                         $osc->numero                    = $request->numero;
-    //                         $osc->complemento               = $request->complemento;
-    //                         $osc->bairro                    = $request->bairro;
-    //                         $osc->cidade                    = $request->cidade;
-    //                         $osc->uf                        = $request->uf;                       
-    //                    $osc->atividades_economicas_id       = $request->atividades_economicas_id;
-    //                    $osc->area_atuacao                   = $request->area_atuacao;
-    //                    $osc->sub_area1                      = $request->sub_area1;
-    //                    $osc->sub_area2                      = $request->sub_area2;
-    //                    $osc->descricao                      = $request->descricao;
-    //                    $osc->surgimento_osc                 = $request->surgimento_osc;
-    //                    $osc->missao_osc                     = $request->missao_osc;
-    //                    $osc->video_institucional            = toEmbeb($request->video_institucional);
-    //                    $osc->fan_page                       = $request->fan_page;
-    //                    $osc->instagram                      = $request->instagram;
+        if($osc){
+            Alert::success('Os dados do proponente foram salvos', 'Sucesso')->persistent('Ok');
+                return redirect()->route('osc.create');
+        }
 
-    //             $osc->save();
-
-    //             Alert::success('Seus dados foram Salvos', 'Sucesso')->persistent('Ok');
-    //             return redirect()->back();
-    //         } catch (Throwable $t) {
-    //             Alert::warning('Não foi possível Salvar seus dados' . $t->getMessage(), 'Erro')->persistent('Ok');
-    //             return redirect()->back();
-    //         }
-    //     },2);
-    //     return $result;
-    // }
+        Alert::error('Algum Erro ocorreu'.$t->getMessage(), 'Erro')->persistent('Ok');
+        return redirect()->back()->withInput();
+    }
 
     public function landingPage(){
         if(Auth::user()->osc() == null){

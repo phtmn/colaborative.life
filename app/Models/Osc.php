@@ -8,10 +8,7 @@ class Osc extends Model
     
 
     protected $fillable = [
-        'user_id','uuid','nome_fantasia','cnpj','ano_fundacao','sigla','cnaes','responsavel','email','telefone','site',
-        'facebook','instagram','youtube','video_institucional','mapa','cep','logradouro','numero','bairro','complemento',
-        'cidade','uf','situacao_imovel','banco_investimentos','agencia_investimentos','conta_investimentos','op_investimentos',
-        'historia','objetivos','impactos','missao','visao','valores','espaco_livre','logo','ativa'
+        'user_id','uuid','num_doc','telefone','cep','logradouro','bairro','cidade','uf','ativa'
     ];
 
     public function projetos(){

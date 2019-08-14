@@ -52,7 +52,7 @@
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Nº do documento</label>
                                     <div class="col-sm-3">
-                                        <input type="text" name="cep" class="form-control" value=" " id="cep" placeholder="CPF ou CNPJ" >                                        
+                                        <input type="text" name="num_doc" class="form-control" value=" " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
                                     </div>
                                 </div>
 
@@ -81,6 +81,13 @@
                                     <label for="" class="col-sm-3 col-form-label text-right">Bairro </label>
                                     <div class="col-sm-4">
                                         <input type="text" name="bairro" class="form-control" value="{{$osc->bairro}}" >                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Cidade</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="cidade" class="form-control" value="{{$osc->cidade}}" >                                        
                                     </div>
                                 </div>
 
@@ -156,6 +163,34 @@
         });
             
             //Quando o campo cep perde o foco.
+
+            $("#cpfcnpj").keydown(function(){
+            try {
+                $("#cpfcnpj").unmask();
+            } catch (e) {}
+
+            var tamanho = $("#cpfcnpj").val().length;
+
+            if(tamanho < 11){
+                $("#cpfcnpj").mask("999.999.999-99");
+            } else if(tamanho >= 11){
+                $("#cpfcnpj").mask("99.999.999/9999-99");
+            }
+
+            // ajustando foco
+            var elem = this;
+            setTimeout(function(){
+                // mudo a posição do seletor
+                elem.selectionStart = elem.selectionEnd = 10000;
+            }, 0);
+            // reaplico o valor para mudar o foco
+            var currentValue = $(this).val();
+            $(this).val('');
+            $(this).val(currentValue);
+        });
+
+
+
             $("#cep").blur(function () {
 
                 //Nova variável "cep" somente com dígitos.

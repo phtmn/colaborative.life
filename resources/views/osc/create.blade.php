@@ -25,92 +25,81 @@
 @section('conteudo')
     <div class="container mt--7">
           
-                {!! Form::open(['route'=>'osc.store','enctype'=>'multipart/form-data']) !!}
+               
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body bg-transparent">
+                        <form action="{{route('osc.store')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <p class="text-primary mt-2">Dados Gerais</p>
 						<hr>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
-                                <div class="col-sm-8">
-                                    {!! Form::text('nome', auth()->user()->name,['class'=>'form-control', 'placeholder'=>'Nome do proponente do projeto']) !!}                                   
+                          
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="nome_fantasia" class="form-control" value="{{ auth()->user()->name}}" readonly>                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">
-                                    Nº do documento
-                                </label>
-                                <div class="col-sm-3">
-                                    {!! Form::text('numdoc',null,['class'=>'form-control','id'=>'ano','id'=>'cpfcnpj', 'placeholder'=>'CNPJ ou CPF']) !!}                                  
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">E-mail</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" name="nome_fantasia" class="form-control" value="{{ auth()->user()->email}}" readonly >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Telefone</label>
-                                <div class="col-sm-3">
-                                    {!! Form::text('telefone',null,['class'=>'form-control','id'=>'telefone']) !!}
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Nº do documento</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="num_doc" class="form-control" value=" " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cep" class="col-sm-3 col-form-label text-right">CEP</label>
-                                <div class="col-sm-2">
-                                    {!! Form::text('cep',null,['class'=> 'form-control','id'=>'cep']) !!}
+
+                                 <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Telefone </label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="telefone" class="form-control" value=" " id="telefone" placeholder="" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="logradouro" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
-                                <div class="col-sm-9">
-                                    {!! Form::text('logradouro',null,['class'=> 'form-control','id'=>'endereco']) !!}
-                                <label for="rua" class="col-sm-3 col-form-label text-right">Rua/Logradouro</label>
-                                <div class="col-sm-8">
-                                    {!! Form::text('rua',null,['class'=> 'form-control','id'=>'endereco']) !!}
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">CEP</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="cep" class="form-control" value="{{$osc->cep}}" id="cep" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="Bairro" class="col-sm-3 col-form-label text-right">Bairro</label>
-                                <div class="col-sm-5">
-                                    {!! Form::text('bairro',null,['class'=> 'form-control','id'=>'bairro']) !!}
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Endereço</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" name="logradouro" class="form-control" value="{{$osc->logradouro}}" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="numero" class="col-sm-3 col-form-label text-right">Número</label>
-                                <div class="col-sm-2">
-                                    {!! Form::text('numero',null,['class'=> 'form-control','id'=>'num']) !!}
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Bairro </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="bairro" class="form-control" value="{{$osc->bairro}}" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cidade" class="col-sm-3 col-form-label text-right">Cidade </label>
-                                <div class="col-sm-5">
-                                    {!! Form::text('cidade',null,['class'=> 'form-control','id'=>'cidade']) !!}
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">Cidade</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="cidade" class="form-control" value="{{$osc->cidade}}" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="uf" class="col-sm-3 col-form-label text-right">Estado </label>
-                                <div class="col-sm-1">
-                                    {!! Form::text('uf',null,['class'=> 'form-control','id'=>'estado']) !!}
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label text-right">UF</label>
+                                    <div class="col-sm-1">
+                                        <input type="text" name="uf" class="form-control" value="{{$osc->uf}}" >                                        
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right"> Site </label>
-                                <div class="col-md-7">
-                                    {!! Form::url('site',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.coopviva.com.br']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Fan Page </label>
-                                <div class="col-md-7">
-                                    {!! Form::text('facebook',null,['class'=>'form-control','placeholder'=>'exemplo: https://facebook.com.br/suainstituicao']) !!}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-sm-3 col-form-label text-right">Instagram </label>
-                                <div class="col-md-7">
-                                    {!! Form::text('instagram',null,['class'=>'form-control','placeholder'=>'exemplo: https://www.instagram.com/coopviva']) !!}
-                                </div>
-                            </div>
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
                         </div>
+                        </form>
 						 </div>
                     </div>
                 </div>

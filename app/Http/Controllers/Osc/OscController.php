@@ -85,7 +85,13 @@ class OscController extends Controller
         $osc = OSC::UpdateOrCreate(
             ['user_id' => auth()->user()->id],
             [
-                'nome_fantasia'          => $request->nome_fantasia,                                       
+                'num_doc'         => $request->num_doc,                                       
+                'telefone'        => $request->telefone,                                       
+                'cep'             => $request->cep,                                       
+                'logradouro'      => $request->logradouro,                                       
+                'bairro'          => $request->bairro,                                       
+                'cidade'          => $request->cidade,                                       
+                'uf'          => $request->uf,                                       
                 'user_id'   => auth()->user()->id
             ]
         );

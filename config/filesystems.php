@@ -57,10 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => 'AKIAJ2YA3RHHGJGUVLAQ',
-            'secret' => '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',
-            'region' => 'sa-east-1',
-            'bucket' => 'coopviva-storage'
+            'key' => 'AKIA2ZWL5DCSH7WRPROV',
+            'secret' => '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',
+            'region' => 'us-east-2',
+            'bucket' => 'mecena'
 //            'url' => env('AWS_URL'),
         ],
 

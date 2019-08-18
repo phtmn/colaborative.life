@@ -51,34 +51,6 @@ class OscController extends Controller
     }
 
 
-    public function store222(CreateOscRequest $request){
-
-        $result = DB::transaction(function() use ($request) {
-            try {
-               
-                OSC::UpdateOrCreate(
-                    ['user_id' => auth()->user()->id],
-                    [
-                    
-                       'nome_fantasia'         => $request->nome_fantasia,                      
-                       'sigla'                 => $request->sigla,
-                       'ano_fundacao'          => $request->ano_fundacao,
-                       'user_id'               => $request->user()->id
-
-                    ]);
-
-
-
-                Alert::success('Os dados da Organização fosssraaaam salvos', 'Sucesso')->persistent('Ok');
-                return redirect()->route('osc.create');
-
-            } catch (Throwable $t) {
-                Alert::error('Algum Erro ocorreu'.$t->getMessage(), 'Erro')->persistent('Ok');
-                return redirect()->back()->withInput();
-            }
-        },2); return $result;
-    }
-
     public function store(Request $request){
 
         //dd($request->all());

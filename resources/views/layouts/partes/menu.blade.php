@@ -41,11 +41,11 @@
 {{--        </a>--}}
 {{--    </li>--}}
     
-	<li class="nav-item">
+	<!-- <li class="nav-item">
         <a class="nav-link" >
             <i class="fas fa-chart-bar text-yellow" data-toggle="tooltip" data-placement="right" title="Em breve"></i> Relatórios
         </a>
-    </li>
+    </li> -->
 </ul>
 <!-- Divider -->
 <hr class="my-3">

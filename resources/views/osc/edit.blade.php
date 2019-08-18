@@ -52,14 +52,14 @@
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Nº do documento</label>
                                     <div class="col-sm-3">
-                                        <input type="text" name="num_doc" class="form-control" value=" " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
+                                        <input type="text" name="num_doc" class="form-control" value="{{$osc->num_doc}} " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
                                     </div>
                                 </div>
 
                                  <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Telefone </label>
-                                    <div class="col-sm-2">
-                                        <input type="text" name="telefone" class="form-control" value=" " id="telefone" placeholder="" >                                        
+                                    <div class="col-sm-3">
+                                        <input type="text" name="telefone" class="form-control" value="{{$osc->telefone}} " id="telefone" placeholder="" >                                        
                                     </div>
                                 </div>
 
@@ -93,7 +93,7 @@
 
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">UF</label>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-2">
                                         <input type="text" name="uf" class="form-control" value="{{$osc->uf}}" >                                        
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@
             var tamanho = $("#cpfcnpj").val().length;
 
             if(tamanho < 11){
-                $("#cpfcnpj").mask("999.999.999-99");
+                $("#cpfcnpj").mask("999.999.999-99 ");
             } else if(tamanho >= 11){
                 $("#cpfcnpj").mask("99.999.999/9999-99");
             }

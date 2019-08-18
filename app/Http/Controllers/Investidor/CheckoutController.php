@@ -57,8 +57,8 @@ class CheckoutController extends Controller
 
     public function gerarPagamento($investimento){       
 
-        MP::setClientSecret('KDHCM0emBn1CfV64ShWWdcugTYd3nCIZ');
-        MP::setClientId('5442329168530937');
+        // MP::setClientSecret('KDHCM0emBn1CfV64ShWWdcugTYd3nCIZ');
+        // MP::setClientId('5442329168530937');
 
         $preference = new \MercadoPago\Preference();
 

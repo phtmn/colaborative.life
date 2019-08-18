@@ -14,7 +14,7 @@ class GaleriaController extends Controller
     public function index(){
         $osc = auth()->user()->osc();
         if(!$osc){
-            Alert::warning('Você precisa cadastrar sua OSC Primeiro','Vish!')->persistent('OK');
+            Alert::warning('Você precisa Preencher Perfil','Vish!')->persistent('OK');
             return redirect()->route('osc.create');
         }
         return view('dashboard.osc.galeria',[

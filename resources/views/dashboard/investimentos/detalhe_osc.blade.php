@@ -33,26 +33,26 @@
             <div class="tab-content" id="pills-tabContent">
 
                     <div class="tab-pane fade show active" id="pills-osc" role="tabpanel" aria-labelledby="pills-osc-tab">
-                    <h1 class="card-title">{{$osc->sigla_osc}} - {{$osc->nome_fantasia}}  </h1>
-                        <p align="justify" class="sample-text" style="text-indent: 15px;"><strong>Ano de Fundação:</strong> {{$osc->ano_fundacao}}</p>
+                    <!-- <h1 class="card-title">{{$osc->sigla_osc}} - {{$osc->nome_fantasia}}  </h1> -->
+                        <!-- <p align="justify" class="sample-text" style="text-indent: 15px;"><strong>Ano de Fundação:</strong> {{$osc->ano_fundacao}}</p>
                         <p align="justify" class="sample-text" style="text-indent: 15px;"><strong>CNAE:</strong> {{$osc->cnae}}</p>
-                        <p align="justify" class="sample-text" style="text-indent: 15px;"><strong>Cidade:</strong> {{ $osc->endereco()->cidade}} - {{ $osc->endereco()->uf}}</p>
+                        <p align="justify" class="sample-text" style="text-indent: 15px;"><strong>Cidade:</strong> {{ $osc->endereco()->cidade}} - {{ $osc->endereco()->uf}}</p> -->
                         <hr>
 
                         <h3>O que a OSC faz?</h3>
-                            <p align="justify" class="sample-text" style="text-indent: 15px;">{{$osc->descricao_osc}} </p>
+                            <!-- <p align="justify" class="sample-text" style="text-indent: 15px;">{{$osc->descricao_osc}} </p>
                         <h3>Como surgiu a OSC?</h3>
                             <p align="justify" class="sample-text" style="text-indent: 15px;">{{$osc->descricao_osc}} </p>
                         <h3>Missão da OSC?</h3>
                             <p align="justify" class="sample-text" style="text-indent: 15px;">{{$osc->missao_osc}} </p>
                         <h3>Visão da OSC?</h3>
-                            <p align="justify" class="sample-text" style="text-indent: 15px;">{{$osc->visao_osc}} </p>
+                            <p align="justify" class="sample-text" style="text-indent: 15px;">{{$osc->visao_osc}} </p> -->
                    <br>
                     </div>
 
 
                     <div class="tab-pane fade " id="pills-ods" role="tabpanel" aria-labelledby="pills-ods-tab">
-                        @forelse($metas->unique('objetivo_id') as $obj)
+                        <!-- @forelse($metas->unique('objetivo_id') as $obj)
                             <a style="cursor: pointer"><img src="{{asset('/vendor/site/images/ods/ods'.$obj->objetivo_id.'.png')}}"></a>
                             @empty
                         @endforelse
@@ -62,7 +62,7 @@
                             {{--<hr>--}}
                             {{--@empty--}}
                             {{--<p style="color:red">Nenhuma ODS cadastrada </p>--}}
-                        {{--@endforelse--}}
+                        {{--@endforelse--}} -->
                     </div>
 
 

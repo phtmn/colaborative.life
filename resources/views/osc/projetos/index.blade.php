@@ -33,8 +33,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">Nome </th>
-                                <th scope="col">Custo (R$)</th>
-                                <th scope="col">Situação</th>
+                                <th scope="col">Nº do PRONAC</th>
+                                <th scope="col">Meta de Captação (R$)</th>
                                 <th scope="col"></th>
                                 
                             </tr>
@@ -50,12 +50,10 @@
                                         </div>
                                     </th>
                                     <td>
-                                        R$ {{ number_format($d->valor_meta,2,',','.') }}
+                                            {{$d->num_pronac}}
                                     </td>
                                     <td>
-                                      <span class="badge badge-dot mr-4">
-                                        <i class="bg-success"></i> {{$d->status}}
-                                      </span>
+                                         R$ {{ number_format($d->valor_meta,2,',','.') }} 
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">

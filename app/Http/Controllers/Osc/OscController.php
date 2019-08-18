@@ -24,7 +24,7 @@ class OscController extends Controller
             return view('osc.painel',[
                 'osc'            => $osc,
                 'projetos'       => $osc->projetos()->count(),
-                'metas'          => DB::table('metas_oscs')->where('osc_id',$osc->id)->get(),
+                // 'metas'          => DB::table('metas_oscs')->where('osc_id',$osc->id)->get(),
                 'investimentos'  => DB::table('investimentos')->where('osc_id',$osc->id)->sum('valor'),
                 'investimentos_p'=> DB::table('investimentos')->where('projeto_id','<>',null)
                                         ->where('osc_id',$osc->id)->sum('valor'),
@@ -39,15 +39,13 @@ class OscController extends Controller
         if($osc){
             return view('osc.edit',[
                 'osc'           => $osc,
-                'bancos'        => DB::table('bancos')->pluck('banco','id'),
+                // 'bancos'        => DB::table('bancos')->pluck('banco','id'),
                 'projetos'      => $osc->projetos()->count(),
-                'metas'         => DB::table('metas_oscs')->where('osc_id',$osc->id)->get(),
+                // 'metas'         => DB::table('metas_oscs')->where('osc_id',$osc->id)->get(),
 
             ]);
         }
-        return view('osc.create',[
-            'bancos' => DB::table('bancos')->pluck('banco','id')
-        ]);
+        return view('osc.create');
     }
 
 
@@ -87,7 +85,7 @@ class OscController extends Controller
             //dd($osc);
             return view('dashboard.investimentos.detalhe_osc',[
                 'osc'        => $osc,
-                'metas'      => DB::table('osc_metas')->where('osc_id',$osc->id)->get(),
+                // 'metas'      => DB::table('osc_metas')->where('osc_id',$osc->id)->get(),
                 'galerias'   => DB::table('galerias')->where('osc_id',$osc->id)->get(),
                 'projetos'   => DB::table('projetos')->where('osc_id',$osc->id)->get(),
                 'tab'        => 'investir'
@@ -102,7 +100,7 @@ class OscController extends Controller
         return view('dashboard.investimentos.detalhe_projeto',[
             'projeto'    => $projeto,
             'galerias'   => DB::table('galerias')->where('osc_id',$projeto->osc_id)->get(),
-            'metas'      => DB::table('osc_metas')->where('osc_id',$projeto->osc_id)->get(),
+            // 'metas'      => DB::table('osc_metas')->where('osc_id',$projeto->osc_id)->get(),
             'osc'        => DB::table('oscs')->where('id',$projeto->osc_id)->first(),
             'tab'        => 'investir'
         ]);

@@ -49,6 +49,20 @@
 </ul>
 <!-- Divider -->
 <hr class="my-3">
+<ul class="navbar-nav">
+<li class="nav-item">
+
+<a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+<i class="ni ni-user-run text-warning"></i> Sair
+        </a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+   
+    </li>
+    </ul>
 <!-- Heading -->
 
 <!-- Navigation -->

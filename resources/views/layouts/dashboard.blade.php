@@ -39,46 +39,12 @@
 
         <ul class="nav align-items-center d-md-none">
           
-        <li class="nav-item dropdown">
-                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
-                  <img src="{{asset('vendor/site/images/jacareCoopViva.png')}}" class="rounded-circle">
-                </span>
-                            <div class="media-body ml-2 d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold"></span>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <div class=" dropdown-header noti-title">
-                            <a href="" data-toggle="modal" data-target="#kalahun-modal"><h6 class="text-overflow m-0" style="text-transform: capitalize;">Olá, Eu sou KA LAHUN</h6></a>
-                        </div>
-                        <div class=" dropdown-header noti-title">
-                        {{--<a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" data-toggle="tooltip" data-placement="right" title="Em breve"><i class="ni ni-bell-55 "></i> </a> --}}
-                            {{--<a href=""  ><h6 class="text-overflow m-0"  style="text-transform: capitalize;"><i class="ni ni-bell-55 " ></i> Notificações (Em breve)</h6></a> --}}
-                        </div>
-                        <div class=" dropdown-header noti-title">
-                        {{--<a href="{{route('detalhe.osc',auth()->user()->osc()->id)}}" ><h6 class="text-overflow m-0" style="text-transform: capitalize;"><i class=" text-dark ni ni-world-2 "></i> <i class="font-weight-bold 900">Landing Page </i></h6></a> --}}
-                        <a href="#" ><h6 class="text-overflow m-0" style="text-transform: capitalize;"><i class=" text-dark ni ni-world-2 "></i> <i class="font-weight-bold 900">Landing Page </i></h6></a>
-                        </div>
-                       
-                        <div class="dropdown-divider"></div>
-                        <a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                           
-                            <span>Sair</span>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </a>
-                    </div>
-                </li>
+        
         </ul>
         
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-            <!-- Collapse header -->
+            
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
@@ -94,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Form -->
+      
             
             <!-- Navigation -->
             @include('layouts.partes.menu')
@@ -117,35 +83,7 @@
             <!-- User -->
 			<ul class="navbar-nav align-items-center d-none d-md-flex">
 				
-                <li class="nav-item dropdown">
-                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="media align-items-center">
-                        <span class="avatar avatar-sm rounded-circle">
-                  <img src="{{asset('vendor/site/images/jacareCoopViva.png')}}" class="rounded-circle">
-                </span>
-                
-                
-                            <div class="media-body ml-2 d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold"></span>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <!-- <div class=" dropdown-header noti-title">
-                            <a href="" data-toggle="modal" data-target="#kalahun-modal"><h6 class="text-overflow m-0" style="text-transform: capitalize;">Olá, Eu sou KA LAHUN</h6></a>
-                        </div> -->
-                       
-                        
-                        <a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                           
-                            <span>Sair</span>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </a>
-                    </div>
-                </li>
+               
 				
             </ul>
 			
@@ -166,7 +104,7 @@
 		
 		
 
-        <div class="modal fade" id="kalahun-modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+        <!-- <div class="modal fade" id="kalahun-modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
             <div class="modal-dialog  modal-lg"  role="document">
 
                 <div class="modal-content">
@@ -207,7 +145,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Footer -->
         <footer class="footer">
             <!-- <div class="row align-items-center justify-content-xl-between">

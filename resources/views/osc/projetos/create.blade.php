@@ -16,55 +16,61 @@
 @stop
 @section('conteudo')
     <div class="container-mt--7">
-	 
-            {!! Form::open(['route'=>'projetos.store']) !!}
+            
             <div class="col-md-12">
                 <div class="card shadow">
                     <div class="card-body bg-transparent">
+                    <form action="{{route('projetos.store')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
                             <p class="text-success mt-2">Dados Gerais</p>
 							<hr>
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Nome </label>
                                         <div class="col-md-7">
-                                            {!! Form::text('nome_projeto',null,["class"=>"form-control",'required'=>'true','placeholder'=>'Título do projeto']) !!}
+                                        <input type="text" name="nome_projeto" class="form-control" value=" "  placeholder="Título do projeto" >                                        
+                                            
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Data <b class="text-success" data-toggle="tooltip" data-placement="right" title="DATA DA PUBLICAÇÃO DA PORTARIA DE APROVAÇÃO NO DOU"> * </b></label>
                                         <div class="col-md-3">
-                                            {!! Form::date('data',null,["class"=>"form-control",'required'=>'true']) !!}
+                                        <input type="date" name="data_dou" class="form-control" value=" "  >                                                                                    
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Nº do PRONAC </label>
                                         <div class="col-md-3">
-                                            {!! Form::text('nome_projeto',null,["class"=>"form-control",'required'=>'true']) !!}
+                                            <input type="text" name="num_pronac" class="form-control" value=" "  >                                             
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Segmento Cultural </label>
                                         <div class="col-md-4">
-                                            {!! Form::text('nome_projeto',null,["class"=>"form-control",'required'=>'true']) !!}
+                                        <input type="text" name="segmento" class="form-control" value=" "  >                                             
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">Tipo da Operação</label>
                                 <div class="col-md-3">
-                                    {!! Form::select('ambito',[
-                                        'Federal'   => 'Art. 18 da Lei ',
-                                        'Estadual'  => 'Art. 26 da Lei'                                        
-                                    ],null,['placeholder'=>'Escolha uma opção','class'=>'form-control']) !!}
+                                <select class="form-control" name="tipo_operacao" >
+                                        <option>Art. 18 da Lei</option>
+                                        <option>Art. 26 da Lei</option>                                        
+                                        </select>
+
+                                  
                                 </div>
                             </div>
 
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right"> Resumo </label>
-                                        <div class="col-md-9">
-                                            {!! Form::textarea('descricao_resumida',null,["class"=>"form-control contador8",'required'=>'true','style'=>'resize: none', 'rows'=>'3','maxlenght'=>'250', 'placeholder'=>'Descrição resumida do seu projeto. Use no máximo 250 caracteres!']) !!}
+                                        <div class="col-md-7">
+                                        <textarea class="form-control" name="resumo" rows="5" resize="none" maxlenght="250" placeholder="Descrição resumida do seu projeto. Use no máximo 250 caracteres!"></textarea>
+                                       
+                                            <!-- {!! Form::textarea('descricao_resumida',null,["class"=>"form-control contador8",'required'=>'true','style'=>'resize: none', 'rows'=>'3','maxlenght'=>'250', 'placeholder'=>'Descrição resumida do seu projeto. Use no máximo 250 caracteres!']) !!} -->
 											<span class='caracteres8'></span>                                           
                                         </div>
                                     </div>
@@ -72,14 +78,16 @@
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Meta de Captação (R$)</label>
                                         <div class="col-md-3">
-                                            {!! Form::text('valor_meta',null,['class'=>'input input-lg form-control','required'=>'true']) !!}
+                                        <input type="text" name="valor_meta" class="form-control" value=" " id="valor_meta"  >                                             
+                                           
                                         </div>
                                     </div>
 									
 								    <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Link VESALIC</label>
                                         <div class="col-md-4">
-                                            {!! Form::text('valor_projeto',null,['class'=>'input input-lg form-control','required'=>'true']) !!}
+                                        <input type="text" name="link_vesalic" class="form-control" value=" "  >                                             
+                                            
                                         </div>
                                     </div>
                                     <p class="text-success mt-2">Dados Bancários</p>
@@ -92,23 +100,23 @@
                                             <div class="row">
                                         
                                         <div class="form-group col-md-4">
+                                       
                                             {!! Form::label('Banco') !!}
-                                            {!! Form::text('agencia_doacao',null,['class'=>'form-control', 'placeholder'=>'Banco do Brasil S.A.', 'readonly']) !!}
+                                            {!! Form::text('banco',null,['class'=>'form-control', 'placeholder'=>'Banco do Brasil S.A.', 'readonly']) !!}
                                         </div>
 
                                         <div class="form-group col-md-3">
+                                       
                                             {!! Form::label('Agência') !!}
-                                            {!! Form::text('agencia_patrocinio',null,['class'=>'form-control']) !!}
+                                            {!! Form::text('banco_ag',null,['class'=>'form-control']) !!}
                                         </div>
 
                                         <div class="form-group col-md-3">
+                                       
                                             {!! Form::label('Conta') !!}
-                                            {!! Form::text('conta_patrocinio',null,['class'=>'form-control']) !!}
-                                        </div>
-                                        <!-- <div class="form-group col-md-2">
-                                            {!! Form::label('OP') !!}
-                                            {!! Form::text('op_doacao',null,['class'=>'form-control']) !!}
-                                        </div> -->
+                                            {!! Form::text('banco_cc',null,['class'=>'form-control']) !!}
+                                        </div> 
+                                        
                                     </div>
                                         </div>
                                     </div>
@@ -119,7 +127,7 @@
 							
 									<button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button> 
 								</div>
-						
+                                </form>
                                
                             </div>
 							</div>
@@ -128,7 +136,7 @@
                     
                 </div>
         
-            {!! Form::close() !!}
+            
      
            
 

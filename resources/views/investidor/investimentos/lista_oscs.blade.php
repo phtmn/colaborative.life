@@ -52,41 +52,7 @@
 
     <div class="container">
 
-        {{--<div class="row m-3">--}}
-            {{--<div class="col-md-12">--}}
-                {{--<form action="#" class="form">--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="form-group col-md-4 p-2 m-1">--}}
-                            {{--<label for="" class="text-white">Objetivo 2030</label>--}}
-                            {{--<select  name="ods" id="ods" class="form-control">--}}
-                                {{--<option> 1 - Erradicação da Pobreza</option>--}}
-                                {{--<option> 2 - Erradicação da Fome</option>--}}
-                                {{--<option> 3 - Saúde e Qualidade</option>--}}
-                                {{--<option> 4 - Educação de Qualidade</option>--}}
-                                {{--<option> 5 - Igualdade de Genero</option>--}}
-                            {{--</select>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group col-md-4 p-2 m-1">--}}
-                            {{--<label for="" class="text-white">Segmento</label>--}}
-                            {{--<select  name="ods" id="ods" class="form-control">--}}
-                                {{--<option> Idoso </option>--}}
-                                {{--<option> Meio Ambiente </option>--}}
-                                {{--<option> </option>--}}
-                                {{--<option> 4 - Educação de Qualidade</option>--}}
-                                {{--<option> 5 - Igualdade de Genero</option>--}}
-                            {{--</select>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group col-md-2 p-2 m-1">--}}
-                            {{--<label for=""></label>--}}
-                            {{--<button class="btn btn-default form-control mt-2" type="button">Pesquisar</button>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</form>--}}
-
-            {{--</div>--}}
-        {{--</div>--}}
+        
 
 
         <div class="row justify-content-center mt-5">
@@ -109,11 +75,9 @@
                                             @endif
 											<br>
 											
-                                            <h6 class="text-default text-uppercase text-center"><b>{{$osc->nome_fantasia}}</b></h6>
+                                            <h6 class="text-default text-uppercase text-center"><b>{{$osc->num_doc}}</b></h6>
 												<hr>
-                                                @foreach($osc->metas->unique('objetivo_id') as $obj)
-                                                    <a style="cursor: pointer"><img class="img-thumbnail" style="width:55px; height:55px;" src="{{asset('/vendor/site/images/ods/ods'.$obj->objetivo_id.'.png')}}"></a>
-                                                @endforeach
+                                               
                                             <div>
 												
 																		
@@ -126,11 +90,11 @@
 
 												<div class="mt-0 d-flex justify-content-center ">   
 														<div class="alert alert-info text-center px-2 py-2 mb-3" role="alert">
-															<strong>{{$osc->metas()->count() }}</strong> Meta(s)
+															<strong> </strong> Meta(s)
 														</div>
 														
 														<div class="alert alert-success text-center px-2 py-2" role="alert">
-															<strong>{{ $osc->projetos()->count() }}</strong> Projeto(s) 
+															<strong> </strong> Projeto(s) 
 														</div>
 														
 														

@@ -25,7 +25,7 @@
                     
 					 
 					<div class="ods">
-                        <h1 class="display-4 text-white " style="text-indent: 20px;">Olá, {{ auth()->user()->apelido}}</h1> 
+                        <h1 class="display-4 text-white " style="text-indent: 20px;">Olá, {{ auth()->user()->name}}</h1> 
 						<h2 class="text-white mt-0 mb-5 text-justify" style="text-indent: 20px;">Aqui no <strong><b>XXX</b></strong>, você pode engajar com projetos ou causas que estão de acordo com seus propósitos de forma planejada, estruturada e transparente. <a href="{{route('quero_investir')}}" class="text-white"> <strong><b><u>#SimEuQuero</u></b></strong></h2>
                     </div>
 					
@@ -45,13 +45,7 @@
 
                     
 					 
-                {{--	<div class="ods"> --}}
-                  {{--       @forelse($metas->unique('objetivo_id') as $obj) --}}
-                    {{--        <a style="cursor: pointer"><img class="img-thumbnail" style="width:55px; height:55px;" src="{{asset('/vendor/site/images/ods/ods'.$obj->objetivo_id.'.png')}}"></a> --}}
-                    {{--    @empty  --}}
-                      {{--      <p class="text-warning font-weight-900">#não há objetivos da Agenda 2030 cadastrados!</p>  --}}
-                        {{--  @endforelse  --}}
-                          {{-- </div> --}}
+                
 					
 
 					 
@@ -70,7 +64,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total</h5>
-                      <span class="h2 font-weight-bold mb-0">{{ $metas->unique('objetivo_id')->count() }}</span>
+                      <span class="h2 font-weight-bold mb-0"></span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape text-white shadow ">
@@ -91,7 +85,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total</h5>
-                      <span class="h2 font-weight-bold mb-0"> {{ $metas->count() ?? '0' }}</span>
+                      <span class="h2 font-weight-bold mb-0"> </span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape text-white shadow ">
@@ -141,7 +135,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">TOTAL (R$)</h5>
-                      <span class="h2 font-weight-bold mb-0"> R$ {{ number_format($investimentos,2,',','.') ?? '0'}}</span>
+                      <span class="h2 font-weight-bold mb-0"> R$ </span>
                     </div>
                     <div class="col-auto">
 						<div class="icon icon-shape bg-white text-yellow rounded-circle shadow">
@@ -152,7 +146,7 @@
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
                     
-                    <span class="text-nowrap text-dark font-weight-900">  Investimentos recebidos em <b class="text-primary">{{$osc->sigla}}</b></span>
+                    <span class="text-nowrap text-dark font-weight-900">  Investimentos recebidos em <b class="text-primary"> </b></span>
                   </p>
                 </div>
               </div>
@@ -163,7 +157,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">TOTAL (R$)  </h5>
-                      <span class="h2 font-weight-bold mb-0"> R$ {{ number_format($investimentos_p,2,',','.') ?? '0'}}</span>
+                      <span class="h2 font-weight-bold mb-0"> </span>
                     </div>
                     <div class="col-auto">
                        <div class="icon icon-shape bg-white text-yellow rounded-circle shadow">

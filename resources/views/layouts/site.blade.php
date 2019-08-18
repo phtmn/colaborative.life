@@ -122,7 +122,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link nav-link-icon" href="https://api.whatsapp.com/send?1=pt_BR&phone=558330341663" target="_blank" data-toggle="tooltip" title=" Whatsapp">
+						<a class="nav-link nav-link-icon" href="" target="_blank" data-toggle="tooltip" title=" Whatsapp">
 							<i class="fa fa-whatsapp"></i>
 							<span class="nav-link-inner--text d-lg-none">Whatsapp</span>
 						</a>
@@ -371,7 +371,7 @@
 <script src="{{asset('vendor/argon-site/assets/vendor/toastr/toastr.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('vendor/argon-site/assets/js/argon.js?v=1.0.1')}}"></script>
-<iframe width="70" height="70" src="https://whatsmagic.bitnix.com.br/embed/?id=c64f2b69cf&tl=NTUwODMzMDM0MTY2Mw==" frameborder="0" style="position:fixed;z-index:1000;bottom:20px;right:20px;"></iframe>
+
 <!--:::::::::::::::::::::SHARETHIS::::::::::::::::::::::::-->
 <script type = 'text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c92adf98429650013e9d722&product=inline-share-buttons' async = 'async'> </script>
 <script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>

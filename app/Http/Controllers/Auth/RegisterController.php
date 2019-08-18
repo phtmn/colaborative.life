@@ -79,13 +79,13 @@ class RegisterController extends Controller
         ]);
 
 
-        VerifyUser::create([
-            'user_id'   => $user->id,
-            'token'     => sha1(time()),
-        ]);
+        // VerifyUser::create([
+        //     'user_id'   => $user->id,
+        //     'token'     => sha1(time()),
+        // ]);
 
-        Mail::to($user->email)->send(new VerifyMail($user));
-        Mail::send(new NewUser($user));
+        // Mail::to($user->email)->send(new VerifyMail($user));
+        // Mail::send(new NewUser($user));
 
         return $user;
 

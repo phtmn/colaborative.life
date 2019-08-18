@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'contato@coopviva.com.br'),
+        'address' => env('MAIL_FROM_ADDRESS', 'pedro.nogueira@hotmail.com.br'),
         'name' => env('MAIL_FROM_NAME', 'Coopviva'),
     ],
 

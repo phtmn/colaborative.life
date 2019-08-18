@@ -192,7 +192,7 @@
 						<h4 class="mb-0 font-weight-light">Junte-se a nós por um mundo sustentável.</h4>
 					</div>
 					<div class="col-xs-12 col-lg-6 text-right">
-							<button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Deixe seu Feedback</button>
+							<!-- <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Deixe seu Feedback</button> -->
 							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog" role="document">
 									  <div class="modal-content">

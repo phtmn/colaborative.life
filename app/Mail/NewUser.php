@@ -29,7 +29,7 @@ class NewUser extends Mailable
      */
     public function build()
     {
-        return $this->to(['bernardo@redeconexao.com.br','alessandra@redeconexao.com.br','matthausnawan@live.com'])
+        return $this->to(['pedro.nogueira@hotmail.com.br'])
                      ->subject('Novo usuario')
                      ->markdown('emails.newUser');
     }

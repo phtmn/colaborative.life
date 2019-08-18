@@ -23,7 +23,7 @@ class CreateVerifyUsersTable extends Migration
             });
 
             Schema::table('users', function(Blueprint $table){
-                $table->boolean('verified')->default(0);
+                $table->boolean('verified')->default(1);
             });
 
     }

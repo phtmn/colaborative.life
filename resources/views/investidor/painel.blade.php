@@ -65,7 +65,7 @@
                                     </div>
 									
 									<div>
-                                        <span class="heading">{{ DB::table('metas_oscs')->count()}}</span>
+                                        <span class="heading"></span>
                                         <span class="description">Metas</span>
                                     </div> -->
                                 </div>

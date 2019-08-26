@@ -93,7 +93,7 @@
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">UF</label>
                                     <div class="col-sm-2">
-                                        <input type="text" name="uf" class="form-control" value="" >                                        
+                                        <input type="text" name="uf" class="form-control" value="" maxlength="2">                                        
                                     </div>
                                 </div>
                         <div class="card-footer text-center">

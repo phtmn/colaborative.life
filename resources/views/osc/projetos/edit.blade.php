@@ -61,7 +61,7 @@
                                     <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">Tipo da Operação</label>
                                 <div class="col-md-3">
-                                <select class="form-control" name="tipo_operacao" value="{{$projeto->tipo_operacao}} ">
+                                <select class="form-control" name="tipo_operacao" value="{{$projeto->tipo_operacao}}">
                                         <option>Art. 18 da Lei</option>
                                         <option>Art. 26 da Lei</option>                                        
                                         </select>

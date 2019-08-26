@@ -126,7 +126,7 @@
                             {!! Form::file('file',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group"> 
-                            {!! Form::text('legenda',null,['class'=>'form-control','placeholder'=>'Insira uma legenda para essa foto']) !!}
+                            {!! Form::text('legenda',null,['class'=>'form-control','placeholder'=>'Insira uma legenda para essa foto', 'required']) !!}
 							<!--<p> teste </p> -->
                         </div>
                     </div>

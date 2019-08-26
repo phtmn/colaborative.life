@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             [
-                'apelido'       => 'Fisica - Investidor',
+                // 'apelido'       => 'Fisica - Investidor',
                 'nome'          => 'Pessoa Fisica',
                 'email'         => 'pessoafisica@email.com',
                 'password'      => bcrypt('123456'),
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
                 'verified'      => 1
             ],
             [
-                'apelido'   => 'Juridica - Investidor',
+                // 'apelido'   => 'Juridica - Investidor',
                 'nome' => 'Pessoa juridica',
                 'email'         => 'pessoajuridica@email.com',
                 'password'      => bcrypt('123456'),
@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
 
             ],
             [
-                'apelido'   => 'OSC - Usuario',
+                // 'apelido'   => 'OSC - Usuario',
                 'nome' => 'Osc Usuário',
                 'email'         => 'osc@email.com',
                 'password'      => bcrypt('123456'),
@@ -74,7 +74,7 @@ class UsersTableSeeder extends Seeder
                 'verified'      => 1
             ],
             [
-                'apelido'   => 'Administrador',
+                // 'apelido'   => 'Administrador',
                 'nome' => 'Administrador',
                 'email'         => 'administrador@email.com',
                 'password'      => bcrypt('secret'),

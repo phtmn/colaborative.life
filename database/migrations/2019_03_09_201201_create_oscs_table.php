@@ -25,7 +25,7 @@ class CreateOscsTable extends Migration {
 			$table->string('cidade', 200)->nullable();
 			$table->string('uf', 2)->nullable();
 			$table->boolean('ativa')->default(1);
-			// $table->string('logo', 200)->nullable();
+			$table->string('logo', 200)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
 

@@ -76,8 +76,8 @@ class ProjetosController extends Controller
         $projeto->num_pronac          = $request->num_pronac;
         $projeto->segmento            = $request->segmento;
         $projeto->tipo_operacao       = $request->tipo_operacao;
-        $projeto->resumo              = $request->resumo;
-        $projeto->valor_meta          = toMoney($request->valor_meta);
+        // $projeto->resumo              = $request->resumo;
+        // $projeto->valor_meta          = toMoney($request->valor_meta);
         $projeto->link_vesalic        = $request->link_vesalic;
         $projeto->banco               = 'Banco do Brasil S.A.';
         $projeto->banco_ag            = $request->banco_ag;

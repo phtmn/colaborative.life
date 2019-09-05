@@ -34,8 +34,8 @@
                             <tr>
                                 <th scope="col">Nome </th>
                                 <th scope="col">Nº do PRONAC</th>
-                                <th scope="col">Meta de Captação (R$)</th>
-                                <th scope="col"></th>
+                                <th scope="col">Status</th>
+                                ;
                                 
                             </tr>
                         </thead>
@@ -53,19 +53,11 @@
                                             {{$d->num_pronac}}
                                     </td>
                                     <td>
-                                         R$ {{ number_format($d->valor_meta,2,',','.') }} 
+                                        Em análise... Publicado... Habilitado para captação
                                     </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                        <button type="submit" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Em breve"><i class="ni ni-cloud-upload-96"></i> Upload de arquivos</button>
+                                    <!-- <td>
                                         
-                                        </a>
-                                            @if($d->arquivo != null)
-                                                <a href="{{ $d->arquivo}}" target="_blank"> Visualizar seu Arquivo</a>
-                                            @endif
-                                           
-                                        </div>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             @empty
                                 <p  class="text-warning font-weight-bold 900" style="text-indent: 25px;">Você ainda não cadastrou nenhum projeto! <span></span></p>

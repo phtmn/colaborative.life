@@ -41,7 +41,7 @@
 
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Nº do PRONAC </label>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <input type="text" name="num_pronac" class="form-control" value=" "  >                                             
                                         </div>
                                     </div>
@@ -65,37 +65,37 @@
                                 </div>
                             </div>
 
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right"> Resumo </label>
                                         <div class="col-md-7">
                                         <textarea class="form-control" name="resumo" rows="5" resize="none" maxlenght="250" placeholder="Descrição resumida do seu projeto. Use no máximo 250 caracteres!"></textarea>
-                                       
+                                        -->
                                             <!-- {!! Form::textarea('descricao_resumida',null,["class"=>"form-control contador8",'required'=>'true','style'=>'resize: none', 'rows'=>'3','maxlenght'=>'250', 'placeholder'=>'Descrição resumida do seu projeto. Use no máximo 250 caracteres!']) !!} -->
-											<span class='caracteres8'></span>                                           
+											<!-- <span class='caracteres8'></span>                                           
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Meta de Captação (R$)</label>
                                         <div class="col-md-3">
                                         <input type="text" name="valor_meta" class="form-control" value=" " id="valor_meta"  >                                             
                                            
                                         </div>
-                                    </div>
+                                    </div> -->
 									
 								    <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Link VESALIC</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
                                         <input type="text" name="link_vesalic" class="form-control" value=" "  >                                             
                                             
                                         </div>
                                     </div>
-                                    <p class="text-success mt-2">Dados Bancários</p>
+                                    <p class="text-success mt-2">Dados Bancários </p>
 									<hr>
 									
 									
 									<div class="form-group row">
-                                        <label for="" class="col-sm-3 col-form-label text-right mt-3">Conta para Receber <b class="text-success">Patrocínios</b></label>
+                                        <label for="" class="col-sm-3 col-form-label text-right mt-3">Conta <b class="text-success">Captação</b></label>
                                         <div class="col-md-9">
                                             <div class="row">
                                         

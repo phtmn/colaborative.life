@@ -18,7 +18,7 @@ class Projeto extends Model
     //     'op_doacao','banco_patrocinio','agencia_patrocinio','conta_patrocinio','op_patrocinio','status','ativo','arquivo'];
 
 
-    protected $fillable = ['user_id','uuid','osc_id','nome_projeto','data_dou','num_pronac','segmento','tipo_operacao','resumo','valor_meta','link_vesalic','banco','banco_ag','banco_cc'];    
+    protected $fillable = ['user_id','uuid','osc_id','nome_projeto','data_dou','num_pronac','segmento','tipo_operacao','link_vesalic','banco','banco_ag','banco_cc'];    
 
     public function osc(){
         return $this->belongsTo(Osc::class);

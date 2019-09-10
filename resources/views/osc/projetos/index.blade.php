@@ -35,7 +35,7 @@
                                 <th scope="col">Nome </th>
                                 <th scope="col">Nº do PRONAC</th>
                                 <th scope="col">Status</th>
-                                ;
+                                
                                 
                             </tr>
                         </thead>

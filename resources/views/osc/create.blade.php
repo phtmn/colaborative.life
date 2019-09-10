@@ -49,7 +49,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-3 col-form-label text-right">Nº do documento</label>
+                                    <label for="" class="col-sm-3 col-form-label text-right">Nº do documento <b class="text-primary" data-toggle="tooltip" data-placement="right" title="CPF ou CNPJ"> * </b></label>
                                     <div class="col-sm-3">
                                         <input type="text" name="num_doc" class="form-control" value=" " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
                                     </div>

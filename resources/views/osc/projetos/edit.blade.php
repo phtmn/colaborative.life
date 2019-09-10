@@ -40,7 +40,9 @@
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Data <b class="text-success" data-toggle="tooltip" data-placement="right" title="DATA DA PUBLICAÇÃO DA PORTARIA DE APROVAÇÃO NO DOU"> * </b></label>
                                         <div class="col-md-3">
-                                        <input type="date" name="data_dou" class="form-control" value="{{$projeto->data_dou}} "  >                                                                                    
+                                        <input type="date" name="data_dou" class="form-control" value="{{$projeto->data_dou}} "  >  
+                                        <input type="text" name="data_dou" class="form-control" value="{{$projeto->data_dou}} "  >   
+                                        
                                         </div>
                                     </div>
 

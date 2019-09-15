@@ -63,7 +63,9 @@
       
             
             <!-- Navigation -->
+            
             @include('layouts.partes.menu')
+           
         </div>
     </div>
 </nav>
@@ -76,10 +78,7 @@
 			
 			
 			
-            @if(auth()->user()->osc())
-            <a class="h4 mb-0 text-white d-none d-lg-inline-block" href="{{route('detalhe.osc',auth()->user()->osc()->id)}}"><i class="ni ni-world-2 "></i> <b class="font-weight-bold 900">Landing Page </b></a>
-            <!-- Form -->
-            @endif
+           
             <!-- User -->
 			<ul class="navbar-nav align-items-center d-none d-md-flex">
 				

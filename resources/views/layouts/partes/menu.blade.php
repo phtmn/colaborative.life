@@ -4,6 +4,7 @@
             <i class="ni ni-tv-2 text-default"></i> Dashboard
         </a>
     </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="{{route('osc.create')}}">
             <i class="ni ni-circle-08 text-blue"></i> Perfil
@@ -50,6 +51,18 @@
 <!-- Divider -->
 <hr class="my-3">
 <ul class="navbar-nav">
+<li class="nav-item">
+<!-- @if(auth()->user()->osc())
+            <a class="h4 mb-0 text-white d-none d-lg-inline-block" href="{{route('detalhe.osc',auth()->user()->osc()->id)}}"><i class="ni ni-world-2 "></i> <b class="font-weight-bold 900">Landing Page </b></a>            
+    @endif -->
+
+
+    @if(auth()->user()->osc())
+        <a class="nav-link" href="{{route('detalhe.osc',auth()->user()->osc()->id)}}">
+            <i class="ni ni-world-2"></i> Landing Page
+        </a>
+        @endif
+    </li>
 <li class="nav-item">
 
 <a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault();

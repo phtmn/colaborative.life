@@ -15,18 +15,18 @@
                <H3 class="text-white text-center font-weight-900 mt-5"> Missão</h3>
             </div>
             
-            <p style="text-align:justify; text-indent: 25px;"  class="font-weight-500 text-white mt-5">{{$osc->missao ?? 'Aqui todas as instituições com seus respectivos projetos se inscrevem através de um cadastro completo e parametrizado conforme exigências de organismos internacionais de sustentabilidade.'}}</p>
+            <!-- <p style="text-align:justify; text-indent: 25px;"  class="font-weight-500 text-white mt-5">{{$osc->missao ?? 'Aqui todas as instituições com seus respectivos projetos se inscrevem através de um cadastro completo e parametrizado conforme exigências de organismos internacionais de sustentabilidade.'}}</p> -->
 			 <hr color="white">
 			 <div class="d-flex justify-content-center mb-1 ">
-                <div class="p-2 mt-0 bd-highlight text-white font-weight-900 text-center">{{ $metas->count() }} Meta(s)</div>
-                <div class="p-2 mt-0 bd-highlight text-white font-weight-900 text-center">{{ $projetos->count() }} Projeto(s)</div>
+                <div class="p-2 mt-0 bd-highlight text-white font-weight-900 text-center"></div>
+                <div class="p-2 mt-0 bd-highlight text-white font-weight-900 text-center"></div>
 			 </div>
           </div>
 		 
           <div class="col-lg-6">
     
             
-            @if($osc->video_institucional)
+            <!-- @if($osc->video_institucional)
                 <div class="card shadow mt-5 text-center ">
                     <p>Video Institucional</p>
                     <div class="p-3">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-            @endif
+            @endif -->
           </div>
 		 
             

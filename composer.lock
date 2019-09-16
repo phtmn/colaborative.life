@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed2df26de1912e376102c5337995054b",
+    "content-hash": "5f3220e000762809e19f9337724288d2",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1648,20 +1648,21 @@
         },
         {
             "name": "mercadopago/dx-php",
-            "version": "1.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mercadopago/dx-php.git",
-                "reference": "9a9e4538924edbd8310640b5b7d97125f4fdbaa2"
+                "reference": "299178d882e81d4684e9f3fd274b5f28016421c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/9a9e4538924edbd8310640b5b7d97125f4fdbaa2",
-                "reference": "9a9e4538924edbd8310640b5b7d97125f4fdbaa2",
+                "url": "https://api.github.com/repos/mercadopago/dx-php/zipball/299178d882e81d4684e9f3fd274b5f28016421c9",
+                "reference": "299178d882e81d4684e9f3fd274b5f28016421c9",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "2.6.*",
+                "doctrine/annotations": "~1.4",
+                "doctrine/common": "~2.6",
                 "php": ">=5.5.0"
             },
             "require-dev": {
@@ -1679,6 +1680,7 @@
                     "MercadoPago\\": [
                         "src/MercadoPago/",
                         "tests/",
+                        "src/MercadoPago/Generic/",
                         "src/MercadoPago/Entities/",
                         "src/MercadoPago/Entities/Shared/"
                     ]
@@ -1701,7 +1703,7 @@
                 }
             ],
             "homepage": "https://github.com/mercadopago/dx-php",
-            "time": "2018-11-28T19:52:54+00:00"
+            "time": "2019-09-16T16:43:57+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5047,18 +5049,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "role": "Developer",
-                    "email": "sebastian@phpeople.de"
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "Developer",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -6381,7 +6383,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mercadopago/dx-php": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -54,8 +54,9 @@
                                     {{$d->num_pronac}}
                                 </td>
                                 <td>
-                                    <span class="badge badge-pill badge-warning">Em análise</span>
-                                    <span class="badge badge-pill badge-success">Aprovado</span>
+                                    
+                                    <span class="text-warning">●</span> Em análise 
+                                    <span class="text-success">●</span> Aprovado 
                                 </td>
                                 <td>
                                     <label class="custom-toggle">

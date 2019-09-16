@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         $osc = DB::table('oscs')->where('id',$request->osc_id)->first();
         
         $investimento = new Investimento();
-        $investimento->descricao            = 'Investimento em:'.$osc->nome_fantasia;
+        $investimento->descricao            = 'Investimento em:'.$osc->bairro; // antes estava novo_fantasia
         $investimento->valor                = toMoney($request->valor);
         $investimento->status_interno       = 'Aguardando Pagamento';
         $investimento->user_id              = $request->user()->id;
@@ -57,8 +57,8 @@ class CheckoutController extends Controller
 
     public function gerarPagamento($investimento){       
 
-        // MP::setClientSecret('KDHCM0emBn1CfV64ShWWdcugTYd3nCIZ');
-        // MP::setClientId('5442329168530937');
+        MP::setClientSecret('B3tZRH1mLi4eBxIl4xXCsB5EWlk0XfN1'); //Checkout básico
+        MP::setClientId('7902040091674396'); // Checkout básico
 
         $preference = new \MercadoPago\Preference();
 

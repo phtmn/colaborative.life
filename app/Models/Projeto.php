@@ -20,6 +20,8 @@ class Projeto extends Model
 
     protected $fillable = ['user_id','uuid','osc_id','nome_projeto','data_dou','num_pronac','segmento','tipo_operacao','link_vesalic','banco','banco_ag','banco_cc'];    
 
+    protected $dates = ['data_dou'];
+
     public function osc(){
         return $this->belongsTo(Osc::class);
     }

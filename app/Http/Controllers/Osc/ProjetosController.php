@@ -69,7 +69,7 @@ class ProjetosController extends Controller
         //         'osc_id'                => $request->user()->osc()->id
         //     ]
         // );
-
+       
         $projeto = new Projeto;
         $projeto->nome_projeto        = $request->nome_projeto;
         $projeto->data_dou            = $request->data_dou;

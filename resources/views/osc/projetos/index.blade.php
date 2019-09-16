@@ -35,7 +35,7 @@
                                 <th scope="col">Nome </th>
                                 <th scope="col">Nº do PRONAC</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Publicar?</th>
+                                <th scope="col">Publicado</th>
 
 
                             </tr>
@@ -54,14 +54,12 @@
                                     {{$d->num_pronac}}
                                 </td>
                                 <td>
-                                    <label class="custom-toggle">
-                                        <input type="checkbox" unchecked>
-                                        <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim">Em analise -- Aprovado</span>
-                                    </label>
+                                    <span class="badge badge-pill badge-warning">Em análise</span>
+                                    <span class="badge badge-pill badge-success">Aprovado</span>
                                 </td>
                                 <td>
-                                <label class="custom-toggle">
-                                        <input type="checkbox" checked>
+                                    <label class="custom-toggle">
+                                        <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="">
                                         <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
                                     </label>
 

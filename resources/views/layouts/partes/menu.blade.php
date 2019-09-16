@@ -4,7 +4,7 @@
             <i class="ni ni-tv-2 text-default"></i> Dashboard
         </a>
     </li>
-    
+    @if(auth()->user()->osc())
     <li class="nav-item">
         <a class="nav-link" href="{{route('osc.create')}}">
             <i class="ni ni-circle-08 text-blue"></i> Perfil
@@ -47,6 +47,7 @@
             <i class="fas fa-chart-bar text-yellow" data-toggle="tooltip" data-placement="right" title="Em breve"></i> Relatórios
         </a>
     </li> -->
+    @endif
 </ul>
 <!-- Divider -->
 <hr class="my-3">

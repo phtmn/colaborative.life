@@ -32,16 +32,16 @@
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Nome </label>
                                         <div class="col-md-7">
-                                        <input type="text" name="nome_projeto" class="form-control" value="{{$projeto->nome_projeto}} "  placeholder="Título do projeto" >                                        
+                                        <input type="text" name="nome_projeto" class="form-control" value="{{$projeto->nome_projeto}} "  placeholder="Título do projeto" readonly>                                        
                                             
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="" class="col-sm-3 col-form-label text-right">Data <b class="text-success" data-toggle="tooltip" data-placement="right" title="DATA DA PUBLICAÇÃO DA PORTARIA DE APROVAÇÃO NO DOU"> * </b></label>
+                                        <label for="" class="col-sm-3 col-form-label text-right" >Data <b class="text-success" data-toggle="tooltip" data-placement="right" title="DATA DA PUBLICAÇÃO DA PORTARIA DE APROVAÇÃO NO DOU"> * </b></label>
                                         <div class="col-md-3">
-                                        <input type="date" name="data_dou" class="form-control" value="{{$projeto->data_dou}} "  >  
-                                        <input type="text" name="data_dou" class="form-control" value="{{$projeto->data_dou}} "  >   
+                                        
+                                        <input type="text" name="data_dou" class="form-control datepicker" value="{{$projeto->data_dou->format('d/m/Y')}}" readonly   >
                                         
                                         </div>
                                     </div>
@@ -49,25 +49,22 @@
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Nº do PRONAC </label>
                                         <div class="col-md-2">
-                                            <input type="text" name="num_pronac" class="form-control" value="{{$projeto->num_pronac}} "  >                                             
+                                            <input type="text" name="num_pronac" class="form-control" value="{{$projeto->num_pronac}} " readonly >                                             
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Segmento Cultural </label>
                                         <div class="col-md-4">
-                                        <input type="text" name="segmento" class="form-control" value="{{$projeto->segmento}} "  >                                             
+                                        <input type="text" name="segmento" class="form-control" value="{{$projeto->segmento}} " readonly >                                             
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                 <label for="" class="col-sm-3 col-form-label text-right">Tipo da Operação</label>
                                 <div class="col-md-3">
-                                <select class="form-control" name="tipo_operacao" value="{{$projeto->tipo_operacao}}">
-                                        <option>Art. 18 da Lei</option>
-                                        <option>Art. 26 da Lei</option>                                        
-                                        </select>
-
+                               
+                                        <input type="text" name="segmento" class="form-control" value="{{$projeto->tipo_operacao}} " readonly >                                             
                                   
                                 </div>
                             </div>
@@ -92,8 +89,8 @@
 									
 								    <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Link VESALIC</label>
-                                        <div class="col-md-5">
-                                        <input type="text" name="link_vesalic" class="form-control" value="{{$projeto->link_vesalic}} "  >                                             
+                                        <div class="col-md-6">
+                                        <input type="text" name="link_vesalic" class="form-control" value="{{$projeto->link_vesalic}} " readonly >                                             
                                             
                                         </div>
                                     </div>
@@ -115,13 +112,15 @@
                                         <div class="form-group col-md-3">
                                        
                                             {!! Form::label('Agência') !!}
-                                            {!! Form::text('banco_ag',null,['class'=>'form-control']) !!}
+                                            <input type="text" name="link_vesalic" class="form-control" value="{{$projeto->banco_cc}} " readonly >
+                                            
                                         </div>
 
                                         <div class="form-group col-md-3">
                                        
                                             {!! Form::label('Conta') !!}
-                                            {!! Form::text('banco_cc',null,['class'=>'form-control']) !!}
+                                            <input type="text" name="link_vesalic" class="form-control" value="{{$projeto->banco_cc}} " readonly >
+                                            
                                         </div> 
                                         
                                     </div>
@@ -131,8 +130,10 @@
 													
 							
 								<div class="card-footer text-center">
-							
-									<button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button> 
+                                <a class="btn btn-outline-success" href="{{ route('projetos.index') }}">
+                                            <i class="ni ni-bold-left"></i> Voltar
+                                        </a>    
+									
 								</div>
                                 </form>
                                

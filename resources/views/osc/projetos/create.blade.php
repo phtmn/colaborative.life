@@ -42,7 +42,7 @@
                                     <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Nº do PRONAC </label>
                                         <div class="col-md-2">
-                                            <input type="text" name="num_pronac" class="form-control" value=" "  >                                             
+                                            <input type="number" name="num_pronac" class="form-control" value=" "  >                                             
                                         </div>
                                     </div>
 
@@ -85,7 +85,7 @@
 									
 								    <div class="form-group row">
                                         <label for="" class="col-sm-3 col-form-label text-right">Link VESALIC</label>
-                                        <div class="col-md-5">
+                                        <div class="col-md-6">
                                         <input type="text" name="link_vesalic" class="form-control" value=" "  >                                             
                                             
                                         </div>

@@ -64,6 +64,9 @@ Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'painel-os
     Route::get('projeto/{id}/galeria','ProjetosController@galeria')->name('projeto.galeria');
     Route::post('galeria.save','ProjetosController@save')->name('galeria.save');
     Route::get('projeto/i/{id}','ProjetosController@mudarInativo')->name('projeto.inativo');
+    
+    Route::get('projeto/ativar/{id}', 'ProjetosController@publicate')->name('projeto.publicate');
+    
 
     Route::get('/detalhe','OscController@landingPage')->name('osc.landingPage');
     Route::get('/detalhe/projeto/{id}','OscController@landingPageProjeto')->name('projeto.landingPage');

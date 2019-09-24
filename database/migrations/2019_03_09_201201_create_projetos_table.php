@@ -29,6 +29,7 @@ class CreateProjetosTable extends Migration {
 			$table->string('banco_ag')->nullable();
             $table->string('banco_cc')->nullable();
 			$table->boolean('ativo')->default(0);
+			$table->boolean('publicado')->default(0);
 			$table->timestamps();
 			$table->softDeletes();
             $table->foreign('osc_id')->references('id')->on('oscs');

@@ -34,36 +34,45 @@
                             <tr>
                                 <th scope="col">Nome </th>
                                 <th scope="col">Nº do PRONAC</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Publicado</th>
-
+                                <th scope="col" class="text-left">Status</th>
+                                <th scope="col" class="text-left">Publicado</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($data as $d)
                             <tr>
-                                <th scope="row">
+                                    <td>
                                     <div class="media align-items-center">
                                         <div class="media-body">
                                             <a href="{{route('projetos.edit',$d->id)}}"></i>{{$d->nome_projeto}}</a>
                                         </div>
                                     </div>
-                                </th>
+                                    </td>
                                 <td>
                                     {{$d->num_pronac}}
                                 </td>
-                                <td>
-                                    
-                                    <span class="text-warning">●</span> Em análise 
-                                    <span class="text-success">●</span> Aprovado 
+                                <td >
+                                   
+                                    @if($d->ativo == '0')
+                                         <span class="text-warning">●</span> Em análise
+                                               @else
+                                          <span class="text-success">●</span> Aprovado
+                                               @endif
                                 </td>
-                                <td>
-                                    <label class="custom-toggle">
-                                        <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="">
+                                <td >
+
+                                    @if($d->ativo == '1')
+                                         <label class="custom-toggle custom-toggle-default">
+                                    <input type="checkbox" class="js-checkbox"
+                              data-id="{{ $d->id }}"
+                              data-route="{{ route('projeto.publicate', [ 'id' => $d->id ]) }}"
+                              {{ ($d->publicado) ? '' : 'checked' }}>
                                         <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
                                     </label>
-
+                                                           @else
+                                                                 
+                                                                @endif
                                 </td>
                             </tr>
                             @empty
@@ -79,3 +88,15 @@
 </div>
 
 @stop
+<script>
+$('.js-checkbox').on('click', function(e) {
+        var route = $(this).data('route');
+        $.ajax({
+          url : route,
+          type : 'get',
+        })
+        .done(function(msg){
+          return true;
+        })
+      });
+      </script>

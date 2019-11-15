@@ -14,9 +14,8 @@ class CreateProjetosTable extends Migration {
 	{
 		Schema::create('projetos', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->uuid('uuid')->nullable();
-			$table->unsignedInteger('osc_id');
+			$table->increments('id');			
+			$table->unsignedInteger('user_id');
 			$table->string('num_pronac')->nullable();
 			$table->string('telefone')->nullable();           
 			$table->string('cep')->nullable();
@@ -30,8 +29,8 @@ class CreateProjetosTable extends Migration {
 			$table->boolean('ativo')->default(0);
 			$table->boolean('publicado')->default(0);
 			$table->timestamps();
-			$table->softDeletes();
-            $table->foreign('osc_id')->references('id')->on('oscs');
+			$table->softDeletes();			
+			$table->foreign('user_id')->references('id')->on('users');
 		});
 	}
 

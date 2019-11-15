@@ -36,8 +36,7 @@ class OscController extends Controller
         $osc = OSC::where('user_id',Auth::user()->id)->first();
         if($osc){
             return view('proponente.perfil.edit',[
-                'osc'           => $osc,                
-                'projetos'      => $osc->projetos()->count(),
+                'osc'           => $osc,  
             ]);
         }
         return view('proponente.perfil.create');
@@ -51,7 +50,7 @@ class OscController extends Controller
             [
                 'num_doc'         => $request->num_doc,                                       
                 'telefone'        => $request->telefone,   
-                'user_id'   => auth()->user()->id
+                'user_id'         => auth()->user()->id
             ]
         );
 

@@ -56,7 +56,6 @@
 												<option value="osc">Perfil Proponente de Projetos</option>
 												<option value="investidor-pf">Perfil Investidor Pessoa Fìsica</option>
 												<option value="investidor-pj">Perfil Investidor Pessoa Jurídica</option>
-{{--												<option value="empresa">Empresa</option>--}}
 											</select>
 										</div>
 

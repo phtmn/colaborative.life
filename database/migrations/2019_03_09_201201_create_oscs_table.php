@@ -15,11 +15,9 @@ class CreateOscsTable extends Migration {
 		Schema::create('oscs', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->unsignedInteger('user_id');
-			$table->uuid('uuid')->nullable();			
+			$table->unsignedInteger('user_id');						
 			$table->string('num_doc')->nullable();		
-            $table->string('telefone')->nullable(); 
-			$table->boolean('ativa')->default(1);			
+            $table->string('telefone')->nullable(); 						
 			$table->timestamps();
 			$table->softDeletes();
 			$table->foreign('user_id')->references('id')->on('users');

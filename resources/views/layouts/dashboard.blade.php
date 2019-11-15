@@ -195,17 +195,23 @@
         $("#op").mask('000');
     
 
-        
-      
-
-
-
-
+         
 
     });
 </script>
 
-
+<script>
+    $('.js-checkbox').on('click', function(e) {
+        var route = $(this).data('route');
+        $.ajax({
+                url: route,
+                type: 'get',
+            })
+            .done(function(msg) {
+                return true;
+            })
+    });
+</script>
 
 <script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
 @include('sweet::alert')

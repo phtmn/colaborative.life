@@ -20,27 +20,25 @@
                     @csrf
                     <p class="text-success mt-2">Dados Gerais</p>
                     <hr>
-                    @include('proponente.projetos.forms.section1')
+                    @include('proponente.projetos.forms.section1_create')
                     <p class="text-success mt-2">Dados do Proponente </p>
                     <hr>
-                    @include('proponente.projetos.forms.section2')
+                    @include('proponente.projetos.forms.section2_create')
                     <p class="text-success mt-2">Dados Bancários </p>
                     <hr>
-                    @include('proponente.projetos.forms.section3')
+                    @include('proponente.projetos.forms.section3_create')
                     <!-- <p class="text-success mt-2">Equipe </p>
                     <hr>
-                    @include('proponente.projetos.forms.section4')
+                    @include('proponente.projetos.forms.section4_create')
                     <p class="text-success mt-2">Upload </p>
                     <hr>
                     <p class="text-success mt-2">Galeria no max 4</p>
                     <hr> -->
                     <div class="card-footer text-center">
-                        <a class="btn btn-outline-success" href="{{ route('projetos.index') }}">
-                            <i class="ni ni-check-bold"></i> Salvar
-                        </a>
+                        <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    @stop
+@stop

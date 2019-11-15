@@ -71,7 +71,8 @@ Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'dashboard
 });
 
 //# ROTAS PARA A AREA ADMINISTRATIVA
-Route::group(['prefix'=>'sistema','middleware'=>['auth','admin']],function(){
+
+Route::group(['middleware'=> ['auth','admin'],'prefix'=>'sistema'],function(){
     Route::get('/dashboard','Admin\DashboardController@index');
 
     Route::resource('admin-osc','Admin\OscController');

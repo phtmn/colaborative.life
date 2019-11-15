@@ -22,13 +22,13 @@ class ProjetosController extends Controller
 
     public function index()
     {
-        $osc = auth()->user()->osc();        
-        return view('proponente.projetos.index');
+        return view('proponente.projetos.index', [
+            'data' => $data = Projeto::all()
+          ]);
     }
 
     public function create()
     {
-        $osc = auth()->user()->osc();       
         return view('proponente.projetos.create');
     }
 
@@ -40,9 +40,9 @@ class ProjetosController extends Controller
         ]);
     }
 
-    public function store(Request $request)
-    //dd($request->all());
+    public function store(Request $request)    
     {
+        
         $projeto = new Projeto;        
         $projeto->num_pronac          = $request->num_pronac;
         $projeto->telefone            = $request->telefone;
@@ -55,9 +55,9 @@ class ProjetosController extends Controller
         $projeto->ag                  = $request->ag;
         $projeto->cc                  = $request->cc;
         $projeto->ativo               = '0';
-        $projeto->osc_id              = $request->user()->osc()->id;
+        $projeto->user_id              = $request->user()->id;
         $projeto->save();
-
+        
         if ($projeto) {
             Alert::success('Dados salvos com sucesso!')->persistent('Ok');
             return redirect()->route('projetos.index');

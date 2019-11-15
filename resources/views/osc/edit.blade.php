@@ -32,7 +32,7 @@
                         <div class="card-body bg-transparent">
                             <form action="{{route('osc.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <p class="text-primary mt-2">Dados do gerais</p>
+                                <p class="text-primary mt-2">Dados gerais</p>
                                 <hr>
 
                                 <div class="form-group row">
@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Nº do documento <b class="text-primary" data-toggle="tooltip" data-placement="right" title="CPF ou CNPJ"> * </b></label>
                                     <div class="col-sm-3">
                                         <input type="text" name="num_doc" class="form-control" value="{{$osc->num_doc}} " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
@@ -96,7 +96,7 @@
                                     <div class="col-sm-2">
                                         <input type="text" name="uf" class="form-control" value="{{$osc->uf}}" maxlength="2">                                        
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="card-footer text-center">
                                     <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>

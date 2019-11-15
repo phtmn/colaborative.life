@@ -35,7 +35,7 @@
 						<hr>
                           
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
+                                    <label for="" class="col-sm-3 col-form-label text-right">Nome </label>
                                     <div class="col-sm-7">
                                         <input type="text" name="nome_fantasia" class="form-control" value="{{ auth()->user()->name}}" readonly>                                        
                                     </div>
@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Nº do documento <b class="text-primary" data-toggle="tooltip" data-placement="right" title="CPF ou CNPJ"> * </b></label>
                                     <div class="col-sm-3">
                                         <input type="text" name="num_doc" class="form-control" value=" " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
@@ -95,7 +95,7 @@
                                     <div class="col-sm-2">
                                         <input type="text" name="uf" class="form-control" value="" maxlength="2">                                        
                                     </div>
-                                </div>
+                                </div> -->
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
                         </div>

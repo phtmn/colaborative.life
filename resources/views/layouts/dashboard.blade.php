@@ -18,7 +18,6 @@
     <!-- Argon CSS -->
     <link type="text/css" href="{{ asset('vendor/argon-dash/assets/css/argon.css?v=1.0.0') }}" rel="stylesheet">
 
-
     @yield('css')
 </head>
 

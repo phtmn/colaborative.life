@@ -10,7 +10,7 @@
 			    <div class="col-xs-12 hovereffect">
                 <div>
               
-                    <a href="{{$g->aws_url}}" data-fancybox="gallery" data-caption="{{$g->legenda}}" class="">
+                    <a href="{{$g->aws_url}}" data-fancybox="gallery" data-caption="{{$g->legenda}} " class="">
                             <img src = "{{$g->aws_url}}" class="img-fluid " alt = "" style="width:355px; height:255px;" />
                             
                     </a>

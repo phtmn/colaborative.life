@@ -32,8 +32,9 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Nome </th>
+                                <th scope="col">Nome (retirar)</th>
                                 <th scope="col">Nº do PRONAC</th>
+                                <th scope="col">URL landingpage</th>
                                 <th scope="col" class="text-left">Status</th>
                                 <th scope="col" class="text-left">Publicado</th>
 

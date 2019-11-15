@@ -10,7 +10,7 @@
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-lg-12 col-md-10">
-					<h1 class="display-2 text-white"> <i class="ni ni-circle-08 text-white"></i> Perfil</h1>
+					<h1 class="display-2 text-white"> <i class="ni ni-circle-08 text-white"></i> Perfillll</h1>
                     <!-- <h1 class="display-2 text-white">Olá, {{ auth()->user()->name}}</h1>  -->
 						<!-- {{-- <p class="text-white mt-0 mb-2">Nesta etapa será preenchido todos os dados de sua Organização. Preencha com cuidado, pois elas serão enviadas para nossa rede de investidores (patrocinadores/doadores). </p> --}} -->
                    <!-- <p class="text-white font-weight-300">Campos com * são obrigatórios</p> -->

@@ -183,6 +183,30 @@
 <!-- Argon JS -->
 <script src="{{ asset('vendor/argon-dash/assets/js/argon.js?v=1.0.0') }}"></script>
 <script src="{{ asset('js/dropzone.js') }}"></script>
+<script src="{{asset('js/jquery.mask.min.js')}}"> </script>
+<script>
+    $(document).ready(function() {
+        $('#telefone').mask('(99) 9 9999-9999');
+        $("#cpf").mask('000.000.000-00');
+        $("#cnpj").mask('00.000.000/0000-00');
+        $("#cep").mask('00.000-000');
+        $("#ano").mask('0000');
+        $("#num").mask('0000');
+        $("#op").mask('000');
+    
+
+        
+      
+
+
+
+
+
+    });
+</script>
+
+
+
 <script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
 @include('sweet::alert')
 @yield('js')

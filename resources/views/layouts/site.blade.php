@@ -94,7 +94,7 @@
 					<li class="nav-item dropdown">
 						<a href="{{route('quero_investir')}}" class="nav-link" >
 							
-							<span class="nav-link-inner--text font-weight-900">Colabore</span>
+							<span class="nav-link-inner--text font-weight-900">Projetos</span>
 						</a>
 						
 					</li>

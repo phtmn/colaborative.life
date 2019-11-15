@@ -36,7 +36,7 @@ Route::group( ['middleware'=> ['auth','verified','perfil'],'prefix'=>'painel-inv
 });
 
 //Grupo de Rotas para OSC
-Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'painel-osc','namespace'=>'Osc'],function() {
+Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'dashboard','namespace'=>'Osc'],function() {
 
    Route::view('/','layouts.dashboard')->name('osc.dashboard');
    
@@ -56,10 +56,7 @@ Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'painel-os
 
     Route::get('/meus-investimentos','OscController@getInvestimentos')->name('investimentos');
 
-    // Route::get('/objetivos-ods','MetasController@metas')->name('osc.objetivos');
-    // Route::get('/metas/{ods}', 'MetasController@metas')->name('metas');
-    // Route::post('/metas', 'MetasController@gravar')->name('metas.salvar');
-    // Route::get('/meta/remover/{id}','MetasController@removerMeta')->name('meta.remover');
+    
 
     Route::get('projeto/{id}/galeria','ProjetosController@galeria')->name('projeto.galeria');
     Route::post('galeria.save','ProjetosController@save')->name('galeria.save');

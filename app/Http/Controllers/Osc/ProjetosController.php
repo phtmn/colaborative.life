@@ -22,57 +22,44 @@ class ProjetosController extends Controller
 
     public function index()
     {
-        $osc = auth()->user()->osc();
-        if (!$osc) {
-            Alert::warning('Você precisa Preencher Perfil', 'Vish!')->persistent('OK');
-            return redirect()->route('osc.create');
-        }
-        //dd($osc);
-        return view('osc.projetos.index', [
-            'data'  => $osc->projetos()
-        ]);
+        $osc = auth()->user()->osc();        
+        return view('proponente.projetos.index');
     }
 
     public function create()
     {
-        $osc = auth()->user()->osc();
-        if (!$osc) {
-            Alert::warning('Você precisa cadastrar sua OSC Primeiro', 'Vish!')->persistent('OK');
-            return redirect()->route('osc.create');
-        }
-
-        return view('osc.projetos.create');
+        $osc = auth()->user()->osc();       
+        return view('proponente.projetos.create');
     }
 
     public function edit($id)
     {
         $projeto  = Projeto::find($id);
-        return view('osc.projetos.edit', [
+        return view('proponente.projetos.edit', [
             'projeto'           => $projeto
-
         ]);
     }
 
     public function store(Request $request)
+    //dd($request->all());
     {
-        $projeto = new Projeto;
-        $projeto->nome_projeto        = $request->nome_projeto;
-        $projeto->data_dou            = $request->data_dou;
+        $projeto = new Projeto;        
         $projeto->num_pronac          = $request->num_pronac;
-        $projeto->segmento            = $request->segmento;
-        $projeto->tipo_operacao       = $request->tipo_operacao;
-        // $projeto->resumo              = $request->resumo;
-        // $projeto->valor_meta          = toMoney($request->valor_meta);
-        $projeto->link_vesalic        = $request->link_vesalic;
+        $projeto->telefone            = $request->telefone;
+        $projeto->cep                 = $request->cep;        
+        $projeto->logradouro          = $request->logradouro;
+        $projeto->bairro              = $request->bairro;
+        $projeto->cidade              = $request->cidade;
+        $projeto->uf                  = $request->uf;
         $projeto->banco               = 'Banco do Brasil S.A.';
-        $projeto->banco_ag            = $request->banco_ag;
-        $projeto->banco_cc            = $request->banco_cc;
+        $projeto->ag                  = $request->ag;
+        $projeto->cc                  = $request->cc;
         $projeto->ativo               = '0';
         $projeto->osc_id              = $request->user()->osc()->id;
         $projeto->save();
 
         if ($projeto) {
-            Alert::success('Projeto cadastrado com Sucesso', 'Sucesso')->persistent('Ok');
+            Alert::success('Dados salvos com sucesso!')->persistent('Ok');
             return redirect()->route('projetos.index');
         }
 

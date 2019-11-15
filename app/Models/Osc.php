@@ -8,7 +8,7 @@ class Osc extends Model
     
 
     protected $fillable = [
-        'user_id','uuid','num_doc','telefone','cep','logradouro','bairro','cidade','uf','logo','ativa'
+        'user_id','uuid','num_doc','telefone','ativa'
     ];
 
     public function projetos(){

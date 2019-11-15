@@ -3,19 +3,18 @@
 
 @section('cabecalho')
 
-    <div class="header pb-5 d-flex align-items-center" style="min-height: 350px;  background-size: cover; background-position: center top;">
+    <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
         <!-- Mask -->
         <span class="mask bg-gradient-default opacity-8"></span>
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
                 <div class="col-lg-12 col-md-10">
-					<h1 class="display-2 text-white"> <i class="ni ni-circle-08 text-white"></i> Perfil</h1>
-                    <!-- <h1 class="display-2 text-white">Olá, {{ auth()->user()->name}}</h1>  -->
-						<!-- {{-- <p class="text-white mt-0 mb-2">Nesta etapa será preenchido todos os dados de sua Organização. Preencha com cuidado, pois elas serão enviadas para nossa rede de investidores (patrocinadores/doadores). </p> --}} -->
-                   <!-- <p class="text-white font-weight-300">Campos com * são obrigatórios</p> -->
+                     <h1 class="display-2 text-white"> <i class="ni ni-circle-08 text-white"></i> Perfilll</h1>
                     
-
+                   
+				   {{-- <h1 class="display-2 text-white">Olá, {{ auth()->user()->apelido}}</h1> --}}
+					   {{-- <p class="text-white mt-0 mb-2">Obrigado por ter preenchido todos os dados de sua Organização. Analizaremos seu cadastro, pois elas serão enviadas para nossa rede de investidores (patrocinadores/doadores). --}}
                 </div>
             </div>
         </div>
@@ -23,19 +22,21 @@
 @stop
 
 @section('conteudo')
-    <div class="container mt--7">
-          
-               
+
+
+
+        <div class="container mt--7">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-body bg-transparent">
-                        <form action="{{route('osc.store')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('osc.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <p class="text-primary mt-2">Dados Gerais</p>
-						<hr>
-                          
+                                <p class="text-primary mt-2">Dados gerais</p>
+                                <hr>
+
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-3 col-form-label text-right">Nome </label>
+                                    <label for="" class="col-sm-3 col-form-label text-right">Proponente </label>
                                     <div class="col-sm-7">
                                         <input type="text" name="nome_fantasia" class="form-control" value="{{ auth()->user()->name}}" readonly>                                        
                                     </div>
@@ -51,67 +52,70 @@
                                 <!-- <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Nº do documento <b class="text-primary" data-toggle="tooltip" data-placement="right" title="CPF ou CNPJ"> * </b></label>
                                     <div class="col-sm-3">
-                                        <input type="text" name="num_doc" class="form-control" value=" " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
+                                        <input type="text" name="num_doc" class="form-control" value="{{$osc->num_doc}} " id="cpfcnpj" placeholder="CPF ou CNPJ" >                                        
                                     </div>
                                 </div>
 
                                  <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Telefone </label>
                                     <div class="col-sm-3">
-                                        <input type="text" name="telefone" class="form-control" value=" " id="telefone" placeholder="" >                                        
+                                        <input type="text" name="telefone" class="form-control" value="{{$osc->telefone}} " id="telefone" placeholder="" >                                        
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">CEP</label>
                                     <div class="col-sm-2">
-                                        <input type="text" name="cep" class="form-control" value="" id="cep" >                                        
+                                        <input type="text" name="cep" class="form-control" value="{{$osc->cep}}" id="cep" >                                        
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Endereço</label>
                                     <div class="col-sm-7">
-                                        <input type="text" name="logradouro" class="form-control" value="" >                                        
+                                        <input type="text" name="logradouro" class="form-control" value="{{$osc->logradouro}}" >                                        
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Bairro </label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="bairro" class="form-control" value="" >                                        
+                                        <input type="text" name="bairro" class="form-control" value="{{$osc->bairro}}" >                                        
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">Cidade</label>
                                     <div class="col-sm-4">
-                                        <input type="text" name="cidade" class="form-control" value="" >                                        
+                                        <input type="text" name="cidade" class="form-control" value="{{$osc->cidade}}" >                                        
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="" class="col-sm-3 col-form-label text-right">UF</label>
                                     <div class="col-sm-2">
-                                        <input type="text" name="uf" class="form-control" value="" maxlength="2">                                        
+                                        <input type="text" name="uf" class="form-control" value="{{$osc->uf}}" maxlength="2">                                        
                                     </div>
                                 </div> -->
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
-                        </div>
-                        </form>
-						 </div>
+
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
+                                </div>
+                            </form>
+						</div>
                     </div>
                 </div>
-            </div>
-            
-       
+            </div>         
+        </div>
+		
+
+
 
 @stop
 
 @section('js')
     <script src="{{asset('js/jquery.mask.min.js')}}"> </script>
- 
+    <!-- <script src="{{asset('js/caracter_count.js')}}"> </script> -->
 
     <script>
         $(document).ready(function(){
@@ -120,8 +124,8 @@
             $("#cnpj").mask('00.000.000/0000-00');
             $("#cep").mask('00.000-000');
             $("#ano").mask('0000');
-            $("#num").mask('0000');
-            $("#op").mask('000');
+            $("#anofun").mask('0000');
+            $("#cnae").mask('0000000');
 
             function limpa_formulário_cep() {
                 // Limpa valores do formulário de cep.
@@ -131,6 +135,34 @@
                 $("#estado").val("");
                 $("#ibge").val("");
             }
+
+
+            $("#cpfcnpj").keydown(function(){
+            try {
+                $("#cpfcnpj").unmask();
+            } catch (e) {}
+
+            var tamanho = $("#cpfcnpj").val().length;
+
+            if(tamanho < 11){
+                $("#cpfcnpj").mask("999.999.999-99 ");
+            } else if(tamanho >= 11){
+                $("#cpfcnpj").mask("99.999.999/9999-99");
+            }
+
+            // ajustando foco
+            var elem = this;
+            setTimeout(function(){
+                // mudo a posição do seletor
+                elem.selectionStart = elem.selectionEnd = 10000;
+            }, 0);
+            // reaplico o valor para mudar o foco
+            var currentValue = $(this).val();
+            $(this).val('');
+            $(this).val(currentValue);
+        });
+            
+            //Quando o campo cep perde o foco.
 
             $("#cpfcnpj").keydown(function(){
             try {
@@ -157,7 +189,8 @@
             $(this).val(currentValue);
         });
 
-            //Quando o campo cep perde o foco.
+
+
             $("#cep").blur(function () {
 
                 //Nova variável "cep" somente com dígitos.
@@ -219,7 +252,7 @@
 
 
     </script>
-    
+
 
 @stop
 

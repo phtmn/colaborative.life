@@ -18,47 +18,47 @@ class ConfigTableSeeder extends Seeder
             ['nome'=>'Administrador'],
         ]);
 
-        DB::table('ambitos')->insert([
-            ['nome'=>'Federal'],
-            ['nome'=>'Estadual'],
-            ['nome'=>'Municipal']
-        ]);
+        // DB::table('ambitos')->insert([
+        //     ['nome'=>'Federal'],
+        //     ['nome'=>'Estadual'],
+        //     ['nome'=>'Municipal']
+        // ]);
 
-        DB::table('instancias')->insert([
-            ['nome'=>'Lei Rouanet'],
-            ['nome'=>'Lei de Incentivo ao Esporte'],
-            ['nome'=>'Lei de Incentivo a Criança e ao Adolescente'],
-        ]);
+        // DB::table('instancias')->insert([
+        //     ['nome'=>'Lei Rouanet'],
+        //     ['nome'=>'Lei de Incentivo ao Esporte'],
+        //     ['nome'=>'Lei de Incentivo a Criança e ao Adolescente'],
+        // ]);
 
-        DB::table('imoveis_situacoes')->insert([
-            ['descricao'=>'Alugada','pontuacao'=>2],
-            ['descricao'=>'Outros', 'pontuacao'=>1],
-            ['descricao'=>'Cedida Funcional', 'pontuacao'=> 5],
-            ['descricao'=>'Própria/Quitada', 'pontuacao'=> 6],
-            ['descricao'=>'Financiada', 'pontuacao'=> 3],
-        ]);
+        // DB::table('imoveis_situacoes')->insert([
+        //     ['descricao'=>'Alugada','pontuacao'=>2],
+        //     ['descricao'=>'Outros', 'pontuacao'=>1],
+        //     ['descricao'=>'Cedida Funcional', 'pontuacao'=> 5],
+        //     ['descricao'=>'Própria/Quitada', 'pontuacao'=> 6],
+        //     ['descricao'=>'Financiada', 'pontuacao'=> 3],
+        // ]);
 
-        DB::table('investimentos_tipos')->insert([
-            ['nome'=>'Doação'],
-            ['nome'=>'Patrocínio'],
-            ['nome'=>'Investimento']
-        ]);
+        // DB::table('investimentos_tipos')->insert([
+        //     ['nome'=>'Doação'],
+        //     ['nome'=>'Patrocínio'],
+        //     ['nome'=>'Investimento']
+        // ]);
 
-        DB::table('segmentos')->insert([
-            ['nome'=>'Educação(Crianças/Jovens)'],
-            ['nome'=>'Meio Ambiente'],
-            ['nome'=>'Idosos'],
-            ['nome'=>'Saúde'],
-            ['nome'=>'Esportes'],
-            ['nome'=>'Cultura']
-        ]);
+        // DB::table('segmentos')->insert([
+        //     ['nome'=>'Educação(Crianças/Jovens)'],
+        //     ['nome'=>'Meio Ambiente'],
+        //     ['nome'=>'Idosos'],
+        //     ['nome'=>'Saúde'],
+        //     ['nome'=>'Esportes'],
+        //     ['nome'=>'Cultura']
+        // ]);
 
-        DB::table('segmentos_atividades')->insert([
-            ['descricao'=>'Agricultura','pontuacao'=>4],
-            ['descricao'=>'Comércio','pontuacao'=>3],
-            ['descricao'=>'Indústria','pontuacao'=>5],
-            ['descricao'=>'Serviço','pontuacao'=>2],
-            ['descricao'=>'Outros','pontuacao'=>1],
-        ]);
+        // DB::table('segmentos_atividades')->insert([
+        //     ['descricao'=>'Agricultura','pontuacao'=>4],
+        //     ['descricao'=>'Comércio','pontuacao'=>3],
+        //     ['descricao'=>'Indústria','pontuacao'=>5],
+        //     ['descricao'=>'Serviço','pontuacao'=>2],
+        //     ['descricao'=>'Outros','pontuacao'=>1],
+        // ]);
     }
 }

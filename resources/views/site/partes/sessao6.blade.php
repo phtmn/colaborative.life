@@ -11,7 +11,7 @@
 					
 
 
-						<a href="{{route('quero_investir')}}" class="btn btn-lg btn-block btn-white" style="text-transform: capitalize;">#simEuQuero</a>
+						<a href="{{route('projetos_lista')}}" class="btn btn-lg btn-block btn-white" style="text-transform: capitalize;">#simEuQuero</a>
 					</div>
 				</div>
 			</div>

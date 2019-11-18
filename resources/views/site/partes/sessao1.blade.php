@@ -15,7 +15,7 @@
                                 <p class="description mt-3">Se você é uma organização sem fins lucrativos e produz o bem comum, com alto valor socioambiental agregado.</p>
                                 <div>
 
-                                    <h4><a href="{{route('quero_investir')}}"><span class="badge badge-pill badge-primary"><b style="text-transform: capitalize;">#SimEuQuero</b></span></a></h4>
+                                    <h4><a href="{{route('projetos_lista')}}"><span class="badge badge-pill badge-primary"><b style="text-transform: capitalize;">#SimEuQuero</b></span></a></h4>
                                    
                                 </div>
                                 
@@ -32,7 +32,7 @@
                                 <p class="description mt-3">Se você quer apoiar, investir, trocar informações, divulgar conteúdos por simpatia, afinidade ou estilo de vida.</p>
                                 <div>
 
-                                     <h4 ><a href="{{route('quero_investir')}}" ><span class="badge badge-pill badge-success" ><b style="text-transform: capitalize;">#SimEuQuero</b></span></a></h4>
+                                     <h4 ><a href="{{route('projetos_lista')}}" ><span class="badge badge-pill badge-success" ><b style="text-transform: capitalize;">#SimEuQuero</b></span></a></h4>
                                 </div>
                                 
                             </div>
@@ -48,7 +48,7 @@
                                 <p class="description mt-3">Se sua empresa está voltada para resultados sustentáveis de impacto, engajamento e transformação social.</p>
                                 <div>
 
-                                    <h4><a href="{{route('quero_investir')}}"><span class="badge badge-pill badge-warning"><b style="text-transform: capitalize;">#SimEuQuero</b></span></a></h4>
+                                    <h4><a href="{{route('projetos_lista')}}"><span class="badge badge-pill badge-warning"><b style="text-transform: capitalize;">#SimEuQuero</b></span></a></h4>
                                 </div>
                                 
                             </div>

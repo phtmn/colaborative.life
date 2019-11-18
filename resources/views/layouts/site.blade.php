@@ -92,7 +92,7 @@
 					</li>
 					
 					<li class="nav-item dropdown">
-						<a href="{{route('quero_investir')}}" class="nav-link" >
+						<a href="{{route('projetos_lista')}}" class="nav-link" >
 							
 							<span class="nav-link-inner--text font-weight-900">Projetos</span>
 						</a>
@@ -109,7 +109,7 @@
 				</ul>
 
 				<ul class="navbar-nav align-items-lg-center ml-lg-auto">
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link nav-link-icon" href="https://www.facebook.com/coopviva/" target="_blank" data-toggle="tooltip" title="Facebook">
 							<i class="fa fa-facebook"></i>
 							<span class="nav-link-inner--text d-lg-none">Facebook</span>
@@ -132,7 +132,7 @@
 							<i class="fa fa-envelope"></i>
 							<span class="nav-link-inner--text d-lg-none">E-mail</span>
 						</a>
-					</li>
+					</li> -->
 					{{--<!--<li class="nav-item">--}}
 						{{--<a class="nav-link nav-link-icon"  data-toggle="tooltip" title="João Pessoa - Paraíba - Brasil">--}}
 							{{--<i class="ni ni-pin-3"></i>--}}

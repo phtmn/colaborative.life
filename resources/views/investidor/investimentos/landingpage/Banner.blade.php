@@ -17,13 +17,13 @@
             <div class="col px-0">
                 <div class="row justify-content-center">
                     <div class="osc">
-                        <h1 class="display-2 text-white font-weight-bold">{{$osc->num_doc}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->num_pronac}} </h1>
                     </div>
 
                 </div>
 
                 <div class="row justify-content-center">
-                    
+                {{$projeto->telefone}} - {{$projeto->banco}}
                 </div>
             </div>
         </div>

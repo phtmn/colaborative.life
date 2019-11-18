@@ -30,6 +30,13 @@ class InvestimentosController extends Controller
         ]);
     }
 
+    public function lista_projetos(){
+        $data = Projeto::where('publicado',1)->get();
+        return view('investidor.investimentos.lista_projetos',[
+            'data' => $data
+        ]);
+    }
+
     public function detalhe_oscs($id){
 
         return view('investidor.investimentos.landing_osc',[
@@ -43,17 +50,26 @@ class InvestimentosController extends Controller
     }
 
     public function detalhe_projeto($id){
-
         $projeto = Projeto::find($id);
 
-        return response()->json($projeto);
-
-//        return view('investidor.investimentos.landing_projeto',[
-//            'projeto'   => Projeto::find($id),
-//            'galerias'  => DB::table('galerias')->where('osc_id',$id)->get(),
-//            'dias'      => Carbon::parse($projeto->inicio_captacao)->diffInDays($projeto->fim_captacao)
-//        ]);
+        return view('investidor.investimentos.landing_projeto',[
+            'projeto'       => Projeto::find($id)
+            // 'projetos'  => DB::table('projetos')->where('osc_id',$id)->get()
+        ]);
     }
+
+    // public function detalhe_projeto($id){
+
+    //     $projeto = Projeto::find($id);
+
+    //     return response()->json($projeto);
+
+    //    return view('investidor.investimentos.landing_projeto',[
+    //        'projeto'   => Projeto::find($id),
+    //        'galerias'  => DB::table('galerias')->where('osc_id',$id)->get(),
+    //        'dias'      => Carbon::parse($projeto->inicio_captacao)->diffInDays($projeto->fim_captacao)
+    //    ]);
+    // }
 
     public function callback(Request $request){
 

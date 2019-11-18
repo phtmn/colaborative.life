@@ -54,8 +54,9 @@ class ProjetosController extends Controller
         $projeto->banco               = 'Banco do Brasil S.A.';
         $projeto->ag                  = $request->ag;
         $projeto->cc                  = $request->cc;
+        $projeto->imagem_projeto      = $request->imagem_projeto;
         $projeto->ativo               = '0';
-        $projeto->user_id              = $request->user()->id;
+        $projeto->user_id             = $request->user()->id;
         $projeto->save();
         
         if ($projeto) {

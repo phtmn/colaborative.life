@@ -25,7 +25,8 @@ class CreateProjetosTable extends Migration {
 			$table->string('uf', 2)->nullable();			
 			$table->string('banco')->nullable();
 			$table->string('ag')->nullable();
-            $table->string('cc')->nullable();
+			$table->string('cc')->nullable();
+			$table->string('imagem_projeto', 100)->nullable();
 			$table->boolean('ativo')->default(0);
 			$table->boolean('publicado')->default(0);
 			$table->timestamps();

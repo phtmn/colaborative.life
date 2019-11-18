@@ -11,11 +11,12 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 Route::get('/feedback', 'FeedbackController@create')->name('site.feedback');
 Route::post('/feedback', 'FeedbackController@store')->name('feedback.store');
 
-Route::get('/sim_eu_quero','Investidor\InvestimentosController@lista_oscs')->name('quero_investir');
-Route::get('/sim_eu_quero/{id}','Investidor\InvestimentosController@detalhe_oscs')->name('detalhe.osc');
+Route::get('/proponentes','Investidor\InvestimentosController@lista_oscs')->name('proponentes_lista');
+Route::get('/projetos','Investidor\InvestimentosController@lista_projetos')->name('projetos_lista');
+Route::get('/proponentes/{id}','Investidor\InvestimentosController@detalhe_oscs')->name('detalhe.osc');
 
-Route::get('/sim_eu_quero/projeto/{id}','Investidor\InvestimentosController@detalhe_projeto')->name('detalhe.projeto');
-Route::get('/sendFile/projeto/{id}','Site\PerfilController@sendFile')->name('projeto.sendFile');
+// Route::get('/proponentes/projetos/{id}','Investidor\InvestimentosController@detalhe_projeto')->name('detalhe.projeto');
+Route::get('/proponentes/projetos/{id}','Investidor\InvestimentosController@detalhe_projeto')->name('detalhe.projeto');
 
 //Grupo de Rotas para Investidor
 Route::group( ['middleware'=> ['auth','verified','perfil'],'prefix'=>'painel-investidor','namespace'=>'Investidor'],function(){

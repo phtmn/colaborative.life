@@ -27,6 +27,9 @@
                     <p class="text-success mt-2">Dados Bancários </p>
                     <hr>
                     @include('proponente.projetos.forms.section3_create')
+                    <p class="text-success mt-2">Upload </p>
+                    <hr>
+                    @include('proponente.projetos.forms.section4_create')
                     <!-- <p class="text-success mt-2">Equipe </p>
                     <hr>
                     @include('proponente.projetos.forms.section4_create')

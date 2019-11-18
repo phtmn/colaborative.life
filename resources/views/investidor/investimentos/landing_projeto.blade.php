@@ -3,13 +3,8 @@
 
 @section('conteudo_principal')
 
-    @include('investidor.investimentos.landingpageProjeto.Banner')
+    @include('investidor.investimentos.landingpage.Banner')
 
-    @include('investidor.investimentos.landingpageProjeto.sessao1')
-
-    @include('investidor.investimentos.landingpageProjeto.sessao2')
-
-    @include('investidor.investimentos.landingpageProjeto.sessao3')
 
 {{--    @include('investidor.investimentos.landingpageProjeto.sessao4')--}}
 

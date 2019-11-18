@@ -76,7 +76,7 @@ class UsersTableSeeder extends Seeder
             [
                 // 'apelido'   => 'Administrador',
                 'name'          => 'Administrador',
-                'tipo_conta'    => 4,
+                'tipo_conta'    => 1,
                 'email'         => 'administrador@email.com',
                 'password'      => bcrypt('secret'),
                 // 'tipo_pessoa'   => 'M',

@@ -15,8 +15,8 @@
         </a>
     </li>   
     <li class="nav-item">
-        <a class="nav-link">
-            <i class="ni ni-single-copy-04 text-yellow" data-toggle="tooltip" data-placement="right" title="Em breve"></i> Recibos
+        <a class="nav-link" href="{{ route('recibos.index') }}">
+            <i class="ni ni-single-copy-04 text-warning" ></i> Recibos
         </a>
     </li>
 </ul>
@@ -25,7 +25,7 @@
     <li class="nav-item">
         <a href="{{route('logout')}}" class="nav-link" onclick="event.preventDefault(); 
         document.getElementById('logout-form').submit();">
-            <i class="ni ni-user-run text-warning"></i> Sair
+            <i class="ni ni-user-run text-danger"></i> Sair
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf

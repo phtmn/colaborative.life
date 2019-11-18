@@ -45,6 +45,7 @@ Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'dashboard
 
     Route::resource('osc','OscController');
     Route::resource('projetos','ProjetosController');
+    Route::resource('recibos','RecibosController');
 
     Route::post('/upload','ProjetosController@uploadFile')->name('projeto.uplaodFile');
 

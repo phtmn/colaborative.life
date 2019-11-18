@@ -37,7 +37,7 @@
                                     
                                 
                                     <a href="{{ route('perfil.show') }}" class="btn btn-sm btn-primary">Meu Perfil</a>
-                                    <a href="{{ route('quero_investir')  }}" data-toggle="tooltip" data-title="Doação e/ou Patrocínio"class="btn btn-sm btn-success ">Quero Investir</a>
+                                    <a href="" data-toggle="tooltip" data-title="Doação e/ou Patrocínio"class="btn btn-sm btn-success ">Quero Investir</a>
 									<a href="#" class="btn btn-sm btn-info " data-toggle="tooltip" data-title="Em breve">O que me inspira</a>
 									<a href="#" class="btn btn-sm btn-danger" data-toggle="tooltip" data-title="Em breve">
                                         <i class="fa fa-heart"></i>

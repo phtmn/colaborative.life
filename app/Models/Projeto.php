@@ -11,7 +11,7 @@ class Projeto extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['user_id','num_pronac','telefone','cep','logradouro','bairro','cidade','uf', 'banco','ag','cc','imagem_projeto','ativo', 'publicado'];    
+    protected $fillable = ['user_id','num_pronac','telefone','cep','logradouro','bairro','cidade','uf', 'banco','ag','cc','video_youtube','imagem_projeto','apresentacao','cronograma','orcamento','contrapartidas','recompensas','ativo', 'publicado'];    
 
     protected $dates = ['data_dou'];
 

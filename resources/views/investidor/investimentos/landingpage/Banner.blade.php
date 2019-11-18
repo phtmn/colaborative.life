@@ -23,7 +23,8 @@
                 </div>
 
                 <div class="row justify-content-center">
-                {{$projeto->telefone}} - {{$projeto->banco}}
+                {{$projeto->telefone}} - {{$projeto->banco}} 
+                {{$projeto->imagem_projeto}}
                 </div>
             </div>
         </div>

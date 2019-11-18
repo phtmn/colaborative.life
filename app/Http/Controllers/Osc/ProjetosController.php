@@ -43,6 +43,30 @@ class ProjetosController extends Controller
     public function store(Request $request)    
     {
         
+        if ($request->hasFile('imagem_projeto')) {
+            $projeto['imagem_projeto']  = $request->imagem_projeto->move('projetos');
+          }
+
+        if ($request->hasFile('apresentacao')) {
+            $projeto['apresentacao']  = $request->apresentacao->move('projetos');
+          }   
+
+        if ($request->hasFile('cronograma')) {
+            $projeto['cronograma']  = $request->cronograma->move('projetos');
+          } 
+        
+        if ($request->hasFile('orcamento')) {
+            $projeto['orcamento']  = $request->orcamento->move('projetos');
+          } 
+        
+        if ($request->hasFile('contrapartidas')) {
+            $projeto['contrapartidas']  = $request->contrapartidas->move('projetos');
+          }
+        
+        if ($request->hasFile('recompensas')) {
+            $projeto['recompensas']  = $request->recompensas->move('projetos');
+          }   
+          
         $projeto = new Projeto;        
         $projeto->num_pronac          = $request->num_pronac;
         $projeto->telefone            = $request->telefone;
@@ -54,11 +78,18 @@ class ProjetosController extends Controller
         $projeto->banco               = 'Banco do Brasil S.A.';
         $projeto->ag                  = $request->ag;
         $projeto->cc                  = $request->cc;
+        $projeto->video_youtube       = $request->video_youtube;
         $projeto->imagem_projeto      = $request->imagem_projeto;
+        $projeto->apresentacao        = $request->apresentacao;
+        $projeto->cronograma          = $request->cronograma;
+        $projeto->orcamento           = $request->orcamento;
+        $projeto->contrapartidas      = $request->contrapartidas;
+        $projeto->recompensas         = $request->recompensas;
         $projeto->ativo               = '0';
         $projeto->user_id             = $request->user()->id;
         $projeto->save();
-        
+                 
+
         if ($projeto) {
             Alert::success('Dados salvos com sucesso!')->persistent('Ok');
             return redirect()->route('projetos.index');

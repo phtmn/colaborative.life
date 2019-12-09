@@ -24,7 +24,7 @@
 	<!---:::fancybox.mim.css:::-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110332879-2"></script>
-	
+
 	@yield('css')
 
 </head>
@@ -45,8 +45,8 @@
 					<div class="row">
 						<div class="col-6 collapse-brand">
 							<a href="{{url('/')}}">
-						
-							
+
+
 							<img src="{{ asset('vendor/site/images/') }}" alt="..::XXX ::.." style="width: 188px; height: auto;">
 							</a>
 						</div>
@@ -61,7 +61,7 @@
 				<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 					<li class="nav-item dropdown">
 						<a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-							
+
 							<span class="nav-link-inner--text font-weight-900">Conheça</span>
 						</a>
 						<div class="dropdown-menu dropdown-menu-xl">
@@ -90,21 +90,21 @@
 							</div>
 						</div>
 					</li>
-					
+
 					<li class="nav-item dropdown">
 						<a href="{{route('projetos_lista')}}" class="nav-link" >
-							
+
 							<span class="nav-link-inner--text font-weight-900">Projetos</span>
 						</a>
-						
+
 					</li>
-					
+
 					{{--<li class="nav-item dropdown">--}}
 					{{--	<a href="{{url('/termo-de-uso')}}" class="nav-link" >--}}
-							
+
 						{{--	<span class="nav-link-inner--text font-weight-900">Termo de Uso</span>--}}
 						{{--</a>--}}
-						
+
 					{{--</li> --}}
 				</ul>
 
@@ -149,21 +149,23 @@
 								<span class="nav-link-inner--text">Cadastre-se</span>
 							</a>
 						@else
-							@if(auth()->user()->tipo_conta <> 'osc')
-								<a href="{{route('perfil.index')}}" class="btn btn-neutral btn-icon">
+                            @php
+                                $route = null;
+
+                                switch(auth()->user()->tipo_conta) {
+                                    case 'osc': $route = 'osc.index'; break;
+                                    case 'admin': $route = 'admin.index'; break;
+                                    default: $route = 'perfil.index';
+                                }
+                            @endphp
+
+                            <a href="{{route($route)}}" class="btn btn-neutral btn-icon">
 									<span class="btn-inner--icon">
 									  <i class="ni ni-tv-2 mr-2"></i>
 									</span>
-									<span class="nav-link-inner--text">Dashboard </span>
-								</a>
-							@else
-								<a href="{{route('osc.index')}}" class="btn btn-neutral btn-icon">
-								<span class="btn-inner--icon">
-								  <i class="ni ni-tv-2 mr-2"></i>
-								</span>
-									<span class="nav-link-inner--text">Dashboard </span>
-								</a>
-							@endif
+                                <span class="nav-link-inner--text">Dashboard </span>
+                            </a>
+
 							<a href="{{route('logout')}}" target="_blank" class="btn btn-neutral btn-icon"
 							   onclick="event.preventDefault();
 													 document.getElementById('logout-form').submit();" data-toggle="tooltip" title="Sair do Sistema">
@@ -206,22 +208,22 @@
 											<form method="POST" action="{{ route('feedback.store') }}">
 											@csrf
 												<div class="form-group ">
-												  
+
 												  <input type="text" class="form-control" name="nome" id="recipient-name" placeholder="Nome">
-												  
+
 												</div>
 												<div class="form-group ">
-													
+
 													<input type="text" class="form-control" name="email" id="recipient-name" placeholder="E-mail">
-													
+
 												  </div>
 												  <div class="form-group ">
-													
+
 													<input type="tel" class="form-control " name="telefone" id="recipient-name" placeholder="Telefone">
-													
+
 												  </div>
 												  <div class="form-group ">
-													
+
 														<div class="input-group mb-3 ">
 																<div class="input-group-prepend">
 																  <label class="input-group-text" for="inputGroupSelect01">Selecione</label>
@@ -234,48 +236,48 @@
 																  <option value="critica">Críticas</option>
 																  <option value="duvida">Dúvidas</option>
 																</select>
-																
+
 															  </div>
 
-														
+
 													  </div>
 												<div class="form-group">
-												
+
 												  <textarea class="form-control" name="mensagem" id="message-text" placeholder="Deixe sua Menssagem" rows="8"></textarea>
-												  
+
 												</div>
 												<div class="modal-footer">
 												  <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
 												  <button type="submit" class="btn btn-success">Enviar</button>
 												</div>
-											  </form> 
-											 
+											  </form>
+
 										</div>
-										
+
 									  </div>
 									</div>
 								  </div>
-					</div> 
+					</div>
 						<div class="col-lg-6 text-lg-center btn-wrapper">
-						
+
 						<!--	<img src="{{asset('vendor/site/images/amazons3.png')}}"  style="width: 128px; height: auto;">
-						
-						
+
+
 							<img src="{{asset('vendor/site/images/mercadopago.png')}}"  style="width: 128px; height: auto;">
-						
-						
+
+
 							<img src="{{asset('vendor/site/images/hostgator.png')}}"  style="width: 128px; height: auto;">
 					-->
 					</div>
-					
-						
-							
-				
-				
+
+
+
+
+
 				</div>
 		<hr>
 		<div class="row align-items-center justify-content-md-between">
-		
+
 			<div class="col-md-5 ">
 				<div class="copyright text-center text-primary text-xl-left text-muted">
 					&copy; 2019
@@ -293,13 +295,13 @@
 					<li class="nav-item">
 						<a href="http://www.agenda2030.com.br/" class="nav-link" target="_blank">Agenda 2030</a>
 					</li>
-					
-				   
+
+
 					<li class="nav-item">
 						<a href="{{url('/termo-de-uso')}}" class="nav-link" >Termo de Uso</a>
 					</li>
 				</ul>
-				
+
 			</div>
 		</div>
 	</div>

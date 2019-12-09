@@ -1,23 +1,22 @@
 <?php
 
 namespace App\Http\Middleware;
-use Auth;
 use Closure;
 
-class CheckPerfil
+class CheckPermission
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     * @param $roles
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, ...$roles)
     {
-        return (auth()->user()->tipo_conta <> 'osc')
+        return (in_array(auth()->user()->tipo_conta, $roles))
             ? $next($request)
-            : redirect()->route('osc.index');
-
+            : redirect()->route('login');
     }
 }

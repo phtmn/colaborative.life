@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title"><i class="fa fa-dashboard"></i> <span>Coopviva Admin/span></a>
+                    <a href="{{ route('site.index') }}" class="site_title"><i class="fa fa-dashboard"></i> <span>Coopviva Admin/span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Bem Vindo,</span>
-                        <h2>{{Auth::user()->name}}</h2>
+                        <h2>{{auth()->user()->name}}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -72,7 +72,7 @@
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
-                <!-- /menu footer buttons -->
+                /menu footer buttons -->
             </div>
         </div>
 

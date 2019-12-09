@@ -17,10 +17,16 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/');
+        if (!Auth::guard($guard)->check()) {
+            return $next($request);
         }
 
-        return $next($request);
+        switch(auth()->user()->tipo_conta) {
+            case 'osc': $route = 'osc.index'; break;
+            case 'admin': $route = 'admin.index'; break;
+            default: $route = 'perfil.index';
+        }
+
+        return redirect()->route($route);
     }
 }

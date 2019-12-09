@@ -19,7 +19,7 @@ Route::get('/proponentes/{id}','Investidor\InvestimentosController@detalhe_oscs'
 Route::get('/proponentes/projetos/{id}','Investidor\InvestimentosController@detalhe_projeto')->name('detalhe.projeto');
 
 //Grupo de Rotas para Investidor
-Route::group( ['middleware'=> ['auth','verified','perfil'],'prefix'=>'painel-investidor','namespace'=>'Investidor'],function(){
+Route::group( ['middleware'=> ['auth','verified','permission:investidor-pj,investidor-pf'],'prefix'=>'painel-investidor','namespace'=>'Investidor'],function(){
 
     Route::get('/perfil','PerfilController@index')->name('perfil.index');
     Route::get('/meus-dados','PerfilController@perfil')->name('perfil.show');
@@ -37,10 +37,10 @@ Route::group( ['middleware'=> ['auth','verified','perfil'],'prefix'=>'painel-inv
 });
 
 //Grupo de Rotas para OSC
-Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'dashboard','namespace'=>'Osc'],function() {
+Route::group( ['middleware'=> ['auth','verified','permission:osc'],'prefix'=>'dashboard','namespace'=>'Osc'],function() {
 
    Route::view('/','layouts.dashboard')->name('osc.dashboard');
-   
+
     Route::post('/uploadFoto','OscController@uploadFoto')->name('osc.uploadFoto');
 
     Route::resource('osc','OscController');
@@ -58,14 +58,14 @@ Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'dashboard
 
     Route::get('/meus-investimentos','OscController@getInvestimentos')->name('investimentos');
 
-    
+
 
     Route::get('projeto/{id}/galeria','ProjetosController@galeria')->name('projeto.galeria');
     Route::post('galeria.save','ProjetosController@save')->name('galeria.save');
     Route::get('projeto/i/{id}','ProjetosController@mudarInativo')->name('projeto.inativo');
-    
+
     Route::get('projeto/ativar/{id}', 'ProjetosController@publicate')->name('projeto.publicate');
-    
+
 
     Route::get('/detalhe','OscController@landingPage')->name('osc.landingPage');
     Route::get('/detalhe/projeto/{id}','OscController@landingPageProjeto')->name('projeto.landingPage');
@@ -74,8 +74,8 @@ Route::group( ['middleware'=> ['auth','verified','can:osc'],'prefix'=>'dashboard
 
 //# ROTAS PARA A AREA ADMINISTRATIVA
 
-Route::group(['middleware'=> ['auth','admin'],'prefix'=>'sistema'],function(){
-    Route::get('/dashboard','Admin\DashboardController@index');
+Route::group(['middleware'=> ['auth', 'permission:admin'],'prefix'=>'sistema'],function(){
+    Route::get('/dashboard','Admin\DashboardController@index')->name('admin.index');
 
     Route::resource('admin-osc','Admin\OscController');
     Route::get('admin-osc/active/{id}','Admin\OscController@active')->name('oscs.active');
@@ -95,5 +95,5 @@ Route::group(['middleware'=> ['auth','admin'],'prefix'=>'sistema'],function(){
 
 
 
-        
+
 

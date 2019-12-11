@@ -11,20 +11,22 @@ class Projeto extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['user_id','num_pronac','telefone','cep','logradouro','bairro','cidade','uf', 'banco','ag','cc','video_youtube','imagem_projeto','apresentacao','cronograma','orcamento','contrapartidas','recompensas','ativo', 'publicado'];    
+    protected $fillable = [
+        'user_id', 'num_pronac', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade',
+        'uf', 'banco', 'ag', 'cc', 'video_youtube', 'imagem_projeto', 'apresentacao',
+        'cronograma', 'orcamento', 'contrapartidas', 'recompensas', 'ativo', 'publicado',
+        'tipo_pessoa', 'cpf', 'cnpj', 'responsavel', 'municipio', 'status'
+    ];
 
     protected $dates = ['data_dou'];
 
-    protected $casts = [
-        'publicado' => 'boolean'
-      ];
+    protected $casts = ['publicado' => 'boolean'];
 
-    public function osc(){
+    public function osc() {
         return $this->belongsTo(Osc::class);
     }
 
-    public function user(){
+    public function user() {
         return $this->belongsTo(User::class);
-    }   
-
+    }
 }

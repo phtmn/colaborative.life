@@ -38,42 +38,42 @@
                                      {{$d->num_pronac}}
                                 </td>
                                 <td>
-                                    <span class="badge badge-dot mr-4">                                        
-                                        <span class="text-primary"> Acessar </span> 
+                                    <span class="badge badge-dot mr-4">
+                                        <span class="text-primary"> Acessar </span>
                                         <!-- acessar só se tiver aprovado -->
                                     </span>
-                                </td>
-                                <td>
-                                    @if($d->ativo == '0')
-                                    <span class="badge badge-dot mr-4">
+                                    </td>
+                                    <td>
+                                        @if($d->status == 'Captação em análise' OR $d->status == 'Não Aprovado para Captação')
+                                            <span class="badge badge-dot mr-4">
                                         <i class="bg-warning"></i>
-                                        <span class="status">Em análise</span>
+                                        <span class="status">{{ $d->status }}</span>
                                     </span>
-                                     @else
-                                    <span class="badge badge-dot mr-4">
+                                             @else
+                                            <span class="badge badge-dot mr-4">
                                         <i class="bg-success"></i>
-                                        <span class="status">Aprovado</span>
+                                        <span class="status">{{ $d->status }}</span>
                                     </span>       
-                                     @endif
-                                </td>
-                                <td>
-                                    @if($d->ativo == '1')
-                                         <label class="custom-toggle custom-toggle-success">
-                                        <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('projeto.publicate', [ 'id' => $d->id ]) }}" {{ ($d->publicado) ? '' : 'checked' }}>
-                                        <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
-                                    </label>
-                                    @else
-                                                                 
-                                    @endif
-                                </td>
-                                <td>
-                                <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <a class="text-success" href="{{route('projetos.edit',$d->id)}}"> Editar</i></a>
+                                             @endif
+                                    </td>
+                                    <td>
+                                        @if($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada')
+                                                 <label class="custom-toggle custom-toggle-success">
+                                                <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('projeto.publicate', [ 'id' => $d->id ]) }}" {{ ($d->publicado) ? 'checked' : '' }}>
+                                                <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
+                                            </label>
+                                        @else
+                                                                         
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <a class="text-success" href="{{route('projetos.edit',$d->id)}}"> Editar</a>
+                                            </div>
                                         </div>
-                                    </div>                                
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
                             @empty
                             <p class="text-warning font-weight-bold 900" style="text-indent: 25px;">Você ainda não cadastrou nenhum projeto! <span></span></p>
                             @endforelse

@@ -32,10 +32,9 @@
                         <thead>
                         <tr>
                             <th>#ID</th>
-                            <th>Nome do Projeto</th>
-                            <th>Valor Projeto</th>
-                            <th>Valor Meta</th>
-                            <th>Instituicao</th>
+                            <th>PRONAC</th>
+                            <th>Status</th>
+                            <th>Telefone</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
@@ -43,10 +42,9 @@
                         @forelse($data as $d)
                             <tr>
                                 <td>{{$d->id}}</td>
-                                <td>{{$d->nome_projeto}}</td>
-                                <td>{{$d->valor_projeto}}</td>
-                                <td>{{$d->valor_meta}}</td>
-                                <td>{{$d->osc->nome_fantasia}}</td>
+                                <td>{{$d->num_pronac}}</td>
+                                <td>{{$d->status}}</td>
+                                <td>{{$d->telefone}}</td>
                                 <td>{{$d->uf}}</td>
                                 <td>
                                     <a href="{{route('admin-projetos.show',$d->id)}}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Detalhes</a>

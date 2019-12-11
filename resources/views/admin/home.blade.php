@@ -177,5 +177,6 @@
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('admin/build/js/custom.min.js') }}"></script>
 
+@yield('js')
 </body>
 </html>

@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers\Osc;
 
-use App\Mail\SendFileUser;
 use Storage;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Projeto;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateProjetoRequest;
 use Alert;
-use Throwable;
-
 
 class ProjetosController extends Controller
 {
@@ -40,37 +35,37 @@ class ProjetosController extends Controller
         ]);
     }
 
-    public function store(Request $request)    
+    public function store(Request $request)
     {
-        
+
         if ($request->hasFile('imagem_projeto')) {
             $projeto['imagem_projeto']  = $request->imagem_projeto->move('projetos');
           }
 
         if ($request->hasFile('apresentacao')) {
             $projeto['apresentacao']  = $request->apresentacao->move('projetos');
-          }   
+          }
 
         if ($request->hasFile('cronograma')) {
             $projeto['cronograma']  = $request->cronograma->move('projetos');
-          } 
-        
+          }
+
         if ($request->hasFile('orcamento')) {
             $projeto['orcamento']  = $request->orcamento->move('projetos');
-          } 
-        
+          }
+
         if ($request->hasFile('contrapartidas')) {
             $projeto['contrapartidas']  = $request->contrapartidas->move('projetos');
           }
-        
+
         if ($request->hasFile('recompensas')) {
             $projeto['recompensas']  = $request->recompensas->move('projetos');
-          }   
-          
-        $projeto = new Projeto;        
+          }
+
+        $projeto = new Projeto;
         $projeto->num_pronac          = $request->num_pronac;
         $projeto->telefone            = $request->telefone;
-        $projeto->cep                 = $request->cep;        
+        $projeto->cep                 = $request->cep;
         $projeto->logradouro          = $request->logradouro;
         $projeto->bairro              = $request->bairro;
         $projeto->cidade              = $request->cidade;
@@ -86,9 +81,9 @@ class ProjetosController extends Controller
         $projeto->contrapartidas      = $request->contrapartidas;
         $projeto->recompensas         = $request->recompensas;
         $projeto->ativo               = '0';
+        $projeto->status              = 'Captação em análise';
         $projeto->user_id             = $request->user()->id;
         $projeto->save();
-                 
 
         if ($projeto) {
             Alert::success('Dados salvos com sucesso!')->persistent('Ok');
@@ -99,48 +94,36 @@ class ProjetosController extends Controller
         return redirect()->route('projetos.create')->withInput($request->all());
     }
 
-    
     public function publicate($id)
     {
         $projeto = Projeto::find($id);
 
-        if ($projeto->publicado == 0) {
-            $projeto->publicado = 1;
-        } else {
-            $projeto->publicado = 0;
-        }
+        $projeto->publicado =  !$projeto->publicado;
 
         if ($projeto->save()) {
-            return response()->json([
-                'success' => true
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false
-            ], 400);
+            return response()->json(['success' => true], 200);
         }
+
+        return response()->json(['success' => false], 400);
     }
 
     public function uploadFile(Request $request)
     {
-
         $projeto = Projeto::find($request->projeto_id);
-
         $image = $request->file('file');
         $imageName = 'PROJETOFILE-' . $projeto->id . time();
-        try {
 
+        try {
             if ($projeto->arquivo != null) {
                 Storage::disk('s3')->delete($projeto->arquivo);
             }
 
             Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
             $imageNameAWS  = Storage::disk('s3')->url($imageName);
-
             $projeto->update(['arquivo' => $imageNameAWS]);
+
             return redirect()->back();
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return redirect()->back();
         }
     }

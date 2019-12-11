@@ -9,24 +9,39 @@ use App\Http\Controllers\Controller;
 class ProjetosController extends Controller
 {
     public function index(){
-
-        $data = Projeto::paginate(10);
         return view('admin.projetos.index',[
-            'data' => $data
+            'data' => Projeto::paginate(10)
         ]);
     }
 
     public function show($id){
-        $projeto = Projeto::find($id);
-
-        return view('admin.projetos.show',compact('projeto'));
+        return view('admin.projetos.show', [
+            'projeto' => Projeto::find($id)
+        ]);
     }
 
     public function active($id){
-
-        $projeto = Projeto::findOrFail($id)->update(['ativo'=>1]);
-        if($projeto){
+        if(Projeto::findOrFail($id)->update(['ativo'=>1])){
             return redirect()->back()->with('msg','Projeto Ativado!');
         }
+    }
+
+    public function update(Request $request, $id) {
+        $projeto = Projeto::findOrFail($id);
+        $data = $request->all();
+
+        if (!isset($data['status'])) {
+            $data['status'] = 'Aprovado para Captação';
+        }
+
+        if (!$projeto) {
+            return redirect()->route('admin-projetos.index')->with('error','Projeto não encontrado!');
+        }
+
+        if (!$projeto->update($data)) {
+            return redirect()->route('admin-projetos.index')->with('error','Erro inesperado!');
+        }
+
+        return redirect()->route('admin-projetos.index')->with('msg','Projeto atualizado!');
     }
 }

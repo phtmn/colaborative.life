@@ -27,13 +27,11 @@ Route::group( ['middleware'=> ['auth','verified','permission:investidor-pj,inves
 
     Route::resource('investimentos','InvestimentosController');
 
-
     Route::get('/investir/{id}','CheckoutController@formIncentivar')->name('investir');
     Route::post('/pagar','CheckoutController@pagar')->name('pagar');
     Route::get('/investimento/d/{id}','InvestimentosController@cancelar')->name('investimento.cancelar');
     Route::get('/investimento/{status}','InvestimentosController@callback');
     Route::get('/investimento/detalhe/{id}','InvestimentosController@detalhe')->name('investimento.detalhe');
-
 });
 
 //Grupo de Rotas para OSC

@@ -12,6 +12,16 @@
     </div>
 </div>
 @stop
+
+@section('style')
+    <style>
+        .disabled-link {
+            opacity: .35;
+            pointer-events: none;
+        }
+    </style>
+@stop
+
 @section('conteudo')
 <div class="container mt--7">
     <div class="row">
@@ -39,8 +49,9 @@
                                 </td>
                                 <td>
                                     <span class="badge badge-dot mr-4">
-                                        <span class="text-primary"> Acessar </span>
-                                        <!-- acessar só se tiver aprovado -->
+                                        <a href="{{ route('detalhe.projeto', $d->num_pronac) }}" data>
+                                            <span class="text-primary {{ (($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada') AND $d->publicado) ? "" : "disabled-link" }}"> Acessar </span>
+                                        </a>
                                     </span>
                                     </td>
                                     <td>
@@ -84,4 +95,16 @@
         </div>
     </div>
 </div>
+@stop
+
+@section('js')
+    <script>
+        $('input:checkbox').change(function() {
+            const link_span = $(this).closest('tr').find('a span');
+
+            ($(this).is(":checked"))
+                ? link_span.removeClass('disabled-link')
+                : link_span.addClass('disabled-link');
+        })
+    </script>
 @stop

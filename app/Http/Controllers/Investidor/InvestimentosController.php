@@ -49,12 +49,24 @@ class InvestimentosController extends Controller
         ]);
     }
 
-    public function detalhe_projeto($id){
-        $projeto = Projeto::find($id);
+    public function detalhe_projeto($num_pronac){
+        $projeto = Projeto::where('num_pronac', $num_pronac)->first();
+
+        if (!$projeto) {
+            abort(404);
+        }
+
+        if (!$projeto->publicado) {
+            abort(404);
+        }
+
+
+        if ($projeto->status != 'Aprovado para Captação' AND $projeto->status != 'Captação Finalizada') {
+            abort(404);
+        }
 
         return view('investidor.investimentos.landing_projeto',[
-            'projeto'       => Projeto::find($id)
-            // 'projetos'  => DB::table('projetos')->where('osc_id',$id)->get()
+            'projeto' => $projeto
         ]);
     }
 
@@ -79,10 +91,10 @@ class InvestimentosController extends Controller
         switch ($request->collection_status){
             case 'pending'    : $novoStatus = 'Aguardando Pagamento'; break;
             case 'approved'   : $novoStatus = 'Investimento Realizado'; break;
-            case 'failure'    : $novoStatus = 'Investimento não Realizado'; break;            
-            case 'in_process' : $novoStatus = 'Em processo de Pagamento'; break;            
+            case 'failure'    : $novoStatus = 'Investimento não Realizado'; break;
+            case 'in_process' : $novoStatus = 'Em processo de Pagamento'; break;
         }
-        
+
         $investimento->mp_codigo        = $request->merchant_order_id;
         $investimento->mp_pagamento     = $request->preference_id;
         $investimento->mp_status        = $request->collection_status;

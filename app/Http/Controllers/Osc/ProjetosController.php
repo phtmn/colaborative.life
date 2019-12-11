@@ -37,29 +37,48 @@ class ProjetosController extends Controller
 
     public function store(Request $request)
     {
+        $files = [];
 
-        if ($request->hasFile('imagem_projeto')) {
-            $projeto['imagem_projeto']  = $request->imagem_projeto->move('projetos');
+        if ($request->hasFile('imagem_projeto') && $request->file('imagem_projeto')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('imagem_projeto')->getClientOriginalName();
+
+            $request->imagem_projeto->move('projetos', $fileName);
+            $files['imagem_projeto']  = $fileName;
           }
 
-        if ($request->hasFile('apresentacao')) {
-            $projeto['apresentacao']  = $request->apresentacao->move('projetos');
+        if ($request->hasFile('apresentacao') && $request->file('apresentacao')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('apresentacao')->getClientOriginalName();
+
+            $request->apresentacao->move('projetos', $fileName);
+            $files['apresentacao']  = $fileName;
           }
 
-        if ($request->hasFile('cronograma')) {
-            $projeto['cronograma']  = $request->cronograma->move('projetos');
+        if ($request->hasFile('cronograma') && $request->file('cronograma')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('cronograma')->getClientOriginalName();
+
+            $request->imagem_projeto->move('projetos', $fileName);
+            $files['cronograma']  = $fileName;
           }
 
-        if ($request->hasFile('orcamento')) {
-            $projeto['orcamento']  = $request->orcamento->move('projetos');
+        if ($request->hasFile('orcamento') && $request->file('orcamento')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('orcamento')->getClientOriginalName();
+
+            $request->imagem_projeto->move('projetos', $fileName);
+            $files['orcamento']  = $fileName;
           }
 
-        if ($request->hasFile('contrapartidas')) {
-            $projeto['contrapartidas']  = $request->contrapartidas->move('projetos');
+        if ($request->hasFile('contrapartidas') && $request->file('contrapartidas')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('contrapartidas')->getClientOriginalName();
+
+            $request->imagem_projeto->move('projetos', $fileName);
+            $files['contrapartidas']  = $fileName;
           }
 
-        if ($request->hasFile('recompensas')) {
-            $projeto['recompensas']  = $request->recompensas->move('projetos');
+        if ($request->hasFile('recompensas') && $request->file('recompensas')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('recompensas')->getClientOriginalName();
+
+            $request->imagem_projeto->move('projetos', $fileName);
+            $files['recompensas']  = $fileName;
           }
 
         $projeto = new Projeto;
@@ -74,12 +93,12 @@ class ProjetosController extends Controller
         $projeto->ag                  = $request->ag;
         $projeto->cc                  = $request->cc;
         $projeto->video_youtube       = $request->video_youtube;
-        $projeto->imagem_projeto      = $request->imagem_projeto;
-        $projeto->apresentacao        = $request->apresentacao;
-        $projeto->cronograma          = $request->cronograma;
-        $projeto->orcamento           = $request->orcamento;
-        $projeto->contrapartidas      = $request->contrapartidas;
-        $projeto->recompensas         = $request->recompensas;
+        $projeto->imagem_projeto      = $files['imagem_projeto'] ?? null;
+        $projeto->apresentacao        = $files['apresentacao'] ?? null;
+        $projeto->cronograma          = $files['cronograma'] ?? null;
+        $projeto->orcamento           = $files['orcamento'] ?? null;
+        $projeto->contrapartidas      = $files['contrapartidas'] ?? null;
+        $projeto->recompensas         = $files['recompensas'] ?? null;
         $projeto->ativo               = '0';
         $projeto->status              = 'Captação em análise';
         $projeto->user_id             = $request->user()->id;

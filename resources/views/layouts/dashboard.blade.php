@@ -19,6 +19,7 @@
     <link type="text/css" href="{{ asset('vendor/argon-dash/assets/css/argon.css?v=1.0.0') }}" rel="stylesheet">
 
     @yield('css')
+    @yield('style')
 </head>
 
 <body>
@@ -34,16 +35,16 @@
             <img src="{{asset('vendor/site/images/coopvidapreta_logo.png')}}" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
-        
+
 
         <ul class="nav align-items-center d-md-none">
-          
-        
+
+
         </ul>
-        
+
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-            
+
             <div class="navbar-collapse-header d-md-none">
                 <div class="row">
                     <div class="col-6 collapse-brand">
@@ -59,12 +60,12 @@
                     </div>
                 </div>
             </div>
-      
-            
+
+
             <!-- Navigation -->
-            
+
             @include('layouts.partes.menu')
-           
+
         </div>
     </div>
 </nav>
@@ -74,33 +75,33 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div class="container-fluid">
             <!-- Brand -->
-			
-			
-			
-           
+
+
+
+
             <!-- User -->
 			<ul class="navbar-nav align-items-center d-none d-md-flex">
-				
-               
-				
+
+
+
             </ul>
-			
-            
-			
+
+
+
         </div>
-		
+
     </nav>
-	
+
     <!-- Header -->
     @yield('cabecalho')
-	
-	
+
+
     <!-- Page content -->
     <div class="container-fluid mt--7">
         @yield('conteudo')
-		
-		
-		
+
+
+
 
         <!-- <div class="modal fade" id="kalahun-modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
             <div class="modal-dialog  modal-lg"  role="document">
@@ -116,29 +117,29 @@
 
                       <center>  <img src="{{asset('vendor/site/images/jacareCoopViva.png')}}" class="thumbnail " style="max-width: 50%; max-height: 50%" ></center>
 						<br>
-						<hr>	
+						<hr>
                         <p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
-                            Nosso mascote foi batizado com o nome de <b class="font-weight-bold">KA LAHUN </b>uma expressão maia que simboliza o numeral 12  e sintetiza a expressão do significado de três palavras poderosas Dedicação – Cooperação – Equilíbrio. 
-						</p>	
-						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">	
-							<b class="font-weight-bold">KA LAHUN </b> o nosso  Jacarezinho é aquele que vive nas águas e na terra representando  nossa  missão de fazer o elo de ligação entre dois mundos (Organizações da Sociedade Civil e Investidores) e assim trabalharmos para a  união dos esforços em uma rede de cooperação viva e cidadã. 
-						</p>	
-						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">		
-							<b class="font-weight-bold">KA LAHUN </b> com seu olho que tudo vê lhe conduzirá na jornada  para o outro lado do rio diretamente ao encontro com seu maiores potenciais. 
-						</p>	
+                            Nosso mascote foi batizado com o nome de <b class="font-weight-bold">KA LAHUN </b>uma expressão maia que simboliza o numeral 12  e sintetiza a expressão do significado de três palavras poderosas Dedicação – Cooperação – Equilíbrio.
+						</p>
 						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
-							<b class="font-weight-bold">KA LAHUN </b> 
-							Dedicação – Cooperação – Equilíbrio 
-						</p>	
-						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">	
+							<b class="font-weight-bold">KA LAHUN </b> o nosso  Jacarezinho é aquele que vive nas águas e na terra representando  nossa  missão de fazer o elo de ligação entre dois mundos (Organizações da Sociedade Civil e Investidores) e assim trabalharmos para a  união dos esforços em uma rede de cooperação viva e cidadã.
+						</p>
+						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
+							<b class="font-weight-bold">KA LAHUN </b> com seu olho que tudo vê lhe conduzirá na jornada  para o outro lado do rio diretamente ao encontro com seu maiores potenciais.
+						</p>
+						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
+							<b class="font-weight-bold">KA LAHUN </b>
+							Dedicação – Cooperação – Equilíbrio
+						</p>
+						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
 							Destinar, entregar-se, aplicar-se, ação e efeito de cooperar, operar conjuntamente com outras pessoas.
-						</p>	
+						</p>
 						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
-							Função: Prestar serviços 
-						 </p>	
+							Função: Prestar serviços
+						 </p>
 						<p class="text-justify mt-3 mx-3" style="text-indent: 15px;">
 							Ação: Universalizar benefícios aos projetos. Compartilhar com a comunidade universal, ultrapassando fronteiras.
-							
+
                         </p>
                     </div>
                 </div>
@@ -156,7 +157,7 @@
                     <ul class="nav nav-footer justify-content-center justify-content-xl-end">
                         <li class="nav-item">
 							<a href="http://simeuquero.org/" class="nav-link" target="_blank">SIM EU QUERO</a>
-                            
+
                         </li>
                         <li class="nav-item">
                             <a href="http://www.redeconexao.com.br/" class="nav-link" target="_blank">Rede de Conexão</a>
@@ -193,9 +194,9 @@
         $("#ano").mask('0000');
         $("#num").mask('0000');
         $("#op").mask('000');
-    
 
-         
+
+
 
     });
 </script>

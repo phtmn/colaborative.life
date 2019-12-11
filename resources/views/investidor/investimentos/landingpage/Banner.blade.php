@@ -23,8 +23,10 @@
                 </div>
 
                 <div class="row justify-content-center">
-                {{$projeto->telefone}} - {{$projeto->banco}} 
-                {{$projeto->imagem_projeto}}
+                    {{$projeto->telefone}} - {{$projeto->banco}}
+
+                    {{-- TODO - Ajustar o tamanho da imagem --}}
+                    <img src="{{ url('projetos/'.$projeto->imagem_projeto) }}" alt="" width="300px">
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-12 col-md-10">
-                <h1 class="display-2 text-white"> <i class="ni ni-tv-2 text-white"></i> Dasboard</h1>
+                <h1 class="display-2 text-white"> <i class="ni ni-tv-2 text-white"></i> Dashboard</h1>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-default text-white rounded-circle shadow">
-                        <i class="ni ni-active-40"></i>
+                        <i class="ni ni-circle-08"></i>
                       </div>
                     </div>
                   </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-default text-white rounded-circle shadow">
-                        <i class="ni ni-chart-pie-35"></i>
+                        <i class="ni ni-collection"></i>
                       </div>
                     </div>
                   </div>

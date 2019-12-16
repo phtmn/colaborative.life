@@ -1,5 +1,18 @@
 @extends('admin.home')
 
+@section('cabecalho')
+<div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
+<span class="mask bg-gradient-default opacity-10"></span>
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-12 col-md-10">
+                <h1 class="display-2 text-white"> <i class="ni ni-circle-08 text-white"></i> Usuários</h1>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
 @section('content')
 <div class="x_panel">
 

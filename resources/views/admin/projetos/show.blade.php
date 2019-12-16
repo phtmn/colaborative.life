@@ -1,13 +1,26 @@
 @extends('admin.home')
 
-@section('content')
-    <div class="x_panel">
-
-        <div class="x_title">
-            <a href="{{route('admin-projetos.index')}}"><i class="fa fa-arrow-left"></i> Voltar para Lista</a>
-
-            <h3>Informações do Projeto: </h3>
+@section('cabecalho')
+<div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
+    <span class="mask bg-gradient-default opacity-10"></span>
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-12 col-md-10">
+                <h1 class="display-2 text-white"> <i class="ni ni-collection text-white"></i> Projetos</h1>
+            </div>
         </div>
+    </div>
+</div>
+@stop
+
+@section('conteudo')
+    
+
+        <!-- <div class="x_title">
+            <a href="{{route('admin-projetos.index')}}"><i class="fa fa-arrow-left " ></i> Voltar para Lista</a>
+
+            
+        </div> -->
 
         <div class="container-mt--7">
             <div class="col-md-12">
@@ -74,7 +87,7 @@
                 </div>
             </div>
         </div>
-    </div>
+   
 @stop
 
 @section('js')

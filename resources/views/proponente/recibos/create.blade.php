@@ -20,26 +20,20 @@
                     @csrf
                     <p class="text-warning mt-2">Dados Gerais</p>
                     <hr>
-                    @include('proponente.projetos.forms.section1_create')
-                    <p class="text-warning mt-2">Dados do Proponente </p>
+                    @include('proponente.recibos.forms.section1_create')
+                    <p class="text-warning mt-2">Dados da Participação </p>
                     <hr>
-                    @include('proponente.projetos.forms.section2_create')
-                    <p class="text-warning mt-2">Dados Bancários </p>
+                    @include('proponente.recibos.forms.section2_create')
+                    <p class="text-warning mt-2">Dados do Incentivador </p>
                     <hr>
-                    @include('proponente.projetos.forms.section3_create')
-                    <p class="text-warning mt-2">Upload </p>
+                    @include('proponente.recibos.forms.section3_create')
+                    <p class="text-warning mt-2">Dados do Projeto Beneficiado </p>
                     <hr>
-                    @include('proponente.projetos.forms.section4_create')
-                    <!-- <p class="text-success mt-2">Equipe </p>
+                    @include('proponente.recibos.forms.section4_create')
+                    <p class="text-warning mt-2">Dados do Declarante * </p>
                     <hr>
-                    @include('proponente.projetos.forms.section5_create') -->
-                    <!-- <p class="text-success mt-2">Equipe </p>
-                    <hr>
-                    @include('proponente.projetos.forms.section4_create')
-                    <p class="text-success mt-2">Upload </p>
-                    <hr>
-                    <p class="text-success mt-2">Galeria no max 4</p>
-                    <hr> -->
+                    @include('proponente.recibos.forms.section5_create')
+                                      
                     <div class="card-footer text-center">
                         <button type="submit" class="btn btn-outline-warning"><i class="ni ni-check-bold"></i> Salvar</button>
                     </div>

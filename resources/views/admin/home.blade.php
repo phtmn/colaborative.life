@@ -1,182 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>.:: Dashboard Admin ::.</title>
+    <!-- Favicon -->
+    <link href="{{asset('vendor/site/images/favicon.ico')}}" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="{{ asset('vendor/argon-dash/assets/vendor/nucleo/css/nucleo.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/argon-dash/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <!-- Argon CSS -->
+    <link type="text/css" href="{{ asset('vendor/argon-dash/assets/css/argon.css?v=1.0.0') }}" rel="stylesheet">
 
-    <title>Coopviva - ADMIN</title>
-
-    <!-- Bootstrap -->
-    <link href="{{ asset('admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="{{asset('admin/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="{{ asset('admin/vendors/nprogress/nprogress.css')  }}" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="{{ asset('admin/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
-
-    <!-- bootstrap-progressbar -->
-    <link href="{{ asset('admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="{{ asset('admin/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="{{ asset('admin/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="{{ asset('admin/build/css/custom.min.css') }}" rel="stylesheet">
+    @yield('css')
+    @yield('style')
 </head>
 
-<body class="nav-md">
-<div class="container body">
-    <div class="main_container">
-        <div class="col-md-3 left_col">
-            <div class="left_col scroll-view">
-                <div class="navbar nav_title" style="border: 0;">
-                    <a href="{{ route('site.index') }}" class="site_title"><i class="fa fa-dashboard"></i> <span>Coopviva Admin/span></a>
-                </div>
+<body >
+ 
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    <div class="container-fluid">
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Brand -->
+        <a class="navbar-brand pt-0" href="{{route('osc.index')}}">
+            <img src="{{asset('vendor/site/images/coopvidapreta_logo.png')}}" class="navbar-brand-img" alt="...">
+        </a>
+        <!-- User -->
 
-                <div class="clearfix"></div>
 
-                <!-- menu profile quick info -->
-                <div class="profile clearfix">
-                    <div class="profile_pic">
-                        <img src="{{asset('admin/images/user.png')}}" alt="..." class="img-circle profile_img">
+        <ul class="nav align-items-center d-md-none">
+
+
+        </ul>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+
+            <div class="navbar-collapse-header d-md-none">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a href="{{route('osc.index')}}">
+                        <img src="{{asset('vendor/site/images/coopvidapreta_logo.png')}}" class="navbar-brand-img" alt="...">
+                        </a>
                     </div>
-                    <div class="profile_info">
-                        <span>Bem Vindo,</span>
-                        <h2>{{auth()->user()->name}}</h2>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
                 </div>
-                <!-- /menu profile quick info -->
-
-                <br />
-
-                @include('admin.partes.menu_esquerdo')
-
-                <!-- /menu footer buttons
-                <div class="sidebar-footer hidden-small">
-                    <a data-toggle="tooltip" data-placement="top" title="Settings">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Lock">
-                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                    </a>
-                </div>
-                /menu footer buttons -->
             </div>
+
+
+            <!-- Navigation -->
+
+            @include('admin.partes.menu')
+
+        </div>
+    </div>
+</nav>
+<!-- Main content -->
+<div class="main-content">
+    <!-- Top navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+            <!-- Brand -->
+
+
+
+
+            <!-- User -->
+			<ul class="navbar-nav align-items-center d-none d-md-flex">
+
+
+
+            </ul>
+
+
+
         </div>
 
-        <!-- top navigation -->
-        <div class="top_nav">
-            <div class="nav_menu">
-                <nav>
-                    <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                    </div>
+    </nav>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
-                                <span class=" fa fa-angle-down"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Conta</a></li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Configurações</span>
-                                    </a>
-                                </li>
-                                <li><a href="javascript:;">Ajuda</a></li>
-                                <li><a href="{{route('logout')}}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i> Sair</a></li>
-                            </ul>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+    <!-- Header -->
+    @yield('cabecalho')
+
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+        @yield('conteudo')
+
+
+
+
+       
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2019 <a href="" class="font-weight-bold ml-1 text-success font-weight-bold 900" >COOPVIVA</a>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+                        <li class="nav-item">
+							<a href="http://simeuquero.org/" class="nav-link" target="_blank">SIM EU QUERO</a>
+
                         </li>
-
-                        @include('admin.partes.alertas')
+                        <li class="nav-item">
+                            <a href="http://www.redeconexao.com.br/" class="nav-link" target="_blank">Rede de Conexão</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://www.agenda2030.com.br/" class="nav-link" target="_blank">Agenda 2030</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('/termo-de-uso')}}" class="nav-link" >Termo de Uso</a>
+                        </li>
                     </ul>
-                </nav>
-            </div>
-        </div>
-        <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <div class="mt--100">
-                @include('admin.messages.alertas')
-            </div>
-
-            @yield('content')
-
-        </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-            <div class="pull-right">
-                Coopviva  <a href="https://colorlib.com">Desenvolvido por RedeConexao</a>
-            </div>
-            <div class="clearfix"></div>
+                </div>
+            </div> -->
         </footer>
-        <!-- /footer content -->
     </div>
 </div>
 
-<!-- jQuery -->
-<script src="{{ asset('admin/vendors/jquery/dist/jquery.min.js') }}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('admin/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<!-- FastClick -->
-<script src="{{ asset('admin/vendors/fastclick/lib/fastclick.js') }}"></script>
-<!-- NProgress -->
-<script src="{{ asset('admin/vendors/nprogress/nprogress.js') }}"></script>
-<!-- Chart.js -->
-<script src="{{ asset('admin/vendors/Chart.js/dist/Chart.min.js') }}"></script>
-<!-- gauge.js -->
-<script src="{{ asset('admin/vendors/gauge.js/dist/gauge.min.js') }}"></script>
-<!-- bootstrap-progressbar -->
-<script src="{{ asset('admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
-<!-- iCheck -->
-<script src="{{ asset('admin/vendors/iCheck/icheck.min.js') }}"></script>
-<!-- Skycons -->
-<script src="{{ asset('admin/vendors/skycons/skycons.js') }}"></script>
-<!-- Flot -->
-<script src="{{ asset('admin/vendors/Flot/jquery.flot.js') }}"></script>
-<script src="{{ asset('admin/vendors/Flot/jquery.flot.pie.js') }}"></script>
-<script src="{{ asset('admin/vendors/Flot/jquery.flot.time.js') }}"></script>
-<script src="{{ asset('admin/vendors/Flot/jquery.flot.stack.js') }}"></script>
-<script src="{{ asset('admin/vendors/Flot/jquery.flot.resize.js') }}"></script>
-<!-- Flot plugins -->
-<script src="{{ asset('admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
-<script src="{{ asset('admin/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
-<script src="{{ asset('admin/vendors/flot.curvedlines/curvedLines.js') }}"></script>
-<!-- DateJS -->
-<script src="{{ asset('admin/vendors/DateJS/build/date.js') }}"></script>
-<!-- JQVMap -->
-<script src="{{ asset('admin/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
-<script src="{{ asset('admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
-<script src="{{ asset('admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
-<!-- bootstrap-daterangepicker -->
-<script src="{{ asset('admin/vendors/moment/min/moment.min.js') }}"></script>
-<script src="{{ asset('admin/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('vendor/argon-dash/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('vendor/argon-dash/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Optional JS -->
+<script src="{{ asset('vendor/argon-dash/assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+<script src="{{ asset('vendor/argon-dash/assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
+<!-- Argon JS -->
+<script src="{{ asset('vendor/argon-dash/assets/js/argon.js?v=1.0.0') }}"></script>
+<script src="{{ asset('js/dropzone.js') }}"></script>
+<script src="{{asset('js/jquery.mask.min.js')}}"> </script>
+<script>
+    $(document).ready(function() {
+        $('#telefone').mask('(99) 9 9999-9999');
+        $("#cpf").mask('000.000.000-00');
+        $("#cnpj").mask('00.000.000/0000-00');
+        $("#cep").mask('00.000-000');
+        $("#ano").mask('0000');
+        $("#num").mask('0000');
+        $("#op").mask('000');
 
-<!-- Custom Theme Scripts -->
-<script src="{{ asset('admin/build/js/custom.min.js') }}"></script>
 
+
+
+    });
+</script>
+
+<script>
+    $('.js-checkbox').on('click', function(e) {
+        var route = $(this).data('route');
+        $.ajax({
+                url: route,
+                type: 'get',
+            })
+            .done(function(msg) {
+                return true;
+            })
+    });
+</script>
+
+<script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
+@include('sweet::alert')
 @yield('js')
 </body>
+
 </html>

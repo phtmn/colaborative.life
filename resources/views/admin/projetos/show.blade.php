@@ -92,17 +92,102 @@
                 .done(({_embedded}) => {
                   const proponente = _embedded.proponentes[0];
                   const boxFields = $('[data-target=fields-fill-from-ajax]')
-                  const inputTipoPessoa = $('input[data-target=tipo-pessoa]');
+                  
+                  const inputNome = $('input[data-target=nome]');                 
+                  
                   const inputResponsavel = $('input[data-target=responsavel]');
                   const inputCpfOrCnpj = $('input[data-target=cpf-or-cnpj]');
-                  const inputMunicipio = $('input[data-target=municipio]');
+                  
+                  const inputPRONAC = $('input[data-target=pronac]');   
+                  const inputSegmento = $('input[data-target=segmento]');   
+                  const inputArea = $('input[data-target=area]');   
+
+                  const inputMecanismo = $('input[data-target=mecanismo]');   
+                  const inputEnquadramento = $('input[data-target=enquadramento]'); 
+                  const inputMunicipio = $('input[data-target=municipio]');  
+
+                  const inputAno_projeto = $('input[data-target=ano_projeto]');
+                  const inputData_termino = $('input[data-target=data_termino]');
                   const inputData_inicio = $('input[data-target=data_inicio]');
 
-                  inputTipoPessoa.val(proponente.tipo_pessoa);
+                  const inputValor_proposta = $('input[data-target=valor_proposta]');
+                  const inputValor_aprovado = $('input[data-target=valor_aprovado]');
+
+                  const inputValor_solicitado = $('input[data-target=valor_solicitado]');
+                  const inputOutras_fontes = $('input[data-target=outras_fontes]');
+
+                  const inputValor_captado = $('input[data-target=valor_captado]');
+                  const inputValor_projeto = $('input[data-target=valor_projeto]');
+
+                  const inputResumo = $('input[data-target=resumo]');
+
+                  const inputEtapa = $('input[data-target=etapa]');
+
+                  const inputObjetivos = $('input[data-target=objetivos]');
+
+                  const inputSinopse = $('input[data-target=sinopse]');
+
+                  const inputJustificativa = $('input[data-target=justificativa]');
+
+                  const inputFicha_tecnica = $('input[data-target=ficha_tecnica]');
+
+                  const inputEspecificacao_tecnica = $('input[data-target=especificacao_tecnica]');
+
+                  const inputImpacto_ambiental = $('input[data-target=impacto_ambiental]');
+
+                  const inputDemocratizacao = $('input[data-target=democratizacao]');
+
+                  const inputAcessibilidade = $('input[data-target=acessibilidade]');
+
+                  // const inputTipoPessoa = $('input[data-target=tipo-pessoa]');                  
+                  
+                  
+                  inputNome.val(response.nome);
+
                   inputResponsavel.val(proponente.responsavel);
                   inputCpfOrCnpj.val(formatCpfOrCnpj(proponente.cgccpf)).attr('name', (response.cgccpf.legth === 11) ? 'cpf' : 'cnpj');
+                  
+                  inputPRONAC.val(response.pronac);
+                  inputSegmento.val(response.segmento);
+                  inputArea.val(response.area);
+
+                  inputMecanismo.val(response.mecanismo);
+                  inputEnquadramento.val(response.enquadramento);
                   inputMunicipio.val(response.municipio);
+
+                  inputAno_projeto.val(response.ano_projeto);
+                  inputData_termino.val(response.data_termino);
                   inputData_inicio.val(response.data_inicio);
+                  
+                  inputValor_proposta.val(response.valor_proposta); 
+                  inputValor_aprovado.val(response.valor_aprovado); 
+
+                  inputValor_solicitado.val(response.valor_solicitado); 
+                  inputOutras_fontes.val(response.outras_fontes); 
+
+                  inputValor_captado.val(response.valor_captado); 
+                  inputValor_projeto.val(response.valor_projeto); 
+
+                  inputResumo.val(response.resumo); 
+
+                  inputEtapa.val(response.etapa); 
+
+                  inputObjetivos.val(response.objetivos); 
+
+                  inputSinopse.val(response.sinopse); 
+
+                  inputJustificativa.val(response.justificativa); 
+
+                  inputEspecificacao_tecnica.val(response.especificacao_tecnica); 
+
+                  inputImpacto_ambiental.val(response.impacto_ambiental); 
+
+                  inputDemocratizacao.val(response.democratizacao); 
+
+                  inputAcessibilidade.val(response.acessibilidade); 
+                  
+                  // inputTipoPessoa.val(proponente.tipo_pessoa);                  
+                  
 
                   boxFields.css({ display: 'block' });
                   buttons.not($(this)).css({ 'pointer-events': 'visible', 'opacity': '1' })

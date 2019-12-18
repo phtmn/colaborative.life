@@ -78,7 +78,7 @@
 
 <section>
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right mt-3">Contrapartidas </label>
+        <label for="" class="col-sm-3 col-form-label text-right mt-3">Cotas de Investimento </label>
         <div class="col-md-9">
             <div class="row">
             <div class="form-group col-md-8">

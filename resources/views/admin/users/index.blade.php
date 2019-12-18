@@ -15,7 +15,7 @@
 
 @section('conteudo')
 
-
+<div class="container mt--7">
 <div class="row">
 
 <div class="col-md-12">
@@ -25,13 +25,14 @@
             </div>
             <div class="table-responsive">        
                <table class="table align-items-center table-flush">
-                    <thead>
+                    <thead class="thead-light">
                     <tr>
                         <th scope="col" class="text-left">#</th>                            
                         <th scope="col" class="text-left">Nome</th>
                         <th scope="col" class="text-left">E-mail</th>
                         <th scope="col" class="text-left">Perfil</th>
                         <th scope="col" class="text-left">Data de Cadastro</th>
+                        <th scope="col" class="text-left"> </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -58,7 +59,7 @@
     </div>
 </div>
 </div>
-
+</div>
 
 
 @stop

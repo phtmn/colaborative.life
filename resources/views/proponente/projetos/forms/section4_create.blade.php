@@ -1,10 +1,20 @@
 <section>
-    <div class="form-group row">
+    <!-- <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label text-right ">Vídeo do Youtube </label>
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
                 <input type="text" name="video_youtube" class="form-control" value="" placeholder="Link do vídeo https://...">
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="form-group row">
+        <label for="" class="col-sm-3 col-form-label text-right ">Extrato * Extrato Bancário da Conta Captação </label>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="form-group col-md-7">
+                <input type="file" name="comprovante_captacao" class="form-control" value="">
                 </div>
             </div>
         </div>

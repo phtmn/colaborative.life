@@ -2,7 +2,7 @@
 
 @section('cabecalho')
 <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
-    <span class="mask bg-gradient-warning opacity-8"></span>
+    <span class="mask bg-gradient-blue opacity-6"></span>
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-12 col-md-10">
@@ -18,9 +18,9 @@
         <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <a href="{{route('recibos.create')}}" class="btn btn-warning "><i class="ni ni-fat-add"></i> Adicionar Recibo</a>
+                    <a href="{{route('recibos.create')}}" class="btn btn-secondary "><i class="ni ni-fat-add"></i> Adicionar </a>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive py-4">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>

@@ -5,20 +5,20 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('admin-users.index')}}">
+        <a class="{{ (\Request::route()->getName() == 'admin-users.index') ? 'nav-link active' : 'nav-link ' }}" href="{{route('admin-users.index')}}">
             <i class="ni ni-circle-08 text-default"></i> Usuarios
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin-projetos.index') }}">
+        <a class="{{ (\Request::route()->getName() == 'admin-projetos.index') ? 'nav-link active' : 'nav-link ' }}" href="{{ route('admin-projetos.index') }}">
             <i class="ni ni-collection text-default"></i> Projetos
         </a>
     </li>  
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="ni ni-chart-bar-32 text-default"></i> Investimentos
         </a>
-    </li> 
+    </li>  -->
     <!-- <li class="nav-item">
         <a class="nav-link" href=" ">
             <i class="ni ni-single-copy-04 text-warning" ></i> Recibos

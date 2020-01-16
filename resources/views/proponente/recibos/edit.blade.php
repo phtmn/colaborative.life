@@ -21,16 +21,16 @@
             <div class="card-body bg-transparent">
                 <form action="{{route('projetos.update','$projeto->id')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <p class="text-success mt-2">Dados Gerais</p>
+                    <p class="text-blue font-weight-bold mt-2">Dados Gerais</p>
                     <hr>
                     @include('proponente.projetos.forms.section1_edit')
-                    <p class="text-success mt-2">Dados do Proponente </p>
+                    <p class="text-blue font-weight-bold mt-2">Dados do Proponente </p>
                     <hr>
                     @include('proponente.projetos.forms.section2_edit')
-                    <p class="text-success mt-2">Dados Bancários </p>
+                    <p class="text-blue font-weight-bold mt-2">Dados Bancários </p>
                     <hr>
                     @include('proponente.projetos.forms.section3_edit')
-                    <p class="text-success mt-2">Upload </p>
+                    <p class="text-blue font-weight-bold mt-2">Upload </p>
                     <hr>
                     @include('proponente.projetos.forms.section4_create')
                     <!-- <p class="text-success mt-2">Equipe </p>
@@ -44,7 +44,7 @@
                         <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Salvar</button>
                     </div> -->
                     <div class="card-footer text-center">
-                        <a class="btn btn-outline-success" href="{{ route('projetos.index') }}">
+                        <a class="btn btn-outline-primary" href="{{ route('recibos.index') }}">
                             <i class="ni ni-bold-left"></i> Voltar
                         </a>
                     </div>

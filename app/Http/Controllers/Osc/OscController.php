@@ -21,16 +21,25 @@ class OscController extends Controller
 
         $osc = auth()->user()->osc();
         if($osc){
-            return view('proponente.painel',[
-                'osc'            => $osc,
-                'projetos'       => $osc->projetos()->count(),                
-                'investimentos'  => DB::table('investimentos')->where('osc_id',$osc->id)->sum('valor'),
-                'investimentos_p'=> DB::table('investimentos')->where('projeto_id','<>',null)
-                                        ->where('osc_id',$osc->id)->sum('valor'),
-            ]);
+            return view('proponente.painel');
         }
         return view('proponente.bemvindo');
     }
+
+    // public function index(){
+
+    //     $osc = auth()->user()->osc();
+    //     if($osc){
+    //         return view('proponente.painel',[
+    //             'osc'            => $osc,
+    //             'projetos'       => $osc->projetos()->count(),                
+    //             'investimentos'  => DB::table('investimentos')->where('osc_id',$osc->id)->sum('valor'),
+    //             'investimentos_p'=> DB::table('investimentos')->where('projeto_id','<>',null)
+    //                                     ->where('osc_id',$osc->id)->sum('valor'),
+    //         ]);
+    //     }
+    //     return view('proponente.bemvindo');
+    // }
 
     public function create(){
         $osc = OSC::where('user_id',Auth::user()->id)->first();

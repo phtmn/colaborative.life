@@ -1,6 +1,6 @@
 	<div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-image: url({{asset('vendor/argon-dash/assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
         <!-- Mask -->
-        <span class="mask bg-gradient-dark opacity-0"></span>
+        <span class="mask bg-gradient-blue opacity-6"></span>
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <div class="row">
@@ -15,7 +15,7 @@
 
 	
 	
-<div class="header bg-gradient-dark pb-4 pt-4 pt-md-4">
+<div class=" header bg-gradient-dark pb-4 pt-4 pt-md-4">
     
        
         <div class="container-fluid d-flex align-items-center mt--9">
@@ -26,7 +26,7 @@
 					 
 					<div class="ods">
                         <h1 class="display-4 text-white " style="text-indent: 20px;">Olá, {{ auth()->user()->name}}</h1> 
-						<h2 class="text-white mt-0 mb-5 text-justify" style="text-indent: 20px;">Aqui no <strong><b>XXX</b></strong>, você pode engajar com projetos ou causas que estão de acordo com seus propósitos de forma planejada, estruturada e transparente. <a href="{{route('quero_investir')}}" class="text-white"> <strong><b><u>#SimEuQuero</u></b></strong></h2>
+						<h2 class="text-white mt-0 mb-5 text-justify" style="text-indent: 20px;">Aqui no <strong><b>XXX</b></strong>, você pode engajar com projetos ou causas que estão de acordo com seus propósitos de forma planejada, estruturada e transparente. <a   class="text-white"> <strong><b><u>#SimEuQuero</u></b></strong></h2>
                     </div>
 					
 
@@ -36,7 +36,7 @@
         </div>
 </div>
 
-<div class="header bg-gradient-dark pb-4 pt-4 pt-md-4">
+<div class=" header bg-gradient-dark pb-4 pt-4 pt-md-4">
     
        
         <div class="container-fluid d-flex align-items-center mt--6">
@@ -106,7 +106,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Total</h5>
-                      <span class="h2 font-weight-bold mb-0">{{ $projetos ?? '0'}}</span>
+                      <span class="h2 font-weight-bold mb-0"> </span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-white text-success rounded-circle shadow">

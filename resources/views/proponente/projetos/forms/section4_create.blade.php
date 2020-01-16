@@ -10,7 +10,7 @@
         </div>
     </div> -->
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Extrato * Extrato Bancário da Conta Captação </label>
+        <label for="" class="col-sm-3 col-form-label text-right "> Extrato bancário da conta captação </label>
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Imagem do projeto </label>
+        <label for="" class="col-sm-3 col-form-label text-right ">Foto de destaque </label>
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <!-- <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label text-right ">Apresentação comercial </label>
         <div class="col-md-9">
             <div class="row">
@@ -38,9 +38,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Cronograma </label>
+        <label for="" class="col-sm-3 col-form-label text-right ">Cronograma de atividades</label>
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Contrapartidas </label>
+        <label for="" class="col-sm-3 col-form-label text-right ">Plano de contrapartidas </label>
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
@@ -69,14 +69,5 @@
             </div>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Recompensas </label>
-        <div class="col-md-9">
-            <div class="row">
-                <div class="form-group col-md-7">
-                <input type="file" name="recompensas" class="form-control" value="">
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </section>

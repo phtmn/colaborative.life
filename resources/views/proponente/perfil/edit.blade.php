@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('cabecalho')
 <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
-    <span class="mask bg-gradient-default opacity-8"></span>
+    <span class="mask bg-gradient-blue opacity-6"></span>
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-12 col-md-10">
@@ -19,7 +19,7 @@
                 <div class="card-body bg-transparent">
                     <form action="{{route('osc.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <p class="text-primary mt-2">Dados gerais</p>
+                        <p class="text-blue font-weight-bold mt-2">Dados gerais</p>
                         <hr>
                         <div class="form-group row">
                             <label for="" class="col-sm-3 col-form-label text-right">Nome completo </label>

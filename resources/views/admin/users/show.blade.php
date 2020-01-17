@@ -2,7 +2,7 @@
 
 @section('cabecalho')
 <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
-<span class="mask bg-gradient-default opacity-10"></span>
+<span class="mask bg-gradient-default opacity-7"></span>
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-12 col-md-10">
@@ -19,10 +19,10 @@
 
 <div class="container mt--7">
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 mt-5">
         <div class="card shadow">
             <div class="card-body bg-transparent">                
-                    <p class="text-primary mt-2">Dados Gerais</p>
+                    <p class="text-default font-weight-bold mt-2">Dados Gerais</p>
                     <hr>
                     <div class="form-group row">
                         <label for="" class="col-sm-3 col-form-label text-right">Nome completo </label>
@@ -49,7 +49,7 @@
                         </div>
                     </div> -->
                     <div class="card-footer text-center">
-                    <a class="btn btn-outline-primary" href="{{route('admin-users.index')}}">
+                    <a class="btn btn-outline-default" href="{{route('admin-users.index')}}">
                             <i class="ni ni-bold-left"></i> Voltar
                         </a>
                        

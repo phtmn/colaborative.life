@@ -2,7 +2,7 @@
 
 @section('cabecalho')
 <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
-<span class="mask bg-gradient-default opacity-10"></span>
+<span class="mask bg-gradient-default opacity-7"></span>
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-12 col-md-10">
@@ -17,10 +17,10 @@
 <div class="container mt--7">
     <div class="row">
 
-    <div class="col-md-12">
+    <div class="col-md-12 mt-5">
             <div class="card shadow">
             <div class="card-header border-0">
-                    <b> Projetos Cadastrados</b>
+            <p class="text-default font-weight-bold mt-3"> Projetos Cadastrados</p>
                 </div>
                 <div class="table-responsive">        
                    <table class="table align-items-center table-flush">

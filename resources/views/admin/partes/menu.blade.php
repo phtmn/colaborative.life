@@ -1,17 +1,24 @@
 <ul class="navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="{{route('osc.index')}}">
-            <i class="ni ni-tv-2 text-default"></i> Dashboard
+        <a class="{{ (\Request::route()->getName() == 'admin.index') ? 'nav-link active' : 'nav-link ' }}" href="{{route('admin.index')}}">
+            <i class="{{ (\Request::route()->getName() == 'admin.index') ? 'ni ni-tv-2 text-blue' : 'ni ni-tv-2   ' }} "></i> Dashboard
         </a>
     </li>
     <li class="nav-item">
-        <a class="{{ (\Request::route()->getName() == 'admin-users.index') ? 'nav-link active' : 'nav-link ' }}" href="{{route('admin-users.index')}}">
-            <i class="ni ni-circle-08 text-default"></i> Usuarios
+        <a class="{{ (\Request::route()->getName() == 'admin-users.index') ? 'nav-link active' : 'nav-link ' }}
+                  {{ (\Request::route()->getName() == 'admin-users.show') ? 'nav-link active' : 'nav-link ' }}" 
+        
+                href="{{route('admin-users.index')}}">
+            <i class="{{ (\Request::route()->getName() == 'admin-users.index') ? 'ni ni-circle-08 text-blue' : 'ni ni-circle-08   ' }} 
+                      {{ (\Request::route()->getName() == 'admin-users.show') ? 'ni ni-circle-08 text-blue' : 'ni ni-circle-08   ' }}"></i> Usuários
         </a>
     </li>
     <li class="nav-item">
-        <a class="{{ (\Request::route()->getName() == 'admin-projetos.index') ? 'nav-link active' : 'nav-link ' }}" href="{{ route('admin-projetos.index') }}">
-            <i class="ni ni-collection text-default"></i> Projetos
+        <a class="{{ (\Request::route()->getName() == 'admin-projetos.index') ? 'nav-link active' : 'nav-link ' }}
+                  {{ (\Request::route()->getName() == 'admin-projetos.show') ? 'nav-link active' : 'nav-link ' }}  " 
+                  href="{{ route('admin-projetos.index') }}">
+            <i class="{{ (\Request::route()->getName() == 'admin-projetos.index') ? 'ni ni-collection text-blue' : 'ni ni-collection   ' }} 
+                      {{ (\Request::route()->getName() == 'admin-projetos.show') ? 'ni ni-collection text-blue' : 'ni ni-collection   ' }} "></i> Projetos
         </a>
     </li>  
     <!-- <li class="nav-item">

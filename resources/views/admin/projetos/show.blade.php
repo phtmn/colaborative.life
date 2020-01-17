@@ -2,7 +2,7 @@
 
 @section('cabecalho')
 <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
-    <span class="mask bg-gradient-default opacity-10"></span>
+    <span class="mask bg-gradient-default opacity-7"></span>
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-12 col-md-10">
@@ -23,25 +23,25 @@
         </div> -->
 
         <div class="container-mt--7">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-5">
                 <div class="card shadow">
                     <div class="card-body bg-transparent">
                         {{ Form::model($projeto,['route'=>['admin-projetos.update',$projeto->id] ]) }}
                         @method('PUT')
                         @csrf
-                        <p class="text-default mt-2">Dados Gerais</p>
+                        <p class="text-default font-weight-bold mt-2">Dados Gerais</p>
                         <hr>
                         @include('admin.projetos.forms.section1_edit')
-                        <p class="text-default mt-2">Dados do Proponente </p>
+                        <p class="text-default font-weight-bold mt-2">Dados do Proponente </p>
                         <hr>
                         @include('admin.projetos.forms.section2_edit')
-                        <p class="text-default mt-2">Dados Bancários </p>
+                        <p class="text-default font-weight-bold mt-2">Dados Bancários </p>
                         <hr>
                         @include('admin.projetos.forms.section3_edit')
                         <hr>
                         @include('admin.projetos.forms.section4_edit')
                         <div data-target="fields-fill-from-ajax" style="display: {{ ($projeto->status == 'Captação em análise' OR $projeto->status == 'Não Aprovado para Captação') ? 'none' : 'block' }}">
-                        <p class="text-default mt-2">Dados do Versalic </p>
+                        <p class="text-default font-weight-bold mt-2">Dados do Versalic </p>
                         <hr>
                         @include('admin.projetos.forms.section5_edit')
                             

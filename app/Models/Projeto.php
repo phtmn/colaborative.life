@@ -13,8 +13,8 @@ class Projeto extends Model
 
     protected $fillable = [
         'user_id', 'num_pronac', 'telefone', 'cep', 'logradouro', 'bairro', 'cidade',
-        'uf', 'banco', 'ag', 'cc', 'video_youtube', 'imagem_projeto', 'apresentacao',
-        'cronograma', 'orcamento', 'contrapartidas', 'recompensas', 'ativo', 'publicado',
+        'uf', 'banco', 'ag', 'cc', 'comprovante_captacao', 'imagem_projeto', 'cronograma',
+        'contrapartidas', 'ativo', 'publicado',
         'tipo_pessoa', 'cpf', 'cnpj', 'responsavel', 'municipio', 'status'
     ];
 

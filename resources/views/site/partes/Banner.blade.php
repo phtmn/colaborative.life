@@ -1,7 +1,7 @@
 <div class="position-relative">
     <!-- shape Hero -->
     <section class="section section-lg section-shaped pb-250">
-        <div class="shape shape-style-1 bg-gradient-success">
+        <div class="shape   bg-gradient-teal">
             <span></span>
             <span></span>
             <span></span>

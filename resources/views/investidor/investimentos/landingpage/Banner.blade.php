@@ -1,7 +1,7 @@
 <div class="position-relative">
     <!-- shape Hero -->
     <section class="section section-lg section-shaped pb-250">
-        <div class="shape shape-style-1 bg-gradient-success">
+        <div class="shape bg-gradient-success">
             <span></span>
             <span></span>
             <span></span>
@@ -26,7 +26,10 @@
                     {{$projeto->telefone}} - {{$projeto->banco}}
 
                     {{-- TODO - Ajustar o tamanho da imagem --}}
+                    <img src="{{ url('projetos/'.$projeto->comprovante_captacao) }}" alt="" width="300px">
                     <img src="{{ url('projetos/'.$projeto->imagem_projeto) }}" alt="" width="300px">
+                    <img src="{{ url('projetos/'.$projeto->cronograma) }}" alt="" width="300px">
+                    <img src="{{ url('projetos/'.$projeto->contrapartidas) }}" alt="" width="300px">
                 </div>
             </div>
         </div>

@@ -22,11 +22,11 @@
             <div class="card-header border-0">
             <p class="text-default font-weight-bold mt-3"> Projetos Cadastrados</p>
                 </div>
-                <div class="table-responsive">        
-                   <table class="table align-items-center table-flush">
+                <div class="table-responsive ">
+                    <table class="table align-items-center table-flush "  style="width:100%" id="example" >
                         <thead class="thead-light">
                         <tr>
-                            <th scope="col" class="text-left">#</th>                            
+                                                       
                             <th scope="col" class="text-left">Nº do PRONAC</th>
                             <th scope="col" class="text-left">Landing Page</th>
                             <th scope="col" class="text-left">Status</th>
@@ -36,7 +36,7 @@
                         <tbody>
                         @forelse($data as $d)
                             <tr>
-                                <td>{{$d->id}}</td>
+                               
                                 <td><a href="{{route('admin-projetos.show',$d->id)}}" >{{$d->num_pronac}} </a></td>
                                 <td> <a href="{{ route('detalhe.projeto', $d->num_pronac) }}" Target=”_blank” data>
                                             <span class="text-primary {{ (($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada') AND $d->publicado) ? "" : "disabled-link" }}"> Acessar </span>

@@ -30,8 +30,8 @@
                 <div class="card-header border-0">
                     <a href="{{route('projetos.create')}}" class="btn btn-secondary "><i class="ni ni-fat-add"></i> Adicionar </a>
                 </div>
-                <div class="table-responsive py-4">
-                    <table class="table align-items-center table-flush">
+                <div class="table-responsive ">
+                    <table class="table align-items-center table-flush "  style="width:100%" id="example" >
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="text-left">Nº do PRONAC</th>

@@ -2,7 +2,7 @@
 
 @section('conteudo_principal')
     <section class="section section-shaped section-sm">
-        <div class="shape shape-style-1 bg-gradient-success">
+        <div class="shape bg-gradient-teal">
             <span></span>
             <span></span>
             <span></span>

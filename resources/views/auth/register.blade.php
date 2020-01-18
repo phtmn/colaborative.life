@@ -2,7 +2,7 @@
 
 @section('conteudo_principal')
     <section class="section section-shaped section-lg-12">
-		<div class="shape shape-style-1 bg-gradient-success">
+		<div class="shape bg-gradient-teal">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -99,25 +99,28 @@
 							
 							<div class="card-body">
 							<div class="form-group">
-									<label for="name"><strong class="text-primary"><i class="ni ni-collection"></i> Perfil Proponente de Projetos</strong></label>
-									<p class="text-justify" class="sample-text" style="text-indent: 20px;"> Se você é uma organização sem fins lucrativos e produz o bem comum, com alto valor socioambiental agregado.</p>
+									<label for="name"><strong class="text-dark"> Perfil Proponente de Projetos</strong></label>
+									<p class="text-justify " class="sample-text" style="text-indent: 20px;"> Se você é uma organização sem fins lucrativos e produz o bem comum, com alto valor socioambiental agregado.</p>
+									<h5 class="text-center"><span class="badge badge-pill badge-primary" style="text-transform: capitalize; " >Portfólio de Projetos</span></a>
+									<span class="badge badge-pill badge-warning" style="text-transform: capitalize; " >Captação de Recursos</span></a>
+									<span class="badge badge-pill badge-warning" style="text-transform: capitalize; " >Recibo de Mecenato</span></a></h5>
 								</div>
 								<hr>
 								<div class="form-group">
-									<label for="name"><strong class="text-success">  <i class="ni ni-satisfied"></i> Perfil Investidor Pessoa Física</strong></label>
-									<p class="text-justify class="sample-text" style="text-indent: 20px;">Se você quer apoiar, investir, trocar informações, divulgar conteúdos por simpatia, afinidade ou estilo de vida.</p>
-									 <h5 class="text-center"><span class="badge badge-pill badge-success" style="text-transform: capitalize;"  >Investidor Social</span></a>
-									 <span class="badge badge-pill badge-success" style="text-transform: capitalize;" >Volutário Ativo</span></a>
+									<label for="name"><strong class="text-dark">   Perfil Investidor Pessoa Física</strong></label>
+									<p class="text-justify" class="sample-text" style="text-indent: 20px;">Se você quer apoiar, investir, trocar informações, divulgar conteúdos por simpatia, afinidade ou estilo de vida.</p>
+									 <h5 class="text-center"><span class="badge badge-pill badge-success" style="text-transform: capitalize;"  >Investir em Projetos</span></a>
+									 <span class="badge badge-pill badge-success" style="text-transform: capitalize;" >6% de Abtimento no IR</span></a>
 									 <span class="badge badge-pill badge-success" style="text-transform: capitalize;" >Volutário Passivo</span></a></h5>
 								</div>
 								
 								<hr>
 								<div class="form-group">
-									<label for="name"><strong class="text-warning"><i class="ni ni-istanbul"></i> Perfil Investidor Pessoa Jurídica</strong></label>
+									<label for="name"><strong class="text-dark"> Perfil Investidor Pessoa Jurídica</strong></label>
 									<p class="text-justify" class="sample-text" style="text-indent: 20px;">	Se sua empresa está voltada para resultados sustentáveis de impacto, engajamento e transformação social.</p>
-									<h5 class="text-center"><span class="badge badge-pill badge-warning" style="text-transform: capitalize;" >Investidor Social</span></a>
-									 <span class="badge badge-pill badge-warning" style="text-transform: capitalize; " >Volutário Ativo</span></a>
-									 <span class="badge badge-pill badge-warning" style="text-transform: capitalize; "  >Volutário Passivo</span></a></h5>
+									<h5 class="text-center"><span class="badge badge-pill badge-warning" style="text-transform: capitalize;" >Investir em Projetos</span></a>
+									 <span class="badge badge-pill badge-warning" style="text-transform: capitalize; " >6% de Abtimento no IR</span></a></h5>
+									 </h5>
 								</div>
 
 								

@@ -6,7 +6,7 @@
     @include('investidor.investimentos.landingpage.Banner')
 
 
-{{--    @include('investidor.investimentos.landingpageProjeto.sessao4')--}}
+{{--    @include('investidor.investimentos.landingpageProjeto.sessao4')
 
     <main class="profile-page">
 

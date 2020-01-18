@@ -8,6 +8,8 @@
     <meta name="author" content="Creative Tim">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>.:: Dashboard do Proponente ::.</title>
+    <link type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet">
     <!-- Favicon -->
     <link href="{{asset('vendor/site/images/favicon.ico')}}" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -185,6 +187,29 @@
 <script src="{{ asset('vendor/argon-dash/assets/js/argon.js?v=1.0.0') }}"></script>
 <script src="{{ asset('js/dropzone.js') }}"></script>
 <script src="{{asset('js/jquery.mask.min.js')}}"> </script>
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+    </script>
+
+
 <script>
     $(document).ready(function() {
         $('#telefone').mask('(99) 9 9999-9999');

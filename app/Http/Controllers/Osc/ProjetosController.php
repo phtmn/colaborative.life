@@ -39,69 +39,56 @@ class ProjetosController extends Controller
     {
         $files = [];
 
+        if ($request->hasFile('comprovante_captacao') && $request->file('comprovante_captacao')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('comprovante_captacao')->getClientOriginalName();
+
+            $request->comprovante_captacao->move('projetos', $fileName);
+            $files['comprovante_captacao']  = $fileName;
+          }
+                
         if ($request->hasFile('imagem_projeto') && $request->file('imagem_projeto')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('imagem_projeto')->getClientOriginalName();
 
             $request->imagem_projeto->move('projetos', $fileName);
             $files['imagem_projeto']  = $fileName;
           }
-
-        if ($request->hasFile('apresentacao') && $request->file('apresentacao')->isValid()) {
-            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('apresentacao')->getClientOriginalName();
-
-            $request->apresentacao->move('projetos', $fileName);
-            $files['apresentacao']  = $fileName;
-          }
-
+        
         if ($request->hasFile('cronograma') && $request->file('cronograma')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('cronograma')->getClientOriginalName();
 
-            $request->imagem_projeto->move('projetos', $fileName);
+            $request->cronograma->move('projetos', $fileName);
             $files['cronograma']  = $fileName;
           }
-
-        if ($request->hasFile('orcamento') && $request->file('orcamento')->isValid()) {
-            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('orcamento')->getClientOriginalName();
-
-            $request->imagem_projeto->move('projetos', $fileName);
-            $files['orcamento']  = $fileName;
-          }
+      
 
         if ($request->hasFile('contrapartidas') && $request->file('contrapartidas')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('contrapartidas')->getClientOriginalName();
 
-            $request->imagem_projeto->move('projetos', $fileName);
+            $request->contrapartidas->move('projetos', $fileName);
             $files['contrapartidas']  = $fileName;
           }
 
-        if ($request->hasFile('recompensas') && $request->file('recompensas')->isValid()) {
-            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('recompensas')->getClientOriginalName();
-
-            $request->imagem_projeto->move('projetos', $fileName);
-            $files['recompensas']  = $fileName;
-          }
-
+       
         $projeto = new Projeto;
-        $projeto->num_pronac          = $request->num_pronac;
-        $projeto->telefone            = $request->telefone;
-        $projeto->cep                 = $request->cep;
-        $projeto->logradouro          = $request->logradouro;
-        $projeto->bairro              = $request->bairro;
-        $projeto->cidade              = $request->cidade;
-        $projeto->uf                  = $request->uf;
-        $projeto->banco               = 'Banco do Brasil S.A.';
-        $projeto->ag                  = $request->ag;
-        $projeto->cc                  = $request->cc;
-        $projeto->video_youtube       = $request->video_youtube;
-        $projeto->imagem_projeto      = $files['imagem_projeto'] ?? null;
-        $projeto->apresentacao        = $files['apresentacao'] ?? null;
-        $projeto->cronograma          = $files['cronograma'] ?? null;
-        $projeto->orcamento           = $files['orcamento'] ?? null;
-        $projeto->contrapartidas      = $files['contrapartidas'] ?? null;
-        $projeto->recompensas         = $files['recompensas'] ?? null;
-        $projeto->ativo               = '0';
-        $projeto->status              = 'Captação em análise';
-        $projeto->user_id             = $request->user()->id;
+        $projeto->num_pronac            = $request->num_pronac;
+        $projeto->telefone              = $request->telefone;
+        $projeto->cep                   = $request->cep;
+        $projeto->logradouro            = $request->logradouro;
+        $projeto->bairro                = $request->bairro;
+        $projeto->cidade                = $request->cidade;
+        $projeto->uf                    = $request->uf;
+        $projeto->banco                 = 'Banco do Brasil S.A.';
+        $projeto->ag                    = $request->ag;
+        $projeto->cc                    = $request->cc;
+        // $projeto->video_youtube         = $request->video_youtube;
+        $projeto->comprovante_captacao  = $files['comprovante_captacao'] ?? null;
+        $projeto->imagem_projeto        = $files['imagem_projeto'] ?? null;        
+        $projeto->cronograma            = $files['cronograma'] ?? null;        
+        $projeto->contrapartidas        = $files['contrapartidas'] ?? null;
+        
+        $projeto->ativo                 = '0';
+        $projeto->status                = 'Captação em análise';
+        $projeto->user_id               = $request->user()->id;
         $projeto->save();
 
         if ($projeto) {

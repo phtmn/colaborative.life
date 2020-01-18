@@ -21,13 +21,13 @@
 <div class="col-md-12 mt-5">
         <div class="card shadow">
         <div class="card-header border-0">
-                <p class="text-default font-weight-bold mt-3"> Usuários Cadastradosssssssssssssssss</p>
+                <p class="text-default font-weight-bold mt-3"> Usuários Cadastrados</p>
             </div>
-            <div class="table-responsive">        
-               <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
+            <div class="table-responsive ">
+                    <table class="table align-items-center table-flush "  style="width:100%" id="example" >
+                        <thead class="thead-light">
                     <tr>
-                        <th scope="col" class="text-left">#</th>                            
+                                            
                         <th scope="col" class="text-left">Nome</th>
                         <th scope="col" class="text-left">E-mail</th>
                         <th scope="col" class="text-left">Perfil</th>
@@ -38,7 +38,7 @@
                     <tbody>
                     @forelse($data as $d)
                         <tr>
-                            <td>{{$d->id}}</td>
+                            
                             <td><a href="{{route('admin-users.show',$d->id)}}" >{{$d->name}} </a></td>
                             <td>{{$d->email}} </td> 
                             <td>{{$d->tipo_conta}}  </td> 

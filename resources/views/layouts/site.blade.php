@@ -6,6 +6,9 @@
 	<meta name="description" content="Aqui no XXX, você pode engajar com projetos ou causas que estão de acordo com seus propósitos, de forma planejada, estruturada e transparente">
 	<meta name="author" content="XXX">
 	<title>.:: XXX ::. </title>
+
+	<link type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet">
 	<!-- Favicon -->
 	<link href="{{asset('vendor/site/images/afavicon.ico')}}" rel="icon" type="image/png">
 	<!-- Fonts -->
@@ -186,126 +189,7 @@
 <main class="coopviva">
 	@yield('conteudo_principal')
 </main>
-<footer class="footer has-cards">
-	<div class="container">
-	<div class="row row-grid align-items-center my-md ">
-					<div class="col-xs-12 col-lg-6">
-						<h3 class="text-primary font-weight-light mb-2"><b>Agradecemos sua visita!</b></h3>
-						<h4 class="mb-0 font-weight-light">Junte-se a nós por um mundo sustentável.</h4>
-					</div>
-					<div class="col-xs-12 col-lg-6 text-right">
-							<!-- <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Deixe seu Feedback</button> -->
-							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									<div class="modal-dialog" role="document">
-									  <div class="modal-content">
-										<div class="modal-header">
-										  <h6 class="modal-title text-center" id="exampleModalLabel">Sua opnião é muito importante para nós!</h6>
-										  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										  </button>
-										</div>
-										<div class="modal-body">
-											<form method="POST" action="{{ route('feedback.store') }}">
-											@csrf
-												<div class="form-group ">
 
-												  <input type="text" class="form-control" name="nome" id="recipient-name" placeholder="Nome">
-
-												</div>
-												<div class="form-group ">
-
-													<input type="text" class="form-control" name="email" id="recipient-name" placeholder="E-mail">
-
-												  </div>
-												  <div class="form-group ">
-
-													<input type="tel" class="form-control " name="telefone" id="recipient-name" placeholder="Telefone">
-
-												  </div>
-												  <div class="form-group ">
-
-														<div class="input-group mb-3 ">
-																<div class="input-group-prepend">
-																  <label class="input-group-text" for="inputGroupSelect01">Selecione</label>
-																</div>
-																<select class="custom-select " name="categoria" id="inputGroupSelect01">
-																  <option selected>Feed...</option>
-																  <option value="sugestao">Sugestão</option>
-																  <option value="elgio">Elogio</option>
-																  <option value="erro">Reportar Erro</option>
-																  <option value="critica">Críticas</option>
-																  <option value="duvida">Dúvidas</option>
-																</select>
-
-															  </div>
-
-
-													  </div>
-												<div class="form-group">
-
-												  <textarea class="form-control" name="mensagem" id="message-text" placeholder="Deixe sua Menssagem" rows="8"></textarea>
-
-												</div>
-												<div class="modal-footer">
-												  <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-												  <button type="submit" class="btn btn-success">Enviar</button>
-												</div>
-											  </form>
-
-										</div>
-
-									  </div>
-									</div>
-								  </div>
-					</div>
-						<div class="col-lg-6 text-lg-center btn-wrapper">
-
-						<!--	<img src="{{asset('vendor/site/images/amazons3.png')}}"  style="width: 128px; height: auto;">
-
-
-							<img src="{{asset('vendor/site/images/mercadopago.png')}}"  style="width: 128px; height: auto;">
-
-
-							<img src="{{asset('vendor/site/images/hostgator.png')}}"  style="width: 128px; height: auto;">
-					-->
-					</div>
-
-
-
-
-
-				</div>
-		<hr>
-		<div class="row align-items-center justify-content-md-between">
-
-			<div class="col-md-5 ">
-				<div class="copyright text-center text-primary text-xl-left text-muted">
-					&copy; 2019
-					<a href="{{url('/')}}" target="_blank">COOPVIVA</a>
-				</div>
-			</div>
-			<div class="col-md-7">
-				<ul class="nav nav-footer justify-content-end">
-				<li class="nav-item">
-						<a href="http://simeuquero.org/" class="nav-link" target="_blank">SIM EU QUERO</a>
-					</li>
-					<li class="nav-item">
-						<a href="http://www.redeconexao.com.br/" class="nav-link" target="_blank">Rede de Conexão</a>
-					</li>
-					<li class="nav-item">
-						<a href="http://www.agenda2030.com.br/" class="nav-link" target="_blank">Agenda 2030</a>
-					</li>
-
-
-					<li class="nav-item">
-						<a href="{{url('/termo-de-uso')}}" class="nav-link" >Termo de Uso</a>
-					</li>
-				</ul>
-
-			</div>
-		</div>
-	</div>
-</footer>
 
 
 <!-- Modal Login -->
@@ -382,6 +266,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
 <!--::::::::::::::::::::::::::::fancybox.mim.js::::::::::::::::::::::::::::::::-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+    </script>
+
+
 @include('sweet::alert')
 @yield('js')
 

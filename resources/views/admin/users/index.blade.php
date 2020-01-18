@@ -21,7 +21,7 @@
 <div class="col-md-12 mt-5">
         <div class="card shadow">
         <div class="card-header border-0">
-                <p class="text-default font-weight-bold mt-3"> Usuários Cadastrados</p>
+                <p class="text-default font-weight-bold mt-3"> Usuários Cadastradosssssssssssssssss</p>
             </div>
             <div class="table-responsive">        
                <table class="table align-items-center table-flush">

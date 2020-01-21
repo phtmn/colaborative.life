@@ -37,7 +37,7 @@
                         @forelse($data as $d)
                             <tr>
                                
-                                <td><a href="{{route('admin-projetos.show',$d->id)}}" >{{$d->num_pronac}} </a></td>
+                                <td><i class="fas fa-edit text-primary"></i> <a class="text-primary " href="{{route('admin-projetos.show',$d->id)}}" >{{$d->num_pronac}} </a></td>
                                 <td> <a href="{{ route('detalhe.projeto', $d->num_pronac) }}" Target=”_blank” data>
                                             <span class="text-primary {{ (($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada') AND $d->publicado) ? "" : "disabled-link" }}"> Acessar </span>
                                         </a></td> 

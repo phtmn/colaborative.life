@@ -30,7 +30,7 @@
                     <p class="text-blue font-weight-bold mt-2">Dados do Projeto Beneficiado </p>
                     <hr>
                     @include('proponente.recibos.forms.section4_create')
-                    <p class="text-blue font-weight-bold mt-2">Dados do Declarante * </p>
+                    <p class="text-blue font-weight-bold mt-2">Dados do Declarante <b class="text-blue" data-toggle="tooltip" title="NO CASO DE PESSOA JURÍDICA " >°</b> </p>
                     <hr>
                     @include('proponente.recibos.forms.section5_create')
                                       

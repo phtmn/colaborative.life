@@ -1,6 +1,6 @@
 <section>        
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right">Tipo de Operação </label>       
+        <label for="" class="col-sm-3 col-form-label text-right">Tipo de operação </label>       
         <div class="form-group col-md-3">
         <select class="form-control" >
             <option value="volvo">..Selecione..</option>
@@ -15,7 +15,7 @@
         </div>
     </div>  
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right">Dandos Bancários </label>
+        <label for="" class="col-sm-3 col-form-label text-right">Dandos bancários </label>
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-4">                    
@@ -31,7 +31,7 @@
         </div>
     </div>  
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Data *</label>
+        <label for="" class="col-sm-3 col-form-label text-right ">Data <b class="text-blue" data-toggle="tooltip" title="Data do recebimento do incentivo" >°</b></label>
         <div class="form-group col-md-3">
             <input type="date" name="cep" class="form-control" value="" id="cep" placeholder="CEP">
         </div>
@@ -51,7 +51,7 @@
         </div>
     </div> 
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Forma de Avaliação da Doação/Patrocínio</label>
+        <label for="" class="col-sm-3 col-form-label text-right ">Forma de avaliação da Doação/Patrocínio</label>
         <div class="form-group col-md-6">
         <textarea class="form-control" id="exampleFormControlTextarea2" rows="2" resize="none"></textarea>
         </div>

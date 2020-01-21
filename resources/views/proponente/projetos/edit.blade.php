@@ -19,8 +19,9 @@
     <div class="col-md-12">
         <div class="card shadow">
             <div class="card-body bg-transparent">
-                <form action="{{route('projetos.update','$projeto->id')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
+            <form action="{{route('projetos.update', [ 'id' => $projeto->id ])}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        {{ method_field('PUT') }}             
                     <p class="text-blue font-weight-bold mt-2">Dados Gerais</p>
                     <hr>
                     @include('proponente.projetos.forms.section1_edit')
@@ -32,7 +33,7 @@
                     @include('proponente.projetos.forms.section3_edit')
                     <p class="text-blue font-weight-bold mt-2">Upload </p>
                     <hr>
-                    @include('proponente.projetos.forms.section4_create')
+                    @include('proponente.projetos.forms.section4_edit')
                     <!-- <p class="text-success mt-2">Equipe </p>
                     <hr>                   
                     <p class="text-success mt-2">Upload </p>
@@ -46,6 +47,7 @@
                         <a class="btn btn-primary" href="{{ route('projetos.index') }}">
                             <i class="ni ni-bold-left"></i> Voltar
                         </a>
+                        <button type="submit" class="btn btn-outline-primary"><i class="ni ni-check-bold"></i> Salvar</button>
                     </div>
                 </form>
             </div>

@@ -10,7 +10,7 @@
         </div>
     </div> 
     <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label text-right ">Data *</label>
+        <label for="" class="col-sm-3 col-form-label text-right ">Data <b class="text-blue" data-toggle="tooltip" title="Data da publicação da portaria de aprovação no DOU" >°</b></label>
         <div class="form-group col-md-3">
             <input type="date" name="cep" class="form-control" value="" id="cep" placeholder="CEP">
         </div>

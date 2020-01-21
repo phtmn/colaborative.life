@@ -6,6 +6,7 @@ use Storage;
 use Illuminate\Http\Request;
 use App\Models\Projeto;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Alert;
 
 class ProjetosController extends Controller
@@ -98,6 +99,77 @@ class ProjetosController extends Controller
 
         Alert::error('Algum Erro ocorreu' . $t->getMessage(), 'Erro')->persistent('Ok');
         return redirect()->route('projetos.create')->withInput($request->all());
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+        $projeto = Projeto::findOrFail($id);
+
+        $files = [];
+
+        if ($request->hasFile('comprovante_captacao') && $request->file('comprovante_captacao')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('comprovante_captacao')->getClientOriginalName();
+
+            $request->comprovante_captacao->move('projetos', $fileName);
+            $files['comprovante_captacao']  = $fileName;
+          }
+                
+        if ($request->hasFile('imagem_projeto') && $request->file('imagem_projeto')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('imagem_projeto')->getClientOriginalName();
+
+            $request->imagem_projeto->move('projetos', $fileName);
+            $files['imagem_projeto']  = $fileName;
+          }
+        
+        if ($request->hasFile('cronograma') && $request->file('cronograma')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('cronograma')->getClientOriginalName();
+
+            $request->cronograma->move('projetos', $fileName);
+            $files['cronograma']  = $fileName;
+          }
+      
+
+        if ($request->hasFile('contrapartidas') && $request->file('contrapartidas')->isValid()) {
+            $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('contrapartidas')->getClientOriginalName();
+
+            $request->contrapartidas->move('projetos', $fileName);
+            $files['contrapartidas']  = $fileName;
+          }
+        
+        $projeto->update([            
+            'telefone'             => $request->telefone,
+            'cep'                  => $request->cep,
+            'logradouro'           => $request->logradouro,
+            'bairro'               => $request->bairro,
+            'cidade'               => $request->cidade,
+            'uf'                   => $request->uf,
+            'comprovante_captacao' => $files['comprovante_captacao'] ?? null,
+            'imagem_projeto'       => $files['imagem_projeto'] ?? null,
+            'cronograma'           => $files['cronograma'] ?? null,
+            'contrapartidas'       => $files['contrapartidas'] ?? null            
+        ]);
+
+        $result = DB::transaction(function() use ($request, $projeto) {
+            try {
+                Alert::success('Dados salvos com sucesso!')->persistent('Ok');
+                return redirect()->route('projetos.index');
+            }
+            catch(Throwable $t) {
+                Alert::error('Algum Erro ocorreu' . $t->getMessage(), 'Erro')->persistent('Ok');
+                return redirect()->route('projetos.create')->withInput($request->all());
+            }
+        });
+
+        return $result;
+
+        // if ($projeto) {
+        //     Alert::success('Dados salvos com sucesso!')->persistent('Ok');
+        //     return redirect()->route('projetos.index');
+        // }
+
+        // Alert::error('Algum Erro ocorreu' . $t->getMessage(), 'Erro')->persistent('Ok');
+        // return redirect()->route('projetos.create')->withInput($request->all());
     }
 
     public function publicate($id)

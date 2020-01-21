@@ -37,16 +37,16 @@
                                 <th scope="col" class="text-left">Nº do PRONAC</th>
                                 <th scope="col" class="text-left">Landing Page</th>
                                 <th scope="col" class="text-left">Status</th>
+                                <th scope="col" class="text-left">Uploads</th>
                                 <th scope="col" class="text-left">Publicado</th>
-                                <th scope="col" class="text-left">#</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($data as $d)
                             <tr>
-                                <td>
-                                     {{$d->num_pronac}}
-                                </td>
+
+                                <td><i class="fas fa-edit text-primary"></i> <a class="text-primary " href="{{route('projetos.edit',$d->id)}}" >{{$d->num_pronac}} </a></td>
+
                                 <td>
                                     <span class="badge badge-dot mr-4">
                                         <a href="{{ route('detalhe.projeto', $d->num_pronac) }}" data>
@@ -68,6 +68,23 @@
                                              @endif
                                     </td>
                                     <td>
+                                         <div class="avatar-group">
+                                            <a href="{{ $d->comprovante_captacao }}" class="avatar avatar-sm rounded-circle" download>  
+                                                <img src="{{ $d->comprovante_captacao }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Extrato bancário da conta captação"> 
+                                              </a>
+                                              <a href="{{ $d->imagem_projeto }}" class="avatar avatar-sm rounded-circle"  download>  
+                                                <img src="{{ $d->imagem_projeto }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Foto de Destaque"> 
+                                              </a>
+                                              <a href="{{ $d->cronograma }}" class="avatar avatar-sm rounded-circle" download>  
+                                                <img src="{{ $d->cronograma }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Cronograma de atividades"> 
+                                              </a>
+                                              <a href="{{ $d->contrapartidas }}" class="avatar avatar-sm rounded-circle" download>  
+                                                <img src="{{ $d->contrapartidas }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Plano de contrapartidas"> 
+                                              </a>                                             
+                                            </div>
+                                        
+                                    </td>
+                                    <td>
                                         @if($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada')
                                                  <label class="custom-toggle custom-toggle-success">
                                                 <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('projeto.publicate', [ 'id' => $d->id ]) }}" {{ ($d->publicado) ? 'checked' : '' }}>
@@ -76,14 +93,7 @@
                                         @else
                                                                          
                                         @endif
-                                    </td>
-                                    <td>
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <a class="text-success" href="{{route('projetos.edit',$d->id)}}"> Editar</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                                    </td>                                   
                                 </tr>
                             @empty
                             <p class="text-warning font-weight-bold 900" style="text-indent: 25px;">Você ainda não cadastrou nenhum projeto! <span></span></p>

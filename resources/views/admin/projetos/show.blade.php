@@ -107,9 +107,10 @@
 
                   const inputMecanismo = $('input[data-target=mecanismo]');   
                   const inputEnquadramento = $('input[data-target=enquadramento]'); 
-                  const inputMunicipio = $('input[data-target=municipio]');  
+                  const inputMunicipio = $('input[data-target=municipio]'); 
+                  const inputUF = $('input[data-target=uf_projeto]');  
 
-                  const inputAno_projeto = $('input[data-target=ano_projeto]');
+                  const inputAno_projeto = $('input[data-target=20ano_projeto]');
                   const inputData_termino = $('input[data-target=data_termino]');
                   const inputData_inicio = $('input[data-target=data_inicio]');
 
@@ -136,7 +137,7 @@
 
                   const inputEspecificacao_tecnica = $('input[data-target=especificacao_tecnica]');
 
-                  const inputImpacto_ambiental = $('input[data-target=impacto_ambiental]');
+                  const inputimpacto_ambiental = $('input[data-target=impacto_ambiental]');
 
                   const inputDemocratizacao = $('input[data-target=democratizacao]');
 
@@ -157,6 +158,7 @@
                   inputMecanismo.val(response.mecanismo);
                   inputEnquadramento.val(response.enquadramento);
                   inputMunicipio.val(response.municipio);
+                  inputUF.val(response.UF);
 
                   inputAno_projeto.val(response.ano_projeto);
                   inputData_termino.val(response.data_termino);
@@ -181,9 +183,11 @@
 
                   inputJustificativa.val(response.justificativa); 
 
+                  inputFicha_tecnica.val(response.ficha_tecnica); 
+
                   inputEspecificacao_tecnica.val(response.especificacao_tecnica); 
 
-                  inputImpacto_ambiental.val(response.impacto_ambiental); 
+                  inputimpacto_ambiental.val(response.impacto_ambiental); 
 
                   inputDemocratizacao.val(response.democratizacao); 
 

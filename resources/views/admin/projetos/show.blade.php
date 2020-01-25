@@ -110,7 +110,7 @@
                   const inputMunicipio = $('input[data-target=municipio]'); 
                   const inputUF = $('input[data-target=uf_projeto]');  
 
-                  const inputAno_projeto = $('input[data-target=20ano_projeto]');
+                  const inputAno_projeto = $('input[data-target=ano_projeto]');
                   const inputData_termino = $('input[data-target=data_termino]');
                   const inputData_inicio = $('input[data-target=data_inicio]');
 
@@ -123,25 +123,25 @@
                   const inputValor_captado = $('input[data-target=valor_captado]');
                   const inputValor_projeto = $('input[data-target=valor_projeto]');
 
-                  const inputResumo = $('input[data-target=resumo]');
+                  const inputResumo = $('textarea[data-target=resumo]');
 
-                  const inputEtapa = $('input[data-target=etapa]');
+                  const inputEtapa = $('textarea[data-target=etapa]');
 
-                  const inputObjetivos = $('input[data-target=objetivos]');
+                  const inputObjetivos = $('textarea[data-target=objetivos]');
 
-                  const inputSinopse = $('input[data-target=sinopse]');
+                  const inputSinopse = $('textarea[data-target=sinopse]');
 
-                  const inputJustificativa = $('input[data-target=justificativa]');
+                  const inputJustificativa = $('textarea[data-target=justificativa]');
 
-                  const inputFicha_tecnica = $('input[data-target=ficha_tecnica]');
+                  const inputFicha_tecnica = $('textarea[data-target=ficha_tecnica]');
 
-                  const inputEspecificacao_tecnica = $('input[data-target=especificacao_tecnica]');
+                  const inputEspecificacao_tecnica = $('textarea[data-target=especificacao_tecnica]');
 
-                  const inputimpacto_ambiental = $('input[data-target=impacto_ambiental]');
+                  const inputimpacto_ambiental = $('textarea[data-target=impacto_ambiental]');
 
-                  const inputDemocratizacao = $('input[data-target=democratizacao]');
+                  const inputDemocratizacao = $('textarea[data-target=democratizacao]');
 
-                  const inputAcessibilidade = $('input[data-target=acessibilidade]');
+                  const inputAcessibilidade = $('textarea[data-target=acessibilidade]');
 
                   // const inputTipoPessoa = $('input[data-target=tipo-pessoa]');                  
                   

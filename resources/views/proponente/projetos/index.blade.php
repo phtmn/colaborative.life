@@ -69,17 +69,17 @@
                                     </td>
                                     <td>
                                          <div class="avatar-group">
-                                            <a href="{{ $d->comprovante_captacao }}" class="avatar avatar-sm rounded-circle" download>  
-                                                <img src="{{ $d->comprovante_captacao }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Extrato bancário da conta captação"> 
+                                            <a href="{{ url('projetos/'.$d->comprovante_captacao) }} " class="avatar avatar-sm rounded-circle" download>  
+                                                <img src="{{ url('projetos/'.$d->comprovante_captacao) }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Extrato bancário da conta captação"> 
                                               </a>
-                                              <a href="{{ $d->imagem_projeto }}" class="avatar avatar-sm rounded-circle"  download>  
-                                                <img src="{{ $d->imagem_projeto }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Foto de Destaque"> 
+                                              <a href="{{ url('projetos/'.$d->imagem_projeto) }} " class="avatar avatar-sm rounded-circle"  download>  
+                                                <img src="{{ url('projetos/'.$d->imagem_projeto) }} "  alt="" class="Image placeholder" data-toggle="tooltip" title="Foto de Destaque"> 
                                               </a>
-                                              <a href="{{ $d->cronograma }}" class="avatar avatar-sm rounded-circle" download>  
-                                                <img src="{{ $d->cronograma }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Cronograma de atividades"> 
+                                              <a href="{{ url('projetos/'.$d->cronograma) }}" class="avatar avatar-sm rounded-circle" download>  
+                                                <img src="{{ url('projetos/'.$d->cronograma) }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Cronograma de atividades"> 
                                               </a>
-                                              <a href="{{ $d->contrapartidas }}" class="avatar avatar-sm rounded-circle" download>  
-                                                <img src="{{ $d->contrapartidas }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Plano de contrapartidas"> 
+                                              <a href="{{ url('projetos/'.$d->contrapartidas) }}" class="avatar avatar-sm rounded-circle" download>  
+                                                <img src="{{ url('projetos/'.$d->contrapartidas) }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Plano de contrapartidas"> 
                                               </a>                                             
                                             </div>
                                         

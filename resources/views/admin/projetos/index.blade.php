@@ -31,6 +31,8 @@
                             <th scope="col" class="text-left">Landing Page</th>
                             <th scope="col" class="text-left">Status</th>
                             <th scope="col" class="text-left">Publicado</th>
+                            <th scope="col" class="text-left">Data de Cadastro</th>
+                            <th scope="col" class="text-left">#</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -64,7 +66,9 @@
                                         @else
                                                                          
                                         @endif
-                                </td>                                                                                                                               
+                                </td> 
+                                <td>{{ date('d/m/Y',strToTime($d->created_at)) }}  </td>  
+                                <td><i class="ni ni-fat-remove text-danger"></i> <a class="text-warning " href="" > </a></td>                                                                                                                              
                             </tr>
                         @empty
                             <p class="label-red">Nenhum projeto cadastrado</p>

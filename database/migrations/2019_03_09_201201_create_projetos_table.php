@@ -31,14 +31,14 @@ class CreateProjetosTable extends Migration {
 			$table->string('cronograma', 100)->nullable();
 			// $table->string('orcamento', 100)->nullable();
 			$table->string('contrapartidas', 100)->nullable();	
-			$table->string('nome', 50)->nullable();
-			$table->string('proponente_responsavel', 50)->nullable(); // responsavel
+			$table->string('nome', 200)->nullable();
+			$table->string('proponente_responsavel', 200)->nullable(); // responsavel
 			$table->string('cpf-or-cnpj', 11)->nullable();
 			$table->string('segmento', 50)->nullable();
 			$table->string('area', 50)->nullable();
 			$table->string('mecanismo', 50)->nullable();
 			$table->string('enquadramento', 50)->nullable();
-			$table->string('municipio_projeto', 50)->nullable(); // municipio
+			$table->string('municipio_projeto', 200)->nullable(); // municipio
 			$table->string('uf_projeto', 2)->nullable();
 			$table->string('ano_projeto', 10)->nullable();
 			$table->string('data_termino', 50)->nullable();

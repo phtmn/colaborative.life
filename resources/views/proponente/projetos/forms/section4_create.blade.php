@@ -14,7 +14,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="comprovante_captacao" class="form-control" value="">
+                <input type="file" name="comprovante_captacao" class="form-control" value="" required>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="imagem_projeto" class="form-control" value="">
+                <input type="file" name="imagem_projeto" class="form-control" value="" required>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="cronograma" class="form-control" value="">
+                <input type="file" name="cronograma" class="form-control" value="" required>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="contrapartidas" class="form-control" value="">
+                <input type="file" name="contrapartidas" class="form-control" value="" required>
                 </div>
             </div>
         </div>

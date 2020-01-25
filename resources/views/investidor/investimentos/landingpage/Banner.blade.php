@@ -18,6 +18,27 @@
                 <div class="row justify-content-center">
                     <div class="osc">
                         <h1 class="display-2 text-white font-weight-bold">{{$projeto->num_pronac}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->nome}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->segmento}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->area}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->mecanismo}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->enquadramento}} </h1>
+                        <!-- <h1 class="display-2 text-white font-weight-bold">{{$projeto->num_pronac}} </h1> Municipio -->
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->uf_projeto}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->ano_projeto}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->data_termino}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->data_inicio}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->valor_proposta}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->valor_aprovado}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->resumo}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->etapa}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->objetivos}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->sinopse}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->ficha_tecnica}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->especificacao_tecnica}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->democratização}} </h1>
+                        <h1 class="display-2 text-white font-weight-bold">{{$projeto->acessibilidade}} </h1>
+
                     </div>
 
                 </div>

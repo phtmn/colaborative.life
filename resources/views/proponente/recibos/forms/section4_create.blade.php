@@ -4,7 +4,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-8">                    
-                    <input type="text" name="banco" class="form-control" value="" >
+                    <input type="text" name="nome_projeto" class="form-control" value="" >
                 </div>               
             </div>
         </div>
@@ -12,7 +12,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label text-right ">Data <b class="text-blue" data-toggle="tooltip" title="Data da publicação da portaria de aprovação no DOU" >°</b></label>
         <div class="form-group col-md-3">
-            <input type="date" name="cep" class="form-control" value="" id="cep" placeholder="CEP">
+            <input type="date" name="data_dou" class="form-control" value="" id="cep" placeholder="CEP">
         </div>
         <div class="form-group col-md-3">
         <!-- <select class="form-control" >
@@ -28,13 +28,13 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-5">                    
-                    <input type="text" name="banco" class="form-control" value="" placeholder="Nome">
+                    <input type="text" name="nome_proponente" class="form-control" value="" placeholder="Nome">
                 </div>
                 <div class="form-group col-md-3">
-                    <input type="text" name="ag" class="form-control" value="" placeholder="CNPJ/CPF" >                    
+                    <input type="text" name="doc_proponente" class="form-control" value="" placeholder="CNPJ/CPF" >                    
                 </div>   
                 <div class="form-group col-md-3">
-                    <input type="text" name="ag" class="form-control" value="" placeholder="Telefone/FAX" >                    
+                    <input type="text" name="tel_proponente" class="form-control" value="" placeholder="Telefone/FAX" >                    
                 </div>              
             </div>
         </div>

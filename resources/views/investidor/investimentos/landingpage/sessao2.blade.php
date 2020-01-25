@@ -5,7 +5,7 @@
       <div class="container pt-lg pb-100 ">
         <div class="row text-center justify-content-center">
          <h2 class="display-3 text-white">Qual problema sua organização resolve?</h2>
-		 <p class="lead text-white font-weight-600">{{ $osc->impactos ?? 'Aqui todas as instituições com seus respectivos projetos se inscrevem através de um cadastro completo e parametrizado conforme exigências de organismos internacionais de sustentabilidade. '}} </p>
+		 <p class="lead text-white font-weight-600">{{ $d->resumo ?? 'Aqui todas as instituições com seus respectivos projetos se inscrevem através de um cadastro completo e parametrizado conforme exigências de organismos internacionais de sustentabilidade. '}} </p>
 		 
         </div>
         <div class="row row-grid mt-4">
@@ -26,7 +26,7 @@
           <div class="col-lg-6">
     
             
-            <!-- @if($osc->video_institucional)
+            {{-- @if($osc->video_institucional)
                 <div class="card shadow mt-5 text-center ">
                     <p>Video Institucional</p>
                     <div class="p-3">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-            @endif -->
+            @endif --}}
           </div>
 		 
             

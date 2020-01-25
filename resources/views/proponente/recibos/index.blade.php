@@ -25,9 +25,9 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="text-left">Nº do PRONAC</th>
-                                <th scope="col" class="text-left">Landing Page</th>
-                                <th scope="col" class="text-left">Status</th>
-                                <th scope="col" class="text-left">Publicado</th>
+                                <th scope="col" class="text-left">Nº do Recibo</th>                                
+                                <th scope="col" class="text-left">Incentivador</th>
+                                <th scope="col" class="text-left">Proponente</th>
                                 <th scope="col" class="text-left">#</th>
                             </tr>
                         </thead>

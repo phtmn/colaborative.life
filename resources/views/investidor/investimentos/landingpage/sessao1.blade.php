@@ -10,13 +10,13 @@
                                 
                                 <h5 class="text-primary text-uppercase text-center">SOU UMA ORGANIZAÇÃO SEM FINS LUCRATIVOS</h5>
 								
-                                <p class="description mt-3"><p align="justify" style="text-indent: 25px;">{{$osc->historia ?? ''}}</p></p>
+                                {{--<p class="description mt-3"><p align="justify" style="text-indent: 25px;">{{$osc->historia ?? ''}}</p></p> --}}
                                 <div>
 									<hr>
 									
-									<div class="d-flex justify-content-center mb-2 ">
+                                    {{--	<div class="d-flex justify-content-center mb-2 ">
 
-                                        @if($osc->site)
+                                    @if($osc->site)
                                             <a href="{{ $osc->site ?? 'https://coopviva.com.br' }}" class="nav-link nav-link-icon" target="_blank"  >
                                             <i class="ni ni-world-2  text-Primary"></i>
                                             </a>
@@ -39,7 +39,7 @@
 										<i class="ni ni-square-pin text-Primary"></i>
 										</a>
 									        @endif
-									</div>	
+									</div>	--}}
                                                                       
                                 </div>
                                 
@@ -51,12 +51,12 @@
                         <div class="card card-lift--hover shadow border-0">
                             <div class="card-body py-4 mt-4 d-flex justify-content-center mb-4">
                                                                
-								@if(!$osc->logo)
+							{{-- 	@if(!$osc->logo)
                                         <img src="{{asset('vendor/site/images/jacareCoopViva.png')}}" class="thumbnail" style="width:205px; height:205px;">
                                     @else
                                         <img src="{{$osc->logo}}" class="" style="width:205px; height:205px;">
                                     @endif
-								
+								--}}
                                 <div>
                                     
                                 </div>
@@ -65,7 +65,7 @@
                                 
                             </div>
 
-                            @cannot('osc')
+                    {{--         @cannot('osc')
                                 <div class="botao mx-2 mb-4 mt-0">
                                     @guest
                                         <div class="text-center">
@@ -75,7 +75,8 @@
                                         <a href="" data-toggle="modal" data-target="#modal-default" class="btn btn-success btn-block">Quero Investir</a>
                                     @endguest
                                 </div>
-                            @endcannot
+                            @endcannot 
+                            --}}
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
     </div>
 </section>
 
-
+{{-- 
 <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
                     <div class="modal-dialog"  role="document">
                         {!! Form::open(['route'=>'pagar']) !!}
@@ -112,3 +113,4 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
+                --}}

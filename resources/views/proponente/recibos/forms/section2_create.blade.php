@@ -11,7 +11,7 @@
             </select>
         </div>
         <div class="form-group col-md-3">
-        <input type="text" name="logradouro" class="form-control" value="" placeholder="Valor (R$) do Incentivo">
+        <input type="text" name="valor_incentivo" class="form-control" value="" placeholder="Valor (R$) do Incentivo">
         </div>
     </div>  
     <div class="form-group row">
@@ -33,7 +33,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label text-right ">Data <b class="text-blue" data-toggle="tooltip" title="Data do recebimento do incentivo" >°</b></label>
         <div class="form-group col-md-3">
-            <input type="date" name="cep" class="form-control" value="" id="cep" placeholder="CEP">
+            <input type="date" name="data_incentivo" class="form-control" value="" placeholder="CEP">
         </div>
         <div class="form-group col-md-3">
         <select class="form-control" >
@@ -47,13 +47,13 @@
     <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label text-right ">Especificar a Doação/Patrocínio</label>
         <div class="form-group col-md-6">
-        <textarea class="form-control" id="exampleFormControlTextarea2" rows="2" resize="none"></textarea>
+        <textarea class="form-control" name="especificar" rows="2" resize="none"></textarea>
         </div>
     </div> 
     <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label text-right ">Forma de avaliação da Doação/Patrocínio</label>
         <div class="form-group col-md-6">
-        <textarea class="form-control" id="exampleFormControlTextarea2" rows="2" resize="none"></textarea>
+        <textarea class="form-control"  name="forma_av" rows="2" resize="none"></textarea>
         </div>
     </div>
 </section>

@@ -4,14 +4,14 @@
    
         
       <div class="row d-flex justify-content-center ">
-         @forelse($galerias as $g)
+      {{--  @forelse($galerias as $g) --}}
 
         <div class="col-xs-12 "><!--corpo-da-galeria-->
 			    <div class="col-xs-12 hovereffect">
                 <div>
               
-                    <a href="{{$g->aws_url}}" data-fancybox="gallery" data-caption="{{$g->legenda}} " class="">
-                            <img src = "{{$g->aws_url}}" class="img-fluid " alt = "" style="width:355px; height:255px;" />
+                {{--   <a href="{{$g->aws_url}}" data-fancybox="gallery" data-caption="{{$g->legenda}} " class=""> --}}
+                {{--        <img src = "{{$g->aws_url}}" class="img-fluid " alt = "" style="width:355px; height:255px;" /> --}}
                             
                     </a>
                 </div>  
@@ -27,9 +27,9 @@
                          {{--alt="{{$g->legenda}}"> --}}
                 {{--</a> --}}
             {{--</div> --}}
-            @empty
+            {{--  @empty --}}
             <p class="font-weight-900 text-default">#não há Fotos para exibir!</p>
-            @endforelse                  
+            {{--   @endforelse    --}}               
   </div><!---/row--->
 </div><!--/container-->
 

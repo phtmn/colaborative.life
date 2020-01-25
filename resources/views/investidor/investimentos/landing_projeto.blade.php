@@ -4,6 +4,10 @@
 @section('conteudo_principal')
 
     @include('investidor.investimentos.landingpage.Banner')
+    @include('investidor.investimentos.landingpage.sessao1')
+    @include('investidor.investimentos.landingpage.sessao2')
+    @include('investidor.investimentos.landingpage.sessao3')
+    
 
 
 {{--    @include('investidor.investimentos.landingpageProjeto.sessao4')

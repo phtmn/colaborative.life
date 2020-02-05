@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Alert;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use App\Models\Osc;
 
@@ -30,10 +31,21 @@ class InvestimentosController extends Controller
         ]);
     }
 
-    public function lista_projetos(){
-        $data = Projeto::where('publicado',1)->get();
+    public function lista_projetos(Request $request){
+        $query =  Projeto::where('publicado',1)->where('status', 'Aprovado para Captação');
+        $parametersInUrl = $request->query();
+        $filterInUrl = Arr::has($parametersInUrl, 'query') ? $parametersInUrl["query"] : null;
+
+        if ($filterInUrl) {
+            $query->where(function ($queryLocal) use ($filterInUrl) {
+                $queryLocal->where('nome', 'like', "%$filterInUrl%")
+                    ->orWhere('num_pronac', 'like', "%$filterInUrl%")
+                    ->orWhere('proponente_responsavel', 'like', "%$filterInUrl%");
+            });
+        }
+
         return view('investidor.investimentos.lista_projetos',[
-            'data' => $data
+            'projetos' => $query->paginate(15)
         ]);
     }
 

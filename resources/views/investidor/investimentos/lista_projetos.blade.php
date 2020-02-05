@@ -20,6 +20,14 @@
             <div class="col px-0">
                 <div class="row">
                     <div class="col-lg-10">
+
+                        <div class="form-group row">
+                            <input type="text" name="filter" class="form-control col-md-10" value="" required data-target="projects-filter" placeholder="faça sua busca por projetos"/>
+                            <button class="btn btn-success btn-icon" style="margin-left: 20px" data-target="projects-filter-btn">
+                                <span class="nav-link-inner--text">Buscar</span>
+                            </button>
+                        </div>
+
                         <h1 class="display-3  text-white">Realize um investimento agora
                             <span style="line-height: 1.1;">Escolha uma Organização para Investir</span>
                         </h1>
@@ -49,57 +57,55 @@
 </div>
 
 <section class="section section-lg pt-lg-0 mt--300">
-    <div class="container-fluid mt--6">
-        <div class="row">
-            <div class="col-lg-4">
-                <!-- Image-Text card -->
-                <div class="card">
-                    <!-- Card image -->
-                    <img class="card-img-top" src="{{asset('images/2.jpg')}}" alt="Image placeholder">
-                    <!-- Card body -->
-                    <div class="card-body">
-                        <h5 class="h2 card-title mb-0">Get started with Argon</h5>
-                        <small class="text-muted">by John Snow on Oct 29th at 10:23 AM</small>
-                        <p class="card-text mt-4">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                        <a href="#!" class="btn btn-link px-0">View article</a>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center mt-5">
-                        <div class="col-lg-12">
-                            @foreach($data->chunk(3) as $d)
-                            <div class="row row-grid">
-                                @foreach($d as $projeto)
-                                <div class="col-lg-4">
-                                    <a href="{{route('detalhe.projeto',$projeto->id)}}" style="cursor: pointer;">
-                                        <!-- <div class="card card-lift--hover shadow border-0 bg-white-default"> -->
-                                        <div class="card">
-                                            <center> <img src="{{asset('vendor/site/images/jacareCoopViva.png')}}" class="card-img-top" style="width:205px; height:205px;"></center>
-                                            <br>
-                                            <div class="card-body">
-
-                                            </div>
-                                        </div>
-                                        <div class="card-footer text-center">
-                                            <div class="row justify-content-center">
-                                                <div class="mt-0 d-flex justify-content-center ">
-                                                    <div class="alert alert-success text-center px-2 py-2" role="alert">
-                                                        <strong> </strong> Projeto(s)
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="row row-grid">
+                    @foreach($projetos as $projeto)
+                        <div class="col-lg-4" style="margin-bottom: 50px">
+                            <div class="card card-lift--hover shadow border-0">
+                                <div class="card-body py-5">
+                                    <h5 class="text-primary text-uppercase">{{ $projeto->nome }}</h5>
+                                    <div>
+                                        <a href="{{ route('detalhe.projeto', $projeto->num_pronac) }}" class="btn btn-outline-primary">
+                                            Ver mais
+                                        </a>
+                                    </div>
                                 </div>
-                                </a>
                             </div>
-                            @endforeach
                         </div>
-                        @endforeach
-                    </div>
+                    @endforeach
                 </div>
             </div>
+
+            {{ $projetos->links() }}
+        </div>
+    </div>
 </section>
 
 
 
+@endsection
+
+@section('js')
+    <script>
+      $(document).ready(() => {
+        const filter = $('input[data-target=projects-filter]');
+        const buttonFilter = $('button[data-target=projects-filter-btn]');
+
+        const buildUrlToFilter = () => `${$(location).attr('href').split('?')[0]}?query=${filter.val()}`;
+
+        filter.keydown(({keyCode}) => {
+          if (keyCode === 13) {
+            window.location.href = buildUrlToFilter();
+          }
+        });
+
+        buttonFilter.click(function() {
+          if (!$.isEmptyObject(filter.val().trim())) {
+            window.location.href = buildUrlToFilter();
+          }
+        });
+      });
+    </script>
 @endsection

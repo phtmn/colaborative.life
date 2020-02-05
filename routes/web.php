@@ -12,10 +12,11 @@ Route::get('/feedback', 'FeedbackController@create')->name('site.feedback');
 Route::post('/feedback', 'FeedbackController@store')->name('feedback.store');
 
 Route::get('/proponentes','Investidor\InvestimentosController@lista_oscs')->name('proponentes_lista');
-Route::get('/projetos','Investidor\InvestimentosController@lista_projetos')->name('projetos_lista');
+Route::get('/propostas','Investidor\InvestimentosController@lista_projetos')->name('projetos_lista');
+
 Route::get('/proponentes/{id}','Investidor\InvestimentosController@detalhe_oscs')->name('detalhe.osc');
 
-Route::get('/projetos/{num_pronac}','Investidor\InvestimentosController@detalhe_projeto')->name('detalhe.projeto');
+Route::get('/propostas/{num_pronac}','Investidor\InvestimentosController@detalhe_projeto')->name('detalhe.projeto');
 
 //Grupo de Rotas para Investidor
 Route::group( ['middleware'=> ['auth','verified','permission:investidor-pj,investidor-pf'],'prefix'=>'painel-investidor','namespace'=>'Investidor'],function(){

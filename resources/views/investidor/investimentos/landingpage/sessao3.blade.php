@@ -128,7 +128,7 @@
                   <div class="card-body py-5">
                    
                     <h4 class="h3 text-primary text-uppercase">Etapas</h4>
-                    <p class="description mt-3">{{$projeto->etapa}} </p>
+                    <p class="description mt-3">{{substr ($projeto->etapa, 0,200)}} </p>
                     <div>
                       <span class="badge badge-pill badge-primary">saiba mais</span>                      
                     </div>
@@ -140,7 +140,7 @@
                   <div class="card-body py-5">
                  
                     <h4 class="h3 text-success text-uppercase">Objetivos</h4>
-                    <p class="description mt-3">{{$projeto->objetivos}}</p>
+                    <p class="description mt-3">{{substr ($projeto->objetivos, 0,200)}}</p>
                     <div>
                       <span class="badge badge-pill badge-success">saiba mais</span>                      
                     </div>
@@ -151,7 +151,7 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">                 
                     <h4 class="h3 text-warning text-uppercase">Sinopse</h4>
-                    <p class="description mt-3">{{$projeto->sinopse}}</p>
+                    <p class="description mt-3">{{ substr ($projeto->sinopse, 0,200)}}...</p>
                     <div>
                     <span class="badge badge-pill badge-success">saiba mais</span>   
                     </div>
@@ -163,7 +163,7 @@
                   <div class="card-body py-5">
                    
                     <h4 class="h3 text-warning text-uppercase">Justificativa</h4>
-                    <p class="description mt-3">{{$projeto->justificativa}}</p>
+                    <p class="description mt-3">{{substr ($projeto->justificativa, 0,200)}}</p>
                     <div>
                     <span class="badge badge-pill badge-success">saiba mais</span>   
                     </div>

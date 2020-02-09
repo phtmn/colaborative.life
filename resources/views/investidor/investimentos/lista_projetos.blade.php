@@ -92,8 +92,8 @@
                             <div class="card-body" align="right">
                             <a href="{{ route('detalhe.projeto', $projeto->num_pronac) }}"
                                     class="btn btn-link px-0 text-success ">PRONAC {{ $projeto->num_pronac }}</a>
-                                <h5 align="right"  class="h6 card-title mb-0" >{{ $projeto->nome }}</h5>
-                                <small class="text-muted" >proposto por <b >{{ $projeto->responsavel }}</b></small>
+                                <h5 align="right"  class="h6 card-title mb-0" >{{ substr ($projeto->nome, 0,30) }}...</h5>
+                                <small class="text-muted" >proposto por <b >{{ substr ($projeto->responsavel, 0,20) }}</b></small>
                                 <!-- <p class="card-text mt-4">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p> -->
                                
                             </div>

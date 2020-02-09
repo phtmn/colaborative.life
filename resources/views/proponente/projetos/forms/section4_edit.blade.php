@@ -14,7 +14,8 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="comprovante_captacao" class="form-control" value="{{$projeto->comprovante_captacao}}" required>
+                    <input type="file" name="comprovante_captacao" class="form-control"
+                        value="{{$projeto->comprovante_captacao}}" required>
                 </div>
             </div>
         </div>
@@ -24,7 +25,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="imagem_projeto" class="form-control" value="{{$projeto->imagem_projeto}}" required>
+                    <input type="file" name="imagem_projeto" class="form-control" value="{{$projeto->imagem_projeto}}" required>
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="cronograma" class="form-control" value="{{$projeto->cronograma}}" required>
+                    <input type="file" name="cronograma" class="form-control" value="{{$projeto->cronograma}}" required>
                 </div>
             </div>
         </div>
@@ -64,10 +65,10 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="contrapartidas" class="form-control" value="{{$projeto->contrapartidas}}" required>
+                    <input type="file" name="contrapartidas" class="form-control" value="{{$projeto->contrapartidas}}" required>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </section>

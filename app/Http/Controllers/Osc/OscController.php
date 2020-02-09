@@ -21,7 +21,7 @@ class OscController extends Controller
 
         $osc = auth()->user()->osc();
         if($osc){
-            return view('proponente.painel');
+            return view('proponente.bemvindo');
         }
         return view('proponente.bemvindo');
     }

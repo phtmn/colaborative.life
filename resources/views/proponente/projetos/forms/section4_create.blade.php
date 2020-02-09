@@ -44,7 +44,7 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="form-group col-md-7">
-                <input type="file" name="cronograma" class="form-control" value="" required>
+                <input type="file" name="cronograma" class="form-control" value=""required >
                 </div>
             </div>
         </div>

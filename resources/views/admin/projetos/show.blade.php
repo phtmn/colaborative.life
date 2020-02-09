@@ -47,14 +47,16 @@
                             
                         </div>
                         <div class="card-footer text-center">
+                        @if($projeto->status == 'Captação em análise')
+                                <button type="button" class="btn btn-outline-danger" data-target="project-reproved"><i class="ni ni-check-bold"></i> Reprovar</button>
+                                <button type="button" class="btn btn-outline-primary" data-target="get-data-from-versalic"><i class="ni ni-check-bold"></i>Capturar dados do VERSALIC</button>
+                               {{-- <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Aprovar</button>--}}
+                            @endEmpty
                         <a class="btn btn-outline-default" href="{{route('admin-projetos.index')}}">
                             <i class="ni ni-bold-left"></i> Voltar
                         </a>
-                            @if($projeto->status == 'Captação em análise')
-                                <button type="button" class="btn btn-outline-danger" data-target="project-reproved"><i class="ni ni-check-bold"></i> Reprovar</button>
-                                <button type="button" class="btn btn-outline-primary" data-target="get-data-from-versalic"><i class="ni ni-check-bold"></i>Capturar dados do VERSALIC</button>
-                                <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Aprovar</button>
-                            @endEmpty
+                        <button type="submit" class="btn btn-outline-success"><i class="ni ni-check-bold"></i> Aprovar</button>
+                            
                         </div>
                         {{ Form::close() }}
 

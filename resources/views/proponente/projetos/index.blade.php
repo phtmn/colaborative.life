@@ -36,9 +36,9 @@
                             <tr>
                                 <th scope="col" class="text-left">Nº do PRONAC</th>
                                 <th scope="col" class="text-left">Landing Page</th>
-                                <th scope="col" class="text-left">Status</th>
-                                <th scope="col" class="text-left">Uploads</th>
+                                <th scope="col" class="text-left">Status</th>                                
                                 <th scope="col" class="text-left">Publicado</th>
+                                <!-- <th scope="col" class="text-left">Data de Cadastro</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -67,8 +67,22 @@
                                     </span>       
                                              @endif
                                     </td>
+                                   
                                     <td>
-                                         <div class="avatar-group">
+                                        @if($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada')
+                                                 <label class="custom-toggle custom-toggle-success">
+                                                <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('projeto.publicate', [ 'id' => $d->id ]) }}" {{ ($d->publicado) ? 'checked' : '' }}>
+                                                <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
+                                            </label>
+                                        @else
+                                                                         
+                                        @endif
+                                    </td>                                   
+                                    {{-- <td>
+                                    
+                                      
+                                        {{ date('d/m/Y',strToTime($d->created_at)) }}
+                                        <div class="avatar-group">
                                             <a href="{{ url('projetos/'.$d->comprovante_captacao) }} " class="avatar avatar-sm rounded-circle" download>  
                                                 <img src="{{ url('projetos/'.$d->comprovante_captacao) }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Extrato bancário da conta captação"> 
                                               </a>
@@ -81,19 +95,9 @@
                                               <a href="{{ url('projetos/'.$d->contrapartidas) }}" class="avatar avatar-sm rounded-circle" download>  
                                                 <img src="{{ url('projetos/'.$d->contrapartidas) }}"  alt="" class="Image placeholder" data-toggle="tooltip" title="Plano de contrapartidas"> 
                                               </a>                                             
-                                            </div>
+                                            </div> 
                                         
-                                    </td>
-                                    <td>
-                                        @if($d->status == 'Aprovado para Captação' OR $d->status == 'Captação Finalizada')
-                                                 <label class="custom-toggle custom-toggle-success">
-                                                <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('projeto.publicate', [ 'id' => $d->id ]) }}" {{ ($d->publicado) ? 'checked' : '' }}>
-                                                <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
-                                            </label>
-                                        @else
-                                                                         
-                                        @endif
-                                    </td>                                   
+                                    </td>--}}
                                 </tr>
                             @empty
                             <p class="text-warning font-weight-bold 900" style="text-indent: 25px;">Você ainda não cadastrou nenhum projeto! <span></span></p>

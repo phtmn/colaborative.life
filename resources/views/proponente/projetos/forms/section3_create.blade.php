@@ -7,10 +7,10 @@
                     <input type="text" name="banco" class="form-control" value="" placeholder="Banco do Brasil S.A." readonly>
                 </div>
                 <div class="form-group col-md-3">
-                    <input type="text" name="ag" class="form-control" value="" placeholder="Agência" >                    
+                    <input type="text" name="ag" class="form-control" value="" placeholder="Agência" required >                    
                 </div>
                 <div class="form-group col-md-3">
-                    <input type="text" name="cc" class="form-control" value="" placeholder="Conta" >                                       
+                    <input type="text" name="cc" class="form-control" value="" placeholder="Conta" required>                                       
                 </div>
             </div>
         </div>

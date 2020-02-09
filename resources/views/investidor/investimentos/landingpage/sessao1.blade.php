@@ -1,3 +1,5 @@
+
+
 <section class="section section-lg pt-lg-0 mt--300">
 
     <div class="container">
@@ -10,7 +12,7 @@
                                 
                                 <h5 class="text-primary text-uppercase text-center">SOU UMA ORGANIZAÇÃO SEM FINS LUCRATIVOS</h5>
 								
-                                {{--<p class="description mt-3"><p align="justify" style="text-indent: 25px;">{{$osc->historia ?? ''}}</p></p> --}}
+                                <p class="description mt-3"><p align="justify" style="text-indent: 25px;"></p></p> 
                                 <div>
 									<hr>
 									

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('admin.home')
 @section('cabecalho')
 <div class="header pb-5 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
     <span class="mask bg-gradient-blue opacity-6"></span>
@@ -16,7 +16,7 @@
     <div class="col-md-12">
         <div class="card shadow">
             <div class="card-body bg-transparent">
-                <form action="{{route('recibos.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('admin-recibos.storeWithInvestimento', request()->route()->parameter('investimento_id'))}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <p class="text-blue font-weight-bold mt-2">Dados Gerais</p>
                     <hr>
@@ -36,9 +36,9 @@
 
                     <div class="card-footer text-center">
                     <a class="btn btn-primary" href="{{ route('recibos.index') }}">
-                            <i class="ni ni-bold-left"></i> Voltar
-                        </a>
-                        <button type="submit" class="btn btn-outline-primary"><i class="ni ni-check-bold"></i> Salvar</button>
+                        <i class="ni ni-bold-left"></i> Voltar
+                    </a>
+                    <button type="submit" class="btn btn-outline-primary"><i class="ni ni-check-bold"></i> Salvar</button>
                     </div>
                 </form>
             </div>

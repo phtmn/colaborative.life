@@ -108,7 +108,7 @@
 							<span class="nav-link-inner--text font-weight-900">Proponentes</span>
 						</a>
 
-					</li> 
+					</li>
 
 					{{--<li class="nav-item dropdown">--}}
 					{{--	<a href="{{url('/termo-de-uso')}}" class="nav-link" >--}}

@@ -13,6 +13,7 @@ Route::post('/feedback', 'FeedbackController@store')->name('feedback.store');
 
 Route::get('/proponentes','Investidor\InvestimentosController@lista_oscs')->name('proponentes_lista');
 Route::get('/portfolio','Investidor\InvestimentosController@lista_projetos')->name('projetos_lista');
+Route::post('/portfolio','Investidor\InvestimentosController@lista_projetos')->name('projetos_lista');
 
 Route::get('/proponentes/{id}','Investidor\InvestimentosController@detalhe_oscs')->name('detalhe.osc');
 
@@ -43,7 +44,6 @@ Route::group( ['middleware'=> ['auth','verified','permission:osc'],'prefix'=>'da
 
     Route::resource('osc','OscController');
     Route::resource('projetos','ProjetosController');
-    Route::resource('recibos','RecibosController');
 
     Route::post('/upload','ProjetosController@uploadFile')->name('projeto.uplaodFile');
 
@@ -56,7 +56,10 @@ Route::group( ['middleware'=> ['auth','verified','permission:osc'],'prefix'=>'da
 
     Route::get('/meus-investimentos','OscController@getInvestimentos')->name('investimentos');
 
+    Route::resource('recibos','RecibosController');
 
+    Route::get('recibos/{investimento_id}/create','RecibosController@createWithInvestimento')->name('recibos.createWithInvestimento');
+    Route::post('recibos/{investimento_id}/create','RecibosController@storeWithInvestimento')->name('recibos.storeWithInvestimento');
 
     Route::get('projeto/{id}/galeria','ProjetosController@galeria')->name('projeto.galeria');
     Route::post('galeria.save','ProjetosController@save')->name('galeria.save');
@@ -67,7 +70,6 @@ Route::group( ['middleware'=> ['auth','verified','permission:osc'],'prefix'=>'da
 
     Route::get('/detalhe','OscController@landingPage')->name('osc.landingPage');
     Route::get('/detalhe/projeto/{id}','OscController@landingPageProjeto')->name('projeto.landingPage');
-
 });
 
 //# ROTAS PARA A AREA ADMINISTRATIVA
@@ -86,7 +88,19 @@ Route::group(['middleware'=> ['auth', 'permission:admin'],'prefix'=>'sistema'],f
     Route::resource('admin-projetos','Admin\ProjetosController');
 
     Route::resource('admin-investimentos','Admin\InvestimentosController');
+
+    Route::resource('admin-recibos','Admin\RecibosController');
+
+    Route::get('recibos/{investimento_id}/create','Admin\RecibosController@createWithInvestimento')->name('admin-recibos.createWithInvestimento');
+    Route::post('recibos/{investimento_id}/create','Admin\RecibosController@storeWithInvestimento')->name('admin-recibos.storeWithInvestimento');
 });
+
+//# ROTAS EM COMUM ENTRE ADMIN E OSC
+
+Route::group(['middleware' => 'auth', 'permission:osc,admin', 'prefix'=>'dashboard'], function () {
+    Route::get('/projetos/{id}/investimentos', 'Osc\ProjetosController@getInvestimentos');
+});
+
 
 
 

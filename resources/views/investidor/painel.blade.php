@@ -34,22 +34,22 @@
                             </div>
                             <div class="col-lg-7 order-lg-3 text-lg-right align-self-lg-center">
                                 <div class="card-profile-actions py-4 mt-lg-0">
-                                    
-                                
+
+
                                     <a href="{{ route('perfil.show') }}" class="btn btn-sm btn-primary">Meu Perfil</a>
-                                    <a href="" data-toggle="tooltip" data-title="Doação e/ou Patrocínio"class="btn btn-sm btn-success ">Quero Investir</a>
+                                    <a href="{{ route('projetos_lista') }}" data-toggle="tooltip" data-title="Doação e/ou Patrocínio"class="btn btn-sm btn-success ">Quero Investir</a>
 									<a href="#" class="btn btn-sm btn-info " data-toggle="tooltip" data-title="Em breve">O que me inspira</a>
 									<a href="#" class="btn btn-sm btn-danger" data-toggle="tooltip" data-title="Em breve">
                                         <i class="fa fa-heart"></i>
                                     </a>
                                     <!--Icones como menus -->
-                                  
+
                                 </div>
                             </div>
                             <div class="col-lg-5 order-lg-1">
                                 <div class="card-profile-stats d-flex justify-content-center">
                                     <div>
-                                        
+
                                         <a href="{{ route('investimentos.index')  }}" class="btn btn-sm btn-outline-success ">Meus Investimentos</a>
                                     </div>
                                     <!-- <div>
@@ -57,13 +57,13 @@
                                         <span class="description">Organizações</span>
                                         <span class="description">Cadastradas</span>
                                     </div>
-                                    
+
 									<div>
                                         <span class="heading">{{ DB::table('projetos')->count()}}</span>
                                         <span class="description">Projetos</span>
 
                                     </div>
-									
+
 									<div>
                                         <span class="heading"></span>
                                         <span class="description">Metas</span>

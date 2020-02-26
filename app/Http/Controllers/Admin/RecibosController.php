@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Osc;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Investimento;
 use App\Models\Projeto;
@@ -13,18 +13,14 @@ class RecibosController extends Controller
 {
     public function index()
     {
-        $user = auth()->user();
-
-        return view('proponente.recibos.index', [
-            'recibos' => $user->recibos
+        return view('admin.recibos.index', [
+            'recibos' => Recibo::all()
           ]);
     }
 
     public function create()
     {
-        return view('proponente.recibos.create', [
-            'investimento' => null
-        ]);
+        return view('admin.recibos.create');
     }
 
     public function store(Request $request)
@@ -68,67 +64,19 @@ class RecibosController extends Controller
         $recibo->projeto_bairro = $request->projeto_bairro;
         $recibo->projeto_cidade = $request->projeto_cidade;
         $recibo->projeto_uf = $request->projeto_uf;
-        $recibo->user_id = auth()->user()->id;
         $recibo->save();
 
 
         if ($recibo) {
-            return redirect()->route('recibos.index');
+            return redirect()->route('admin-recibos.index');
         }
 
-        return redirect()->route('recibos.create')->withInput($request->all());
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Recibo  $recibo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Recibo $recibo)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Recibo  $recibo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Recibo $recibo)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Recibo  $recibo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Recibo $recibo)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Recibo  $recibo
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Recibo $recibo)
-    {
-        //
+        return redirect()->route('admin-recibos.create')->withInput($request->all());
     }
 
     public function createWithInvestimento($investimento_id)
     {
-        return view('proponente.recibos.createWithInvestimento', [
-            'investimento' => Investimento::find($investimento_id)
-        ]);
+        return view('admin.recibos.createWithInvestimento');
     }
 
 
@@ -167,17 +115,17 @@ class RecibosController extends Controller
             $recibo->declarador_cargo = $request->declarador_cargo;
             $recibo->declarador_local = $request->declarador_local;
             $recibo->declarador_data = $request->declarador_data;
-            $recibo->user_id = auth()->user()->id;
+            $recibo->user_id = $investimento->projeto->user_id;
             $recibo->save();
 
             $investimento->recibo_id = $recibo->id;
             $investimento->save();
 
             if ($recibo) {
-                return redirect()->route('recibos.index');
+                return redirect()->route('admin-recibos.index');
             }
         }
 
-        return redirect()->route('recibos.createWithInvestimento', $investimento_id)->withInput($request->all());
+        return redirect()->route('admin-recibos.createWithInvestimento', $investimento_id)->withInput($request->all());
     }
 }

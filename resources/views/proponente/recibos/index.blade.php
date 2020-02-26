@@ -25,14 +25,61 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="text-left">Nº do PRONAC</th>
-                                <th scope="col" class="text-left">Nº do Recibo</th>                                
+                                <th scope="col" class="text-left">Nº do Recibo</th>
                                 <th scope="col" class="text-left">Incentivador</th>
                                 <th scope="col" class="text-left">Proponente</th>
-                                <th scope="col" class="text-left">#</th>
+                                <th scope="col" class="text-left">Comprovante</th>
                             </tr>
                         </thead>
                         <tbody>
-                           
+                        @forelse($recibos as $recibo)
+                            <tr>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        @if ($recibo->investimento)
+                                            {{ $recibo->investimento->projeto->num_pronac }}
+                                        @else
+                                            {{ $recibo->projeto_nome }}
+                                        @endif
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $recibo->num_recibo }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        {{ $recibo->incentivador_nome }}
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        @if ($recibo->investimento)
+                                            {{ $recibo->investimento->projeto->responsavel }}
+                                        @else
+                                            {{ $recibo->projeto_responsavel }}
+                                        @endif
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        @if ($recibo->investimento)
+                                            <a class="text-black-50" href="{{ url('investimentos/' . $recibo->investimento->comprovante_transferencia) }}" target="_blank">
+                                                Comprovante
+                                            </a>
+                                        @else
+                                            Sem investimento
+                                        @endif
+                                    </span>
+                                </td>
+                            </tr>
+                        @empty
+                            <p class="text-warning font-weight-bold 900" style="text-indent: 25px;">Você ainda não cadastrou nenhum projeto! <span></span></p>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>

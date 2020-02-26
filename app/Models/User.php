@@ -46,8 +46,16 @@ class User extends Authenticatable
         return $this->hasMany(Projeto::class);
     }
 
+    public function investimentos(){
+        return $this->hasMany(Investimento::class);
+    }
+
+    public function recibos(){
+        return $this->hasMany(Recibo::class);
+    }
+
     public function osc(){
         return $this->hasOne(Osc::class)->first();
     }
-    
+
 }

@@ -12,28 +12,28 @@ class Projeto extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'user_id', 
-        'num_pronac', 
-        'telefone', 
-        'cep', 
-        'logradouro', 
-        'bairro', 
+        'user_id',
+        'num_pronac',
+        'telefone',
+        'cep',
+        'logradouro',
+        'bairro',
         'cidade',
-        'uf', 
-        'banco', 
-        'ag', 
-        'cc', 
-        'comprovante_captacao', 
-        'imagem_projeto', 
+        'uf',
+        'banco',
+        'ag',
+        'cc',
+        'comprovante_captacao',
+        'imagem_projeto',
         'cronograma',
-        'contrapartidas', 
-        'ativo', 
+        'contrapartidas',
+        'ativo',
         'publicado',
-        'tipo_pessoa', 
-        'cpf', 
+        'tipo_pessoa',
+        'cpf',
         'cnpj',
-        'nome',         
-        'responsavel', 
+        'nome',
+        'responsavel',
         'cpf-or-cnpj',
         'segmento',
         'area',
@@ -49,7 +49,7 @@ class Projeto extends Model
         'valor_solicitado',
         'outras_fontes',
         'valor_captado',
-        'valor_projeto', 
+        'valor_projeto',
         'resumo',
         'etapa',
         'objetivos',
@@ -67,11 +67,19 @@ class Projeto extends Model
 
     protected $casts = ['publicado' => 'boolean'];
 
+    public function getCountInvestmentsWithoutProofAttribute() {
+        return $this->hasMany(Investimento::class)->whereNull('recibo_id')->count();
+    }
+
     public function osc() {
         return $this->belongsTo(Osc::class);
     }
 
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    public function investimentos() {
+        return $this->hasMany(Investimento::class);
     }
 }

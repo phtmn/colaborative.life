@@ -26,7 +26,7 @@
 </head>
 
 <body >
- 
+
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
         <!-- Toggler -->
@@ -106,7 +106,7 @@
 
 
 
-       
+
         <!-- Footer -->
         <footer class="footer">
             <!-- <div class="row align-items-center justify-content-xl-between">

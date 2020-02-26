@@ -15,13 +15,11 @@ use App\Models\Osc;
 class InvestimentosController extends Controller
 {
     public function index(){
-
-        $data = Investimento::all();
+        $user = auth()->user();
 
         return view('investidor.investimentos.index',[
-            'data'=> $data
+            'investimentos'=> $user->investimentos()->orderBy('id', 'DESC')->paginate(10)
         ]);
-
     }
 
     public function lista_oscs(){
@@ -129,5 +127,30 @@ class InvestimentosController extends Controller
     public function detalhe($id){
         $investimento = Investimento::find($id);
         return view('investidor.investimentos.detalhe',compact('investimento'));
+    }
+
+    public function store(Request $request)
+    {
+
+        if ($request->hasFile('comprovante_tranferencia') && $request->file('comprovante_tranferencia')->isValid()) {
+            $comprovante = uniqid(date('HisYmd')) . "_-_" . $request->file('comprovante_tranferencia')->getClientOriginalName();
+
+            $request->comprovante_tranferencia->move('investimentos', $comprovante);
+
+            $investimento = new Investimento;
+            $investimento->user_id = auth()->user()->id;
+            $investimento->projeto_id = $request->projeto_id;
+            $investimento->comprovante_transferencia = $comprovante;
+            $investimento->valor = 0;
+            $investimento->save();
+
+            if ($investimento) {
+                Alert::success('Dados salvos com sucesso!')->persistent('Ok');
+                return redirect()->route('investimentos.index');
+            }
+
+            Alert::error('Algum Erro ocorreu' . $t->getMessage(), 'Erro')->persistent('Ok');
+            return redirect()->route('projetos.create')->withInput($request->all());
+        }
     }
 }

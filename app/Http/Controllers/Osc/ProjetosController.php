@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Osc;
 
+use App\Models\Investimento;
 use Storage;
 use Illuminate\Http\Request;
 use App\Models\Projeto;
@@ -13,13 +14,15 @@ class ProjetosController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:osc');
+        //$this->middleware('can:osc');
     }
 
     public function index()
     {
+        $user = auth()->user();
+
         return view('proponente.projetos.index', [
-            'data' => $data = Projeto::all()
+            'projetos' => $user->projetos
           ]);
     }
 
@@ -46,21 +49,21 @@ class ProjetosController extends Controller
             $request->comprovante_captacao->move('projetos', $fileName);
             $files['comprovante_captacao']  = $fileName;
           }
-                
+
         if ($request->hasFile('imagem_projeto') && $request->file('imagem_projeto')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('imagem_projeto')->getClientOriginalName();
 
             $request->imagem_projeto->move('projetos', $fileName);
             $files['imagem_projeto']  = $fileName;
           }
-        
+
         if ($request->hasFile('cronograma') && $request->file('cronograma')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('cronograma')->getClientOriginalName();
 
             $request->cronograma->move('projetos', $fileName);
             $files['cronograma']  = $fileName;
           }
-      
+
 
         if ($request->hasFile('contrapartidas') && $request->file('contrapartidas')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('contrapartidas')->getClientOriginalName();
@@ -69,7 +72,7 @@ class ProjetosController extends Controller
             $files['contrapartidas']  = $fileName;
           }
 
-       
+
         $projeto = new Projeto;
         $projeto->num_pronac            = $request->num_pronac;
         $projeto->telefone              = $request->telefone;
@@ -83,10 +86,10 @@ class ProjetosController extends Controller
         $projeto->cc                    = $request->cc;
         // $projeto->video_youtube         = $request->video_youtube;
         $projeto->comprovante_captacao  = $files['comprovante_captacao'] ?? null;
-        $projeto->imagem_projeto        = $files['imagem_projeto'] ?? null;        
-        $projeto->cronograma            = $files['cronograma'] ?? null;        
+        $projeto->imagem_projeto        = $files['imagem_projeto'] ?? null;
+        $projeto->cronograma            = $files['cronograma'] ?? null;
         $projeto->contrapartidas        = $files['contrapartidas'] ?? null;
-        
+
         $projeto->ativo                 = '0';
         $projeto->status                = 'Captação em análise';
         $projeto->user_id               = $request->user()->id;
@@ -103,7 +106,7 @@ class ProjetosController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+
         $projeto = Projeto::findOrFail($id);
 
         $files = [];
@@ -114,21 +117,21 @@ class ProjetosController extends Controller
             $request->comprovante_captacao->move('projetos', $fileName);
             $files['comprovante_captacao']  = $fileName;
           }
-                
+
         if ($request->hasFile('imagem_projeto') && $request->file('imagem_projeto')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('imagem_projeto')->getClientOriginalName();
 
             $request->imagem_projeto->move('projetos', $fileName);
             $files['imagem_projeto']  = $fileName;
           }
-        
+
         if ($request->hasFile('cronograma') && $request->file('cronograma')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('cronograma')->getClientOriginalName();
 
             $request->cronograma->move('projetos', $fileName);
             $files['cronograma']  = $fileName;
           }
-      
+
 
         if ($request->hasFile('contrapartidas') && $request->file('contrapartidas')->isValid()) {
             $fileName = uniqid(date('HisYmd')) . "_-_" . $request->file('contrapartidas')->getClientOriginalName();
@@ -136,8 +139,8 @@ class ProjetosController extends Controller
             $request->contrapartidas->move('projetos', $fileName);
             $files['contrapartidas']  = $fileName;
           }
-        
-        $projeto->update([            
+
+        $projeto->update([
             'telefone'             => $request->telefone,
             'cep'                  => $request->cep,
             'logradouro'           => $request->logradouro,
@@ -147,7 +150,7 @@ class ProjetosController extends Controller
             'comprovante_captacao' => $files['comprovante_captacao'] ?? null,
             'imagem_projeto'       => $files['imagem_projeto'] ?? null,
             'cronograma'           => $files['cronograma'] ?? null,
-            'contrapartidas'       => $files['contrapartidas'] ?? null            
+            'contrapartidas'       => $files['contrapartidas'] ?? null
         ]);
 
         $result = DB::transaction(function() use ($request, $projeto) {
@@ -204,5 +207,10 @@ class ProjetosController extends Controller
         } catch (\Exception $e) {
             return redirect()->back();
         }
+    }
+
+    public function getInvestimentos($project_id)
+    {
+        return response()->json(Projeto::find($project_id)->investimentos()->whereNull('recibo_id')->get());
     }
 }
